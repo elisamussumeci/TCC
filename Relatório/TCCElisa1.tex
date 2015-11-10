@@ -170,20 +170,49 @@ Esse trabalho tem como principal objetivo caracterizar a dinâmica de dissemina�
 
 \section{Metodologia}
 
-\subsection{Recuperação de Informação}
+\subsection{Rede de Disseminação Original}
 
-  Ao estudar e analisar um conjunto de textos, precisamos traduzi-lo para uma linguagem computacional de forma que possamos aplicar modelos e heurísticas 
-  conhecidas para extrair informação dele. Esse processo é chamado de \textit{Recuperação da Informação} (RI).
-    
-  
-\subsubsection{Modelos Utilizados}
+Ao estudar e analisar um conjunto de textos, precisamos traduzi-lo para uma linguagem computacional de forma que possamos aplicar modelos e heurísticas 
+conhecidas para extrair informação dele.
 
-  Na realização do processo de RI, utilizamos dois modelos: Word2Vec e Tf-Idf
-  
-  O modelo \textbf{Tf-Idf}, (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
-  a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
-  $Idf_{t}$.
-  
+\subsubsection{Matriz de Documentos}
+
+Representamos vetorialmente nosso conjunto de dados utilizando o Word2Vec, uma ferramenta que promove uma implementação eficiente do
+modelo skip-gram e bag-of-words contínuo (inserir referencia).
+
+Para gerar nosso modelo word2vec, fornecemos como entrada o corpus linguístico referente a toda a coleção de documentos
+e o modelo nos retorna uma matriz, onde as linhas são as palavras contidas no corpus e as colunas são os atributos gerados pelo modelo:
+
+(AJEITAR MATRIZ)
+
+\begin{center}
+ \begin{tabular}{ccccc}
+          & $a_{1}$ & $a_{2}$ & ... & $a_{m}$ \\ \cline{2-5}
+    $v_{1}$ &    &    &     &    \\
+    $v_{2}$ &    &    &     &    \\
+    ...  &    &    &     &    \\
+    $v_{n}$ &    &    &     &    \\
+    \end{tabular}
+ 
+\end{center}
+
+
+Temos nessa matriz a representação de todas as palavras presentes em nosso corpus, porém, queremos representar documentos e não palavras.
+Para isso, buscamos o vetor referente de cada palavra contida em um documento e somamo-os. Dessa forma, associamos todas as palavras contidas
+em um documento, e transformamo-as em um único vetor. Ou seja, dado um documento A, sabemos que ele é composto pelo seguinte conjunto de palavras
+$P:\{1,2,3,4,5\}$. Para cada termo buscamos o seu vetor representativo $v_{t}$, $t =\{1,2,3,4,5\}$ e somamos todos esses vetores, criando o vetor
+$v_{D}$ que representa o vetor do documento D:
+
+$$v_{D} = v_{1}+v_{2}+v_{3}+v_{4}+v_{5} $$
+
+Representando um documento dessa forma, não levamos em consideração a importância de cada palavra para o documento. Para melhorar nossa 
+representação, antes de somar os vetores, iremos multiplicar cada um pelo valor \textbf{Tf-Idf} da palavra a qual ele representa.
+
+O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
+a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
+$Idf_{t}$.
+
+
   Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
   $d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
   porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
@@ -237,79 +266,98 @@ Esse trabalho tem como principal objetivo caracterizar a dinâmica de dissemina�
   dentro de um documento e com a raridade do termo na coleção. É considerado o melhor esquema de ponderação em recuperação da informação.
   
   $$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
-  
-    
-  
-\subsubsection{Representação Artigos}
 
-  Para criarmos o modelo Word2Vec, fornecemos como entrada um corpus linguístico (coleção de documentos) e o modelo nos retorna uma matriz
-  onde cada palavra é representada por um vetor. Podemos ver a seguir a matriz resultante desse modelo em nosso conjunto de dados:
-  
-  $$\begin{bmatrix}
-     -1.13546148e-01 & -8.23762193e-02 & ... & -1.48673728e-01\\
-     -7.33665004e-02 &  1.13490485e-01 & ... &  1.01513676e-01\\
-     -1.17934421e-02 & 1.34973019e-01  & ... &  1.22169554e-02\\
-     ... & & &  \\
-     -1.04698418e-02 & 4.16711420e-02 & ... &  1.23268731e-01\\
-      1.67298820e-02 &   4.50479165e-02 & ... & -1.80342391e-01\\
-     -3.84105071e-02 &   7.35700727e-02 & ... &  4.78151329e-02
-    \end{bmatrix}
- $$
- 
-  Temos nessa matriz a representação de todas as palavras presentes em nosso corpus, porém, queremos representar documentos e não palavras.
-  Para isso, buscamos o vetor referente de cada palavra contida em um documento e somamo-os. Dessa forma, associamos todas as palavras contidas
-  em um documento, e transformamo-as em um único vetor. Ou seja, dado um documento A, sabemos que ele é composto pelo seguinte conjunto de palavras
-  $P:\{1,2,3,4,5\}$. Para cada termo buscamos o seu vetor representativo $v_{t}$, $t =\{1,2,3,4,5\}$ e somamos todos esses vetores, criando o vetor
-  $v_{d}$ que representa o vetor do documento D:
-  
-  $$v_{d} = v_{1}+v_{2}+v_{3}+v_{4}+v_{5} $$
-  
-  Representando um documento dessa forma, não levamos em consideração a importância de cada palavra para o documento, o que nos faz ter
-  uma representação pouco eficiênte. Para contornar isso, iremos antes de somar os vetores referentes às palavras, multiplicá-los 
-  pelo valor TF-IDF de cada palavra em cada documento. Dessa forma temos para cada palavra um valor $w_{t,d}$, $i=\{1,2,3,4,5\}$ referente
-  ao valor TF-IDF to termo $t$ no ducumento $d$:
+
+ Utilizando essa medida em nosso modelo, temos para cada palavra $i$ um valor $w_{t,d}$, referente
+  ao valor Tf-Idf do termo $t$ no documento $d$. Sendo assim:
   
   $$v_{D} = \sum_{i=1}^{5} v_{i} \cdot w_{t,d} $$
 
 
-\subsection{Rede de Disseminação}
+\subsubsection{Construção da Rede}
+
+ Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um artigo.
  
- Um dos desafios da área de epidemiologia é como representar dinâmicas de disseminação de doenças. Uma representação muito comum que se tornou popular após o modelo
- do mundo pequeno (adicionar referência), foi a modelagem através de Redes Complexas.
- 
- Criamos uma rede complexa para representar a disseminação da notícia do Atentado ao Charlie Hebdo. Para construir a rede
+ Ao construir a rede dos nossos documentos,
  consideramos como contaminação sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
  artigo B.
  
  Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isso é, dado um nó $e_{i}$ e um nó
  $e_{j}$ existe uma aresta $a_{ij}$ que sai de \textit{i} e vai para \textit{j} se o artigo \textit{i} influênciou o artigo \textit{j}.
  
+ Para definir quando um artigo influencia outro em nossa rede, foram usadas duas heurísticas: \textbf{similaridade de cosseno} e 
+ \textbf{temporalidade}.
  
- 
-\subsubsection{Definição de Influência}
- 
- Para definir quando um artigo influencia outro em nossa rede, foram usadas duas heurísticas: similaridade de cosseno e temporalidade.
- 
- A similaridade de cosseno utiliza da distância de cossenos para definir se dois artigos são similares ou não. A distância de cosseno
- consiste em calcular o cosseno entre o ângulo que os dois vetores formam. Podemos calculá-lo utilizando a fórmula abaixo:
+ Utilizamos a similaridade de cossenos para definir se dois artigos são similares ou não. Para isso, calculamos a distância de cossenos
+ entre o ângulo que os dois vetores formam. Podemos calculá-lo utilizando a fórmula abaixo:
  
  $$ cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
  
- Caso a distância de cossenos entre os dois artigos for pequena, então os consideramos similares. Possuindo dois artigo similares, ainda não
- sabemos qual influênciou e qual foi o influenciado. Para definir essa questão, utilizamos a data e hora em que cada um foi publicado.
+ Se a distância calculada for suficientemente pequena, consideramos os artigos similares.
  
- Dessa forma, se dois artigos são similares, consideramos como influenciador aquele que foi publicado primeiro. 
+ Possuindo artigos similares, inferimos que existe uma relação de influência entre eles, 
+ porém não temos como saber qual influênciou e qual foi influenciado. Para definir essa questão, utilizamos a data e hora em que
+ cada um foi publicado. Dessa forma, se dois artigos são similares, consideramos como influenciador aquele que foi publicado primeiro. 
 
  
-\subsubsection{Escolha de Limiares}
+ INCLUIR O QUE É SUFICIENTEMENTE PEQUENO 
+ 
+\subsection{Simulação Rede de Disseminação}
 
- Ao definir influência, consideramos que os artigos são similares se possuem uma distância de cosseno pequena. Porém, não definimos
- o quão pequena essa distância tem que ser. 
+Nesta parte do trabalho, temos como objetivo simular a disseminação de nossa rede original utilizando o modelo (adicionar referencia)
+para tentar validar nossa rede de disseminação como um processo epidemiológico.
+
+\subsubsection{Rede Completa}
+
+ Para simular nossa rede, construimos primeiramente uma rede completa com os mesmos nós de nossa rede original, onde os pesos das arestas
+ são as probabilidades dessa aresta existir no caminho de disseminação da notícia, ou seja, a probabilidade de um artigo influenciar um 
+ outro. Para isso, levamos em conta o veículo que publicou o artigo. Dessa forma podemos saber 
+ através dos veículos qual a chance de um artigo do veículo x ser influenciado por um artigo do veículo y.
+
+ Construimos então, uma matriz de pesos identificando todos os veículos presentes na rede original e contando quantas vezes
+ cada veículo x foi influenciado pelo veículo y. Dado que na rede original possuimos n
+ veículos diferentes, temos uma matriz quadrada $nxn$, onde cada posição $a_{ij}$ nos da a quantidade de vezes que o veículo i foi influenciado
+ pelo veículo j. Consideramos que um veículo não influência a si mesmo, logo a diagonal da nossa matriz é de zeros:
+ \pagebreak
  
- Inicialmente foram utilizado valores escolhidos aleatóriamente, entretanto, essa não é a melhor forma de escolher esses valores.
- Sendo assim, serão feitas análises nas distribuições das distâncias para podermos encontrar limiares mais justos para a criação da rede.
-  
+ \begin{center}
+ \hspace{0.2cm}a \hspace{0.5cm} b \hspace{0.3cm} $\hdots$ \hspace{0.4cm}c
  
+ \vspace{0.2cm}
+ $
+ \begin{tabular}{c}
+   a \\
+   b \\
+   \vdots\\
+   c
+ \end{tabular}
+$
+ $
+ \begin{bmatrix}
+  0 & a_{12} & \hdots & a_{1n}\\
+  a_{21} & 0 & \hdots & a_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{31} & a_{32} & \hdots & 0
+ \end{bmatrix}_{nxn}
+$
+
+\end{center}
+
+\vspace{0.4cm}
+Por exemplo, $a_{12}$ é o número de vezes que artigos do veículo $b$ influenciaram artigos do veículo $a$.
+
+A partir da matriz de pesos damos os pesos de cada aresta de nossa rede completa. Para cada nó da rede, identificamos seu veículo e atribuimos
+a todas as arestas que saem dele as chances dele influenciar cada vizinho, e a todas as arestas que chegam nele as chances dele ser influenciado
+por cada vizinho. Nossa rede será algo do tipo:
+
+[DESENHO REDE COMPLETA GENERICA]
+
+\subsubsection{Simulação}
+
+Na simulação da disseminação, utilizamos o modelo epidemiologico[incluir referencia]:
+
+   $$\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$\\
+   $$\dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$
 \section{Resultados}
  
 
@@ -327,12 +375,8 @@ No decorrer deste trabalho utilizaremos como exemplo para análises os dados ref
   
 
   \pagebreak
-\subsection{Estatísticas Básicas}
 
-No banco de dados do MediaCloud, pudemos observar 2136 artigos referentes ao Charlie Hebdo. Abaixo temos um gráfico desses artigos
-no tempo:
-
-\subsection{Rede Disseminação}
+\subsection{Rede Disseminação Original}
 
 Abaixo temos uma visualização da
  rede criada:
@@ -342,21 +386,6 @@ Abaixo temos uma visualização da
  \includegraphics[scale=0.5]{Untitled.png}
  % Untitled.png: 969x591 pixel, 72dpi, 34.18x20.85 cm, bb=0 0 969 591
 \end{figure}
-
-\subsubsection{Análises}
-
- Nesta seção serão realizadas análises na rede de disseminação, como análisar os caminhos presentes na rede a partir de determinados veículos, análisar
- a distribuição dos caminhos da rede, observar o subgrafos presentes, entre outros.
- 
-\section{Modelos Epidemiológicos}
-
-\section{Validação da Rede de Disseminação}
-
-\section{Modelo de Disseminação}
-
-\section{Simulações}
-
-\section{Comparação de Resultados}
 
 
 \section{Conclusão}

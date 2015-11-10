@@ -56,7 +56,7 @@ def plot_sol(sol, color_dict, domains):
 
 ## dI- matrix com a probabilidade do artigo ser infectado no tempo t. dI[0] - artigos infectados no tempo 0
 ## Infects - matrix boolean com os infectados no tempo t.
-## receve T.solution
+## recebe T.solution
 
 def create_dI(sol):
     dI = np.zeros((len(T.solution), len(T.solution[0][1])/2))
