@@ -12,5 +12,5 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Simula\IeC {\c c}\IeC {\~a}o}{8}
 \contentsline {section}{\numberline {4}Resultados}{8}
 \contentsline {subsection}{\numberline {4.1}Escolha de uma Not\IeC {\'\i }cia}{8}
-\contentsline {subsection}{\numberline {4.2}Rede Dissemina\IeC {\c c}\IeC {\~a}o Original}{9}
-\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{9}
+\contentsline {subsection}{\numberline {4.2}Rede Dissemina\IeC {\c c}\IeC {\~a}o Original}{10}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{10}

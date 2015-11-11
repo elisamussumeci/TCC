@@ -103,7 +103,7 @@ original_graph = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charli
 ori_outs = [i[1] for i in original_graph.out_degree_iter()]
 g_ori = gaussian_kde(ori_outs)
 
-graph_simulated = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_simulated_nx.gpickle')
+graph_simulated = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_simulated_nx0.01.gpickle')
 sim_outs = [j[1] for j in graph_simulated.out_degree_iter()]
 g_sim = gaussian_kde(sim_outs)
 

@@ -8,7 +8,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation_sage.sage" afterPath="$PROJECT_DIR$/simulation_sage.sage" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_graph_sim.py" afterPath="$PROJECT_DIR$/create_graph_sim.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TCC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,25 +53,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simulation_sage.sage" pinned="false" current-in-tab="true">
+      <file leaf-file-name="simulation_sage.sage" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85714287" vertical-offset="315" max-vertical-offset="1635">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1635">
               <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_graph_sim.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="create_graph_sim.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-              <caret line="111" column="60" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.6020408" vertical-offset="455" max-vertical-offset="1455">
+              <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#153#1544#0" expanded="false" />
-                <element signature="e#1582#2984#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -104,8 +104,8 @@
         <option value="$PROJECT_DIR$/graph_sim_funs.py" />
         <option value="$PROJECT_DIR$/word2vec_graph_funs.py" />
         <option value="$PROJECT_DIR$/create_graphs.py" />
-        <option value="$PROJECT_DIR$/create_graph_sim.py" />
         <option value="$PROJECT_DIR$/simulation_sage.sage" />
+        <option value="$PROJECT_DIR$/create_graph_sim.py" />
       </list>
     </option>
   </component>
@@ -464,7 +464,6 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
-            <element signature="e#1582#2984#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -502,7 +501,6 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
-            <element signature="e#1582#2984#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,18 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <caret line="111" column="60" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#153#1544#0" expanded="false" />
-            <element signature="e#1582#2984#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create_graphs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1920">
@@ -588,9 +574,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85714287" vertical-offset="315" max-vertical-offset="1635">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1635">
           <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6020408" vertical-offset="455" max-vertical-offset="1455">
+          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#153#1544#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

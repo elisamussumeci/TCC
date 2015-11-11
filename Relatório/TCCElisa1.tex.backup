@@ -348,16 +348,28 @@ Por exemplo, $a_{12}$ é o número de vezes que artigos do veículo $b$ influenc
 
 A partir da matriz de pesos damos os pesos de cada aresta de nossa rede completa. Para cada nó da rede, identificamos seu veículo e atribuimos
 a todas as arestas que saem dele as chances dele influenciar cada vizinho, e a todas as arestas que chegam nele as chances dele ser influenciado
-por cada vizinho. Nossa rede será algo do tipo:
+por cada vizinho:
 
 [DESENHO REDE COMPLETA GENERICA]
 
 \subsubsection{Simulação}
 
-Na simulação da disseminação, utilizamos o modelo [incluir referencia]:
+ Na simulação da disseminação, utilizamos o modelo epidemiológico [incluir referencia]:
 
    $$\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$\\
    $$\dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$
+
+   [EXPLICAR MODELO]
+  
+  Ao terminar a simulação obtemos uma matriz de estados, onde cada posição $a_{ij}$ se refere a probabilidade do artigo
+  j estar contaminado no passo i da simulação. Utilizando uma distribuição de bernoulli, definimos os artigos que estão infectados
+  em casa passo, ficando assim com uma matriz booleana de estados.
+  
+  A partir da matriz booleana, podemos criar todos os nós de nossa rede simulada. Porém, ainda precisamos criar as arestas, ou seja, definir
+  as relações de influência. Para isso, a cada novo artigo contaminado no passo $i$, consideramos como possíveis influenciadores todos os artigos
+  infectados no passo $i-1$ e utilizando a matriz de pesos entre os domínios, calculamos a probabilidade de cada artigo infectado no tempo
+  $i-1$ ter infectado cada novo artigo infectado no tempo $i$. Assim escolhemos 
+
 \section{Resultados}
  
 
