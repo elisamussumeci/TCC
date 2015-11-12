@@ -1,16 +1,18 @@
 \select@language {portuguese}
 \contentsline {section}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{4}
 \contentsline {subsection}{\numberline {1.1}Referencial Te\IeC {\'o}rico}{4}
+\contentsline {subsubsection}{\numberline {1.1.1}O espalhamento de not\IeC {\'\i }cias como um processo de cont\IeC {\'a}gio}{4}
+\contentsline {subsubsection}{\numberline {1.1.2}Processamento de Linguagem Natural}{4}
 \contentsline {subsection}{\numberline {1.2}O Projeto Media Cloud Brasil}{4}
-\contentsline {section}{\numberline {2}Objetivo}{4}
+\contentsline {section}{\numberline {2}Objetivo}{5}
 \contentsline {section}{\numberline {3}Metodologia}{5}
 \contentsline {subsection}{\numberline {3.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Original}{5}
 \contentsline {subsubsection}{\numberline {3.1.1}Matriz de Documentos}{5}
 \contentsline {subsubsection}{\numberline {3.1.2}Constru\IeC {\c c}\IeC {\~a}o da Rede}{7}
 \contentsline {subsection}{\numberline {3.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{7}
 \contentsline {subsubsection}{\numberline {3.2.1}Rede Completa}{7}
-\contentsline {subsubsection}{\numberline {3.2.2}Simula\IeC {\c c}\IeC {\~a}o}{8}
-\contentsline {section}{\numberline {4}Resultados}{8}
-\contentsline {subsection}{\numberline {4.1}Escolha de uma Not\IeC {\'\i }cia}{8}
-\contentsline {subsection}{\numberline {4.2}Rede Dissemina\IeC {\c c}\IeC {\~a}o Original}{10}
-\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{10}
+\contentsline {subsubsection}{\numberline {3.2.2}Simula\IeC {\c c}\IeC {\~a}o}{9}
+\contentsline {section}{\numberline {4}Resultados}{9}
+\contentsline {subsection}{\numberline {4.1}Escolha de uma Not\IeC {\'\i }cia}{9}
+\contentsline {subsection}{\numberline {4.2}Rede Dissemina\IeC {\c c}\IeC {\~a}o Original}{11}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{11}
