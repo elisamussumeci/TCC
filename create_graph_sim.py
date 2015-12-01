@@ -98,12 +98,15 @@ def graph_simu_nx(Infects, G):
     return graph_sim
 
 
+Infects = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects.csv'), delimiter=",")
 G = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_complete.csv'), delimiter=",")
 original_graph = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph.gpickle')
+
 ori_outs = [i[1] for i in original_graph.out_degree_iter()]
 g_ori = gaussian_kde(ori_outs)
 
-graph_simulated = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_simulated_nx0.01.gpickle')
+graph_simulated = graph_simu_nx(Infects, G)
+nx.write_gpickle(graph_simulated, '/home/elisa/Documents/Projetos/TCC/data/graph_simulated_nx.gpickle')
 sim_outs = [j[1] for j in graph_simulated.out_degree_iter()]
 g_sim = gaussian_kde(sim_outs)
 
@@ -112,6 +115,7 @@ plt.hist(ori_outs, bins=30, color='b', alpha=0.3, normed=True)
 plt.plot(range(0, 20), g_sim.evaluate(range(20)), color='r')
 plt.plot(range(0, 20), g_ori.evaluate(range(20)), color='b')
 plt.xlim(0, 20)
+plt.savefig('graph_validation.png')
 plt.show()
 
 
@@ -131,5 +135,5 @@ plt.show()
 #     plt.savefig('data/charlie/graph_sim_%s.png' % i)
 #     plt.close()
 #
-#     e = entropy(g_sim.evaluate(range(20)), g_ori.evaluate(range(20)))
-#     print('lambda: %s' % i, e)
+e = entropy(g_sim.evaluate(range(20)), g_ori.evaluate(range(20)))
+print('lambda:', e)

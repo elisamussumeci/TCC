@@ -77,16 +77,19 @@ def create_ids_list(data):
 # ##########Functions for graph creation ##############
 
 
-def get_pos(data, pub_i, column_list, time_max, sim_min):
+def get_pos(data, pub_i, column_list, time_max, sim_min, outs):
     sim = max(column_list)
     if sim < sim_min:
         return None
 
     pos = column_list.index(sim)
     time_dif = (data[pos]['published'] - pub_i).total_seconds()/3600
-    if time_dif > time_max:
+    if pos in outs:
         column_list[pos] = 0
-        get_pos(data,pub_i, column_list, time_max, sim_min)
+        get_pos(data, pub_i, column_list, time_max, sim_min, outs)
+    elif time_dif > time_max:
+        column_list[pos] = 0
+        get_pos(data, pub_i, column_list, time_max, sim_min, outs)
     else:
         return pos
 
@@ -96,11 +99,11 @@ def create_graph(dists_triu, data, time_max=164, sim_min=0.8):
     G = nx.DiGraph()
     G.add_node(0, step=0, date=data[0]['published'], domain=urlparse(data[0]['link']).netloc, _id=data[0]['_id'],
               children=[])
-    date_init = data[0]['published']
+    outs = []
     for i in range(1,size):
         pub_i = data[i]['published']
         column = list(dists_triu[:,i])
-        pos = get_pos(data, pub_i, column, time_max, sim_min)
+        pos = get_pos(data, pub_i, column, time_max, sim_min, outs)
 
         if pos != None:
             if pos not in G.nodes():
@@ -112,9 +115,51 @@ def create_graph(dists_triu, data, time_max=164, sim_min=0.8):
                 G.add_node(i, date=pub_i, domain=domain_2, _id=data[i]['_id'], children=[])
 
             G.add_edge(pos, i)
+        else:
+            outs.append(i)
     return G
 
 # domain_graph create a graph where the nodes are the website from the article
+
+
+def create_date(pub1, pub2, s):
+    dif = (pub2-pub1).total_seconds()/3600
+    return round((dif/s))
+
+
+def create_graphml(dists_triu, data, time_max=164, sim_min=0.8):
+    size = dists_triu.shape[0]
+    G = nx.DiGraph()
+    G.add_node(0, step=0, date=0,domain=urlparse(data[0]['link']).netloc)
+    date_init = data[0]['published']
+    outs = []
+    for i in range(1, size):
+        pub_i = data[i]['published']
+        column = list(dists_triu[:,i])
+        pos = get_pos(data, pub_i, column, time_max, sim_min, outs)
+
+        if pos != None:
+            if pos not in G.nodes():
+                domain_1 = urlparse(data[pos]['link']).netloc
+                date_1 = create_date(date_init, data[pos]['published'], 5)
+                G.add_node(pos, date=date_1, domain=domain_1)
+            if i not in G.nodes():
+                domain_2 = urlparse(data[i]['link']).netloc
+                date_2 = create_date(date_init, pub_i, 5)
+                G.add_node(i, date=date_2, domain=domain_2)
+
+            G.add_edge(pos, i)
+        else:
+            outs.append(i)
+    return G
+
+
+def cria_atribs_step(G,list):
+    for i in list:
+        for node in G.successors(i):
+            G.node[node]['step'] = G.node[i]['step'] + 15
+        cria_atribs_step(G,G.successors(i))
+    return G
 
 
 def domain_graph(H):

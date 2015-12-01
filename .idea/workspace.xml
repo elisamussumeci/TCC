@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4ecf4090-0ff1-4eef-96dc-bd8bc70de907" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/.ipynb_checkpoints/TCC - Word2Vec Similaridade-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Notebook/.ipynb_checkpoints/TCC - Word2Vec Similaridade-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" afterPath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.log" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/Untitled.ipynb" afterPath="$PROJECT_DIR$/Notebook/Untitled.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_graph_sim.py" afterPath="$PROJECT_DIR$/create_graph_sim.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_graphs.py" afterPath="$PROJECT_DIR$/create_graphs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation_sage.sage" afterPath="$PROJECT_DIR$/simulation_sage.sage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TCC.iws" />
@@ -36,18 +40,20 @@
       <file leaf-file-name="create_graphs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_graphs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1920">
-              <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1983" max-vertical-offset="2400">
+              <caret line="111" column="61" selection-start-line="111" selection-start-column="61" selection-end-line="111" selection-end-column="61" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#335#716#0" expanded="false" />
                 <element signature="e#897#2116#0" expanded="false" />
                 <element signature="e#2150#2415#0" expanded="false" />
-                <element signature="e#2537#2850#0" expanded="false" />
-                <element signature="e#2920#3807#0" expanded="false" />
-                <element signature="e#3915#4496#0" expanded="false" />
-                <element signature="e#4536#5050#0" expanded="false" />
-                <element signature="e#5205#5513#0" expanded="false" />
+                <element signature="e#2543#2981#0" expanded="false" />
+                <element signature="e#4081#4145#0" expanded="false" />
+                <element signature="e#4217#5122#0" expanded="false" />
+                <element signature="e#5159#5325#0" expanded="false" />
+                <element signature="e#5353#5934#0" expanded="false" />
+                <element signature="e#5974#6488#0" expanded="false" />
+                <element signature="e#6643#6951#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -56,8 +62,8 @@
       <file leaf-file-name="simulation_sage.sage" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1635">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state vertical-scroll-proportion="-41.129032" vertical-offset="0" max-vertical-offset="1650">
+              <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -66,11 +72,12 @@
       <file leaf-file-name="create_graph_sim.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6020408" vertical-offset="455" max-vertical-offset="1455">
-              <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+            <state vertical-scroll-proportion="2.0247934" vertical-offset="0" max-vertical-offset="855">
+              <caret line="137" column="31" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#153#1544#0" expanded="false" />
+                <element signature="e#1582#2984#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,7 +86,7 @@
       <file leaf-file-name="cluster_analysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cluster_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="915">
               <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
@@ -104,16 +111,16 @@
         <option value="$PROJECT_DIR$/graph_sim_funs.py" />
         <option value="$PROJECT_DIR$/word2vec_graph_funs.py" />
         <option value="$PROJECT_DIR$/create_graphs.py" />
-        <option value="$PROJECT_DIR$/simulation_sage.sage" />
         <option value="$PROJECT_DIR$/create_graph_sim.py" />
+        <option value="$PROJECT_DIR$/simulation_sage.sage" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -363,8 +370,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2769953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -373,9 +380,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1749226" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2879257" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39473686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32352942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -426,11 +433,107 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/create_graphs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1920">
+          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#335#716#0" expanded="false" />
+            <element signature="e#897#2116#0" expanded="false" />
+            <element signature="e#2150#2415#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="2115">
+          <caret line="127" column="45" selection-start-line="127" selection-start-column="45" selection-end-line="127" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#153#1544#0" expanded="false" />
+            <element signature="e#1582#2984#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cluster_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="915">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_graphs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1920">
+          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#335#716#0" expanded="false" />
+            <element signature="e#897#2116#0" expanded="false" />
+            <element signature="e#2150#2415#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1635">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1455">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#153#1544#0" expanded="false" />
+            <element signature="e#1582#2984#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cluster_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="915">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/create_graphs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1463" max-vertical-offset="1920">
@@ -440,11 +543,13 @@
             <element signature="e#335#716#0" expanded="false" />
             <element signature="e#897#2116#0" expanded="false" />
             <element signature="e#2150#2415#0" expanded="false" />
-            <element signature="e#2537#2850#0" expanded="false" />
-            <element signature="e#2920#3807#0" expanded="false" />
-            <element signature="e#3915#4496#0" expanded="false" />
-            <element signature="e#4536#5050#0" expanded="false" />
-            <element signature="e#5205#5513#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -464,6 +569,7 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
+            <element signature="e#1582#2984#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -477,11 +583,13 @@
             <element signature="e#335#716#0" expanded="false" />
             <element signature="e#897#2116#0" expanded="false" />
             <element signature="e#2150#2415#0" expanded="false" />
-            <element signature="e#2537#2850#0" expanded="false" />
-            <element signature="e#2920#3807#0" expanded="false" />
-            <element signature="e#3915#4496#0" expanded="false" />
-            <element signature="e#4536#5050#0" expanded="false" />
-            <element signature="e#5205#5513#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,6 +609,7 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
+            <element signature="e#1582#2984#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,11 +623,13 @@
             <element signature="e#335#716#0" expanded="false" />
             <element signature="e#897#2116#0" expanded="false" />
             <element signature="e#2150#2415#0" expanded="false" />
-            <element signature="e#2537#2850#0" expanded="false" />
-            <element signature="e#2920#3807#0" expanded="false" />
-            <element signature="e#3915#4496#0" expanded="false" />
-            <element signature="e#4536#5050#0" expanded="false" />
-            <element signature="e#5205#5513#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -542,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06276151" vertical-offset="0" max-vertical-offset="478">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -556,37 +666,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_graphs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1920">
-          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2400">
+          <caret line="111" column="61" selection-start-line="111" selection-start-column="61" selection-end-line="111" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#335#716#0" expanded="false" />
             <element signature="e#897#2116#0" expanded="false" />
             <element signature="e#2150#2415#0" expanded="false" />
-            <element signature="e#2537#2850#0" expanded="false" />
-            <element signature="e#2920#3807#0" expanded="false" />
-            <element signature="e#3915#4496#0" expanded="false" />
-            <element signature="e#4536#5050#0" expanded="false" />
-            <element signature="e#5205#5513#0" expanded="false" />
+            <element signature="e#2543#2981#0" expanded="false" />
+            <element signature="e#4081#4145#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5159#5325#0" expanded="false" />
+            <element signature="e#5353#5934#0" expanded="false" />
+            <element signature="e#5974#6488#0" expanded="false" />
+            <element signature="e#6643#6951#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1635">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        <state vertical-scroll-proportion="-41.129032" vertical-offset="0" max-vertical-offset="1650">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6020408" vertical-offset="455" max-vertical-offset="1455">
-          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+        <state vertical-scroll-proportion="2.0247934" vertical-offset="0" max-vertical-offset="855">
+          <caret line="137" column="31" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
+            <element signature="e#1582#2984#0" expanded="false" />
           </folding>
         </state>
       </provider>
