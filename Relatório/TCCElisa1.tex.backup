@@ -7,6 +7,8 @@
 \usepackage{pslatex}
 \usepackage[portuguese]{babel}
 \usepackage{indentfirst}
+\usepackage{natbib}
+\usepackage[textsize=tiny]{todonotes}
 \usepackage{tikz}
 \usepackage[lmargin=3cm,rmargin=3cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
 \setlength{\parindent}{1cm}
@@ -98,7 +100,7 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
   
   
   {\line(1,0){250}}\\
-  {\bf Professor Orientador: Flavio Codeço Coelho}\\[0.1cm]
+  {\bf Professor Orientador: Flávio Codeço Coelho}\\[0.1cm]
   {\bf Escola de Matemática Aplicada}\\[0.1cm]
   {\bf Fundação Getulio Vargas}
  \end{center}
@@ -112,7 +114,7 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
 
 \begin{abstract}
  
-O processo de formação de opinião, nos dias de hoje, é fortemente influenciado pela mídia digital.
+O processo de formação de opinião\todo{nos dias de hoje,} é fortemente influenciado pela mídia digital.
 Entretanto pouco se sabe sobre o processo de disseminação de notícias e os fatores que determinam o alcance de cada
 notícia.
 
@@ -129,27 +131,28 @@ de notícias, a fim de prever tendências e mapear questões de interesse.
 
 \section{Introdução}
 
-Atualmente a internet é um dos principais meios de veiculação de notícias e informação. Com o crescente
-número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou significamente, o que tornou fundamental
-o papel das mídias digitais no acesso à informação.
+Atualmente podemos considerar a internet como um dos principais meios de veiculação de notícias e informação. Com o crescente
+número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou sifnificamente, o que tornou fundamental
+o papel das mídias digitais no acesso à informação.\todo{incluir aqui um parágrafo sobre os tipos de mídia digital}\todo{falar também que midias diferentes tem periodicidades, alcances , publicos e credibilidades diferentes e que isso afeta a disseminação da informação }
 
-Consideramos como mídia digital todo e qualquer veículo difusor de informação contido na internet brasileira. Alguns exemplos dessas mídias
-são jornais, revistas e blogs independentes.
+
+
 
 A mídia tem um forte papel influenciador no processo de formação de opinião. Sendo assim, podemos considerar 
-importante entender como uma notícia se comporta na mídia ................
+importante entender como uma notícia se\todo{se forma e se espalha na internet} comporta na mídia
 
-A partir dos dados do Projeto Media Cloud Brasil, estudamos como uma notícia se forma e se espalha na internet. Para isso
+A partir dos dados do Projeto Media Cloud Brasil\todo{referência}, estudamos ccomo uma notícia se dissemina na mídia. Para isso
 estudaremos os caminhos percorridos em uma rede complexa de influências criada através de modelos de recuperação de informação, 
 como representação vetorial de palavras.
 
 \subsection{Referencial Teórico}
 
-\subsubsection{O espalhamento de notícias como um processo de contágio}
-
 Explicar material teorico usado nas metodologias
-
-\subsubsection{Processamento de linguagem natural}
+\subsubsection{O espalhamento de notícias como um processo de contágio}
+\todo[inline]{Esplicar o que é um processo de contágio, e explicar por que você acha que o espalhamentoo das notícias é um. Falar do modelo SIR como um modelo que pode representar a dinâmica das notícias.}
+\subsubsection{Processamento de Linguagem Natural}
+\label{sec:nlp}
+\todo[inline]{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
 representação vetorial de palavras
 
 O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
@@ -157,18 +160,16 @@ O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topogr�
  análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
  constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
  
-\subsubsection{O Modelo Skipgram}
-
 \subsection{O Projeto Media Cloud Brasil}
 
 Para a realização deste trabalho, foram utilizados os dados do projeto MediaCloud Brasil. O MediaCloud Brasil é um projeto concebido e mantido pelo
 NAMD/EMAp da Fundação Getúlio Vargas, e vem ao longo dos últimos três anos monitorando mais de cem mil veículos de mídia da internet brasileira. Possui em
-sua base de dados mais de um milhão de artigos capturados.
-
+sua base de dados mais de 1.6 milhão de artigos capturados.
+\todo[inline]{falar sobre o que e como o Media cloud captura os artigos}
 O projeto utiliza como banco de dados o MongoDB, um banco de dados de documentos open-source de alta performance. O MongoDB é classificado como um banco de 
 dados 'NoSQL', uma vez que evita a tradicional estrutura  baseada em tabela relacional e utiliza documentos JSON com esquemas dinâmicos para armazenamento 
-dos documentos. A vantagem de utilizar o JSON é realizar a integração de dados em certos tipos de aplicações de forma mais fácil e mais rápida.
-
+dos documentos. A vantagem de utilizar o JSON é realizar a integração de dados em certos tipos de aplicações de forma mais fácil e mais rápida.\todo{Que tipo de aplicações?}
+\todo[inline]{Falar que uma vez armazenado, o banco de artigos é indexado para permitir buscas textuais}
 \section{Objetivo}
 
 Esse trabalho tem como principal objetivo caracterizar a dinâmica de disseminação das notícias no país através de redes complexas.
@@ -180,6 +181,8 @@ Esse trabalho tem como principal objetivo caracterizar a dinâmica de dissemina�
 Ao estudar e analisar um conjunto de textos, precisamos traduzi-lo para uma linguagem computacional de forma que possamos aplicar modelos e heurísticas 
 conhecidas para extrair informação dele.
 
+\todo[inline]{falar sobre o critério de construção da rede, usando tempo e similaridade, para aproximar a rede real, não observável.}
+
 \subsubsection{Matriz de Documentos}
 
 Representamos vetorialmente nosso conjunto de dados utilizando o Word2Vec, uma ferramenta que promove uma implementação eficiente do
@@ -189,7 +192,7 @@ Para gerar nosso modelo word2vec, fornecemos como entrada o corpus linguístico 
 e o modelo nos retorna uma matriz, onde as linhas são as palavras contidas no corpus e as colunas são os atributos gerados pelo modelo:
 
 (AJEITAR MATRIZ)
-
+\todo{aqui talvez seja melhor usar o ambiente array, ao invés de tabular}
 \begin{center}
  \begin{tabular}{ccccc}
           & $a_{1}$ & $a_{2}$ & ... & $a_{m}$ \\ \cline{2-5}
@@ -202,7 +205,7 @@ e o modelo nos retorna uma matriz, onde as linhas são as palavras contidas no c
 \end{center}
 
 
-Temos nessa matriz a representação de todas as palavras presentes em nosso corpus, porém, queremos representar documentos e não palavras.
+Temos nessa matriz a representação de todas as palavras presentes em nosso corpus, porém, queremos representar documentos e não palavras.\todo{como é esta representação?, porque ela é adequada para o seu trabalho? explicar isso em uma seçãoo sobre o skipgram no referencial teórico}
 Para isso, buscamos o vetor referente de cada palavra contida em um documento e somamo-os. Dessa forma, associamos todas as palavras contidas
 em um documento, e transformamo-as em um único vetor. Ou seja, dado um documento A, sabemos que ele é composto pelo seguinte conjunto de palavras
 $P:\{1,2,3,4,5\}$. Para cada termo buscamos o seu vetor representativo $v_{t}$, $t =\{1,2,3,4,5\}$ e somamos todos esses vetores, criando o vetor
@@ -215,7 +218,7 @@ representação, antes de somar os vetores, iremos multiplicar cada um pelo valo
 
 O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
 a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
-$Idf_{t}$.
+$Idf_{t}$.\todo{mover a explicação do TF-IDF para o a seção \ref{sec:nlp}, referencie a equação do tf-IDF aqui e deixe na metodologia apenas o que você fez, usando o TF-IDF e outras coisas mais.}
 
 
   Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
@@ -227,11 +230,14 @@ $Idf_{t}$.
   A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
   pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
   
-  $$W_{t,d}=\begin{cases}
+  \begin{equation}
+   W_{t,d}=\begin{cases}
              1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
              0 \ \hspace{3cm} \text{caso contrário}
             \end{cases}
- $$
+  \end{equation}
+
+ 
  
  
  Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
