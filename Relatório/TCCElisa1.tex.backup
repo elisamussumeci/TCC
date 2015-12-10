@@ -114,7 +114,7 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
 
 \begin{abstract}
  
-O processo de formação de opinião\todo{nos dias de hoje,} é fortemente influenciado pela mídia digital.
+O processo de formação de opinião é fortemente influenciado pela mídia digital.
 Entretanto pouco se sabe sobre o processo de disseminação de notícias e os fatores que determinam o alcance de cada
 notícia.
 
@@ -131,35 +131,28 @@ de notícias, a fim de prever tendências e mapear questões de interesse.
 
 \section{Introdução}
 
-Atualmente podemos considerar a internet como um dos principais meios de veiculação de notícias e informação. Com o crescente
-número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou sifnificamente, o que tornou fundamental
-o papel das mídias digitais no acesso à informação.\todo{incluir aqui um parágrafo sobre os tipos de mídia digital}\todo{falar também que midias diferentes tem periodicidades, alcances , publicos e credibilidades diferentes e que isso afeta a disseminação da informação }
 
+Atualmente a internet é um dos principais meios de veiculação de notícias e informação do país. Com o crescente
+número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou significamente, o que tornou fundamental
+o papel das mídias digitais no acesso à informação.
 
+Consideramos como mídia digital todo e qualquer veículo difusor de informação contido na internet brasileira, como jornais, revistas e 
+blogs independentes. Cada mídia presente na internet possui sua própria periodicidade, alcance, público e credibilidade, o que afeta
+diretamento no processo de disseminação da informação.
 
+Utilizando do fato que essas mídias digitais são fundamentais na disseminação da informação, e que com isso possuem um forte papel 
+influenciador no processo de formação de opinião, podemos definir como importante entender como as notícias se formam e se espalham
+na internet brasileira.
 
-A mídia tem um forte papel influenciador no processo de formação de opinião. Sendo assim, podemos considerar 
-importante entender como uma notícia se\todo{se forma e se espalha na internet} comporta na mídia
+Um dos métodos de se estudar a disseminação da informação é utilizar modelos epidemiológicos. (referencia de artigo) em (ano do artigo)
+conseguiu modelar a disseminação de (tabela de alguma coisa) no tempo através de modelos epidemiológicos, como SIR, SIS entre outros. Ese tipo
+de abordagem vem sendo utilizada também para entender redes de contatos em redes sociais como (incluir referencia). MELHORAR PARAGRAFO
 
-A partir dos dados do Projeto Media Cloud Brasil\todo{referência}, estudamos ccomo uma notícia se dissemina na mídia. Para isso
-estudaremos os caminhos percorridos em uma rede complexa de influências criada através de modelos de recuperação de informação, 
-como representação vetorial de palavras.
+Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
+Para isso
+estudaremos os caminhos percorridos em uma rede de disseminação criada através de modelos de recuperação de informação utilizados em cima
+da base de dados do Projeto MediaCloud Brasil \todo{referência}.
 
-\subsection{Referencial Teórico}
-
-Explicar material teorico usado nas metodologias
-\subsubsection{O espalhamento de notícias como um processo de contágio}
-\todo[inline]{Esplicar o que é um processo de contágio, e explicar por que você acha que o espalhamentoo das notícias é um. Falar do modelo SIR como um modelo que pode representar a dinâmica das notícias.}
-\subsubsection{Processamento de Linguagem Natural}
-\label{sec:nlp}
-\todo[inline]{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
-representação vetorial de palavras
-
-O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
- de vértices (nós) que são interligados por meio de arestas (Barabási, 2003). A teoria das Redes Complexas  está relacionada com a modelagem de redes reais, através da 
- análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
- constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
- 
 \subsection{O Projeto Media Cloud Brasil}
 
 Para a realização deste trabalho, foram utilizados os dados do projeto MediaCloud Brasil. O MediaCloud Brasil é um projeto concebido e mantido pelo
@@ -170,18 +163,95 @@ O projeto utiliza como banco de dados o MongoDB, um banco de dados de documentos
 dados 'NoSQL', uma vez que evita a tradicional estrutura  baseada em tabela relacional e utiliza documentos JSON com esquemas dinâmicos para armazenamento 
 dos documentos. A vantagem de utilizar o JSON é realizar a integração de dados em certos tipos de aplicações de forma mais fácil e mais rápida.\todo{Que tipo de aplicações?}
 \todo[inline]{Falar que uma vez armazenado, o banco de artigos é indexado para permitir buscas textuais}
+
+\subsection{Referencial Teórico}
+
+
+\subsubsection{O espalhamento de notícias como um processo de contágio}
+
+Uma epidemia é caracterizada pela incidência de grande número de casos de uma doença em um curto período de tempo. Sabemos que as doenças
+se espalham através do contágio entre infectados, mas como podemos definir esse contágio? 
+
+Cada doença possui uma forma própria de transmissão, por exemplo, a gripe é uma doença viral e se transmite a partir de vias orais, já a dengue
+é transmitida a partir da picada de um mosquisto, assim como a febre amarela. Saber a forma de contágio de uma doença é fundamental para que
+possamos entender sua disseminação e modelar sua epidemia.
+
+Ao observar o comportamento de notícias, assuntos e histórias na mídia, podemos ver o surgimento de memes e histórias 'virais'. Esses 
+tipos de notícias são chamadas de virais por se espalharem muito rápido e obterem um alcançe grande na população. Algumas dessas notícias
+se sustentam por um longo tempo na mídia, e outras são esquecidas rapidamente. 
+
+Se pensarmos que estamos lidando com um processo de disseminação, que possui uma taxa de espalhamento e uma taxa de esquecimento, podemos
+facilmente fazer uma comparação à modelos epidemiológicos, principalmente ao modelo SIR, que possui uma taxa de infecção e
+uma taxa de recuperação. Dessa forma, podemos estudar como uma notícia se espalha da mesma forma que modelamos uma epidemia.
+
+Para modelar a disseminação de notícias da mesma forma que modelamos a de doenças, precisamos
+que nosso modelo seja compatível com o de uma epidemia, ou seja, precisamos definir os infectados, suscetíveis e o método de contágio.
+
+Em nosso modelo, uma notícia/assunto é a doença, e os infectados são todos os artigos que falam sobre essa notícia. 
+Para definir o contágio da nossa notícia, consideramos que um artigo infecta o outro quando ele influência o outro. Ou seja,
+definimos que quando um artigo exerceu influência sobre um outro, ele infectou esse outro artigo. 
+
+Dessa forma, podemos ver a similaridade entre ambas modelagens, o que deixa claro a possibilidade de modelar a disseminação de
+notícias através de modelos epidemiológicos. O que nos falta descobrir são os parâmetros que utilizaremos para realizar essa modelagem
+de forma que fique o mais verídica possível.
+
+\subsubsection{Processos Epidemiológicos em Redes Complexas}
+
+
+\subsubsection{Processamento de Linguagem Natural}
+\label{sec:nlp}
+
+\todo[inline]{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
+representação vetorial de palavras
+
+O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
+ de vértices (nós) que são interligados por meio de arestas (Barabási, 2003). A teoria das Redes Complexas  está relacionada com a modelagem de redes reais, através da 
+ análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
+ constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
+ 
+
+
 \section{Objetivo}
 
 Esse trabalho tem como principal objetivo caracterizar a dinâmica de disseminação das notícias no país através de redes complexas.
 
+
+
+
+\pagebreak
 \section{Metodologia}
 
-\subsection{Rede de Disseminação Original}
+\subsection{Rede de Disseminação Real}
 
-Ao estudar e analisar um conjunto de textos, precisamos traduzi-lo para uma linguagem computacional de forma que possamos aplicar modelos e heurísticas 
-conhecidas para extrair informação dele.
+Nesta primeira parte do trabalho, iremos construir uma rede complexa que descreva o processo epidemiológico de uma notícia. O objetivo
+da construção dessa rede, é conseguir aproximar a rede de interligação real entre os artigos selecionados do banco
+MediaCloud, de forma a torná-la observável.
 
-\todo[inline]{falar sobre o critério de construção da rede, usando tempo e similaridade, para aproximar a rede real, não observável.}
+Primeiramente, selecionamos todos os artigos do banco referentes a uma determinada notícia, criando assim, nosso corpus linguístico.
+Depois ,a partir desse corpus, utlizamos métodos de PLN para representar matricialmente nosso conjunto de dados. A partir da matriz 
+criada construímos nossa rede direcionada de disseminação, onde cada vértice ou nó da rede é um artigo.
+
+Para construir a rede de disseminação precisamos definir a relação de contágio entre artigos, ou seja, o que conecta um artigo ao outro 
+na rede. No nosso caso, definimos que o contágio se dá através de uma relação de influência, porém como definir essa relação? Partindo do
+pressuposto de que se um artigo influênciou outro então esses artigos são necessariamente similares, consideramos a \textbf{similaridade}
+entre os artigos o fator principal para definir se eles possuem uma conexão em nossa rede.
+
+Possuindo uma conexão, ainda precisamos saber quem influênciou e quem foi o influenciado. Para definir isso, utilizamos o \textbf{tempo}.
+Assim, dado que dois artigos são similares, definimos como influenciador o artigo que fui publicado primeiro e influenciado o artigo publicado
+depois. No caso de um artigo ter mais de um similar publicado anteriormente a ele, definimos como influenciador o artigo
+mais similar à ele. Dessa forma todos os vértices de nossa rede possuem um grau de entrada igual à 1 e podem possuir um grau de saída maior
+do que 1.
+
+Abaixo podemos ver um exemplo do que esperamos da nossa rede de disseminação real:
+
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.2]{./rede1.png}
+ % rede1.png: 960x720 pixel, 72dpi, 33.87x25.40 cm, bb=0 0 960 720
+ \caption{Rede Real Genérica}
+\end{figure}
+
 
 \subsubsection{Matriz de Documentos}
 
@@ -236,8 +306,6 @@ $Idf_{t}$.\todo{mover a explicação do TF-IDF para o a seção \ref{sec:nlp}, r
              0 \ \hspace{3cm} \text{caso contrário}
             \end{cases}
   \end{equation}
-
- 
  
  
  Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
@@ -283,14 +351,14 @@ $Idf_{t}$.\todo{mover a explicação do TF-IDF para o a seção \ref{sec:nlp}, r
   ao valor Tf-Idf do termo $t$ no documento $d$. Sendo assim:
   
   $$v_{D} = \sum_{i=1}^{5} v_{i} \cdot w_{t,d} $$
-
+\todo{Você copiou este texto de algum lugar?}
 
 \subsubsection{Construção da Rede}
 
  Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um artigo.
  
  Ao construir a rede dos nossos documentos,
- consideramos como contaminação sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
+ consideramos como contágio sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
  artigo B.
  
  Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isso é, dado um nó $e_{i}$ e um nó
@@ -367,8 +435,15 @@ por cada vizinho:
 
  Na simulação da disseminação, utilizamos o modelo epidemiológico [incluir referencia]:
 
-   $$\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$\\
-   $$\dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$$
+ \begin{equation}
+  \begin{cases}
+
+   \dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\     
+   \dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+   
+  \end{cases}
+ \end{equation}
+
 
    [EXPLICAR MODELO]
   
@@ -384,34 +459,27 @@ por cada vizinho:
   $i-1$ ter infectado cada novo artigo infectado no tempo $i$. Definimos o artigo influenciador a partir da probabilidade que ele tem de 
   influenciar o novo artigo infectado. 
 
+  
+  
 \section{Resultados}
  
 
-\subsection{Escolha de uma Notícia}
 
-Para analisar a dinâmica de disseminação de notícias na mídia brasileira, escolhemos notícias e acompanhamos o seu comportamento no decorrer 
-do tempo.
-Entretanto, o processo de escolha dessas notícias não é trivial, visto que determinar se um artigo fala sobre determinado assunto requer
-uma análise elaborada de cada artigo.
-
-Para contornar esse problema inicialmente, escolhemos notícias que surgiram na mídia apenas relacionadas a um assunto, como por exemplo o atentado
-do Charlie Hebdo, Rolezinhos, etcs.
-
-No decorrer deste trabalho utilizaremos como exemplo para análises os dados referentes ao atentado ao Charlie Hebdo.
-  
-
-  \pagebreak
-
-\subsection{Rede Disseminação Original}
+\subsection{Rede de Disseminação Original}
 
 Abaixo temos uma visualização da
  rede criada:
 
- \begin{figure}[h]
+\begin{figure}[h]
  \centering
- \includegraphics[scale=0.5]{Untitled.png}
- % Untitled.png: 969x591 pixel, 72dpi, 34.18x20.85 cm, bb=0 0 969 591
+ \includegraphics[scale=0.4]{../results/a.png}
+ % a.png: 1075x623 pixel, 72dpi, 37.92x21.98 cm, bb=0 0 1075 623
+ \caption{Rede Disseminação}
 \end{figure}
+
+
+
+\subsection{Simulação Rede de Disseminação}
 
 
 \section{Conclusão}
