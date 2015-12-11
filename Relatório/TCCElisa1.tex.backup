@@ -18,8 +18,6 @@
 
 
 \begin{document}
-\bibliographystyle{abbrv}
-\bibliography{ref}
 
 \begin{titlepage}
  \begin{center}
@@ -369,7 +367,10 @@ Podemos exemplificar da seguinte forma: dado um documento $D$, sabemos que ele �
 $P:\{1,2,3,4,5\}$. Para cada termo, buscamos o seu vetor representativo $p_{i}$, $i =\{1,2,3,4,5\}$ na matriz de
 palavras e somamo-os, criando o vetor $v_{D}$ que representa o vetor referente ao documento $D$:
 
-$$v_{D} = p_{1}+p_{2}+p_{3}+p_{4}+p_{5} $$
+\begin{equation}
+  v_{D} = p_{1}+p_{2}+p_{3}+p_{4}+p_{5}
+\end{equation}
+
 
 Ao representar um documento dessa forma, não levamos em consideração a relevância de cada palavra para o documento, o que
 faz da nossa representação pouco eficiente. Para melhorar nossa 
@@ -379,7 +380,10 @@ ao qual ele representa.
 Sendo assim, sabendo que para cada palavra $i$ temos um vetor $p_{i}$ que a representa na matriz de palavras, e um valor $w_{i,d}$ referente
 ao valor \textit{TF-IDF} da palavra $i$ no documento $D$, representamos o vetor $v_{D}$ da seguinte forma:
 
-  $$v_{D} = \sum_{i=1}^{5} p_{i} \cdot w_{t,D} $$
+\begin{equation}
+  v_{D} = \sum_{i=1}^{5} p_{i} \cdot w_{t,D}
+\end{equation}
+
 
 Sendo assim, ficamos com a matriz de documentos abaixo, onde cada linha $v_{i}$ é um documento, e cada coluna $t_{i}$ é a soma do atributo $i$
 em todas as palavras do documento $i$:
@@ -428,7 +432,10 @@ $
     Para definir similaride entre dois artigos, utilizamos a \textit{Similaridade de Cosseno}. A similaridade de cosseno mede a semelhança entre
     dois vetores através da distância de cosseno do ângulo que eles formam. Para calcular a distância de cosseno $d(A,B)$ entre um vetor $A$ e $B$, fazemos:
     
-    $$ d(A,B) = cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
+    \begin{equation}
+      d(A,B) = cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel}
+    \end{equation}
+
     
     A similaridade de cosseno se dá por $1-d(A,B)$.Utilizando essa equação, calculamos a similaridade de cosseno para cada
     par de vetor de nossa matriz de documentos, criando assim, uma matriz de similaridades. Se similaridade entre dois vetores for 
@@ -470,31 +477,109 @@ $
 Na segunda parte do trabalho, temos como objetivo simular a disseminação de nossa rede real utilizando um modelo epidemiológico, com o intuito
 de validarmos nossa rede e conseguirmos caracterizá-la.
 
-Queremos então, conseguir modelar a disseminação de uma notícia em uma rede genéric e conseguir um resultado semelhante à nossa rede de
-disseminação real
-\subsubsection{Rede Completa}
+Queremos então, conseguir modelar a disseminação de uma notícia em uma rede genérica e conseguir um resultado semelhante à nossa rede de
+disseminação real. Dessa forma, dado uma rede completa com $N$ nós, queremos traçar o espalhamento da infecção nesses $N$ nós, ou seja, definir
+as relações de influencia entre eles, utilizando os resultados de uma simulação epidemiológica:
+\vspace{0.4cm}
 
- Para simular nossa rede, construimos primeiramente uma rede completa com os mesmos nós de nossa rede original, onde os pesos das arestas
+\begin{figure}[ht]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{./rede3.png}
+  \caption{Rede Completa}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{./rede4.png}
+  \caption{Disseminação na Rede Completa}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+
+\pagebreak
+\subsubsection{Criação Rede Completa}
+
+
+ Para simular nossa rede, construimos primeiramente uma rede completa com os mesmos nós de nossa rede real, onde os pesos das arestas
  são as probabilidades dessa aresta existir no caminho de disseminação da notícia, ou seja, a probabilidade de um artigo influenciar um 
- outro. Para isso, levamos em conta o veículo que publicou o artigo. Dessa forma podemos saber 
- através dos veículos qual a chance de um artigo do veículo x ser influenciado por um artigo do veículo y.
+ outro. Podemos exemplificar da seguinte forma, dado duas vértices de nossa rede completa, $A$ e $B$. Teremos como peso para as duas 
+ arestas que conectam esses nós a probabilidade de cada uma existir:
+ 
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.3]{./rede5.png}
+ % rede5.png: 543x345 pixel, 72dpi, 19.16x12.17 cm, bb=0 0 543 345
+ \caption{Pesos na Rede Completa}
+\end{figure}
 
- Construimos então, uma matriz de pesos identificando todos os veículos presentes na rede original e contando quantas vezes
- cada veículo x foi influenciado pelo veículo y. Dado que na rede original possuimos n
- veículos diferentes, temos uma matriz quadrada $nxn$, onde cada posição $a_{ij}$ nos da a quantidade de vezes que o veículo i foi influenciado
- pelo veículo j. Consideramos que um veículo não influência a si mesmo, logo a diagonal da nossa matriz é de zeros:
- \pagebreak
+ Onde $P_{CA}$ e $P_{AC}$ são as probabilidades do nó $C$ ter influenciado o nó $A$, e do no $A$ ter influenciado o nó $C$, 
+ respectivamente.
+
+ Calculamos essas probabilidades através da infomação do \textbf{veículo} responsável por cada artigo. Para cada nó presente em nossa rede completa,
+ buscamos o veículo que publicou o artigo referente ao nó (exemplos de veículos são oglobo.com, folha.com.br). Possuindo o veículo de cada
+ nó presente na rede, podemos saber qual a chance de um artigo do veículo $X$ ser influenciado por um artigo do veículo $Y$. Dessa forma, 
+ considerando $X$ e $Y$, os veículos dos nós $A$ e $C$, respectivamente, calculamos a probabilidade $P_{AC}$ da seguinte forma:
+ 
+ \begin{equation}
+  P_{AC} = \dfrac{N_{XY}}{NY}
+ \end{equation}
+
+ 
+ Onde  $N_{XY}$ é o número de vezes que um artigo do veículo $X$ influenciou um artigo do veículo $Y$, e $NY$ represnta o número de vezes
+ em que um artigo do veículo $Y$ foi influenciado em nossa rede de disseminação real.
+
+ Construímos então uma matriz de pesos, onde calculamos as probabilidades para cada par de veículos. É esperado em um conjunto de 
+ dados possuirmos mais de um artigo publicado pelo mesmo veículo, sendo assim, considerando que temos $n$ artigos em nosso corpus 
+ linguístico, possuimos nele $m$ veículos responsáveis pela publicação desses $n$ artigos.
+
+ Dessa forma, nossa matriz de pesos possui tamanho $mxm$, e cada posição $a_{ij}$ temos a probabilidade do veículo 
+ $i$ ser influenciado pelo veículo $j$. Considerando que um veículo não influencia a si mesmo, teremos a matriz a seguir:
  
  \begin{center}
- \hspace{0.2cm}a \hspace{0.5cm} b \hspace{0.3cm} $\hdots$ \hspace{0.4cm}c
+ \hspace{0.2cm}x \hspace{0.5cm} y \hspace{0.3cm} $\hdots$ \hspace{0.4cm}z
  
  \vspace{0.2cm}
  $
  \begin{tabular}{c}
-   a \\
-   b \\
+   x \\
+   y \\
    \vdots\\
-   c
+   z
+ \end{tabular}
+$
+ $
+ \begin{bmatrix}
+  0 & a_{12} & \hdots & a_{1m}\\
+  a_{21} & 0 & \hdots & a_{2m}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{31} & a_{32} & \hdots & 0
+ \end{bmatrix}_{mxm}
+$
+
+\end{center}
+
+\vspace{0.4cm}
+
+Utilizando a matriz de pesos acima, atribuiremos os valores para cada aresta de a rede completa criada acima. Para isso, criamos uma matriz
+de adjacência, onde cada valor $a_{ij}$, contém a probabilidade dessa aresta existir.
+Sendo assim, para cada par de artigos $d_{i},d_{j}$ de nossa rede completa,
+descobrimos seus veículos $x$ e $y$, e buscamos a probabilidade de conexão entre eles na matriz de pesos. Dessa forma,
+ficamos com uma matriz $nxn$ documentos, que descreve a probabilidade da conexão entre cada par de vértices da rede completa, e que será
+essencial para a simualação da disseminação da notícia na rede.
+  
+ \begin{center}
+ \hspace{0.2cm}$d_{1}$ \hspace{0.5cm} $d_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$d_{n}$
+ 
+ \vspace{0.2cm}
+ $
+ \begin{tabular}{c}
+   d_{1} \\
+   d_{2} \\
+   \vdots\\
+   d_{n}
  \end{tabular}
 $
  $
@@ -508,40 +593,84 @@ $
 
 \end{center}
 
-\vspace{0.4cm}
-Por exemplo, $a_{12}$ é o número de vezes que artigos do veículo $b$ influenciaram artigos do veículo $a$.
-
-A partir da matriz de pesos damos os pesos de cada aresta de nossa rede completa. Para cada nó da rede, identificamos seu veículo e atribuimos
-a todas as arestas que saem dele as chances dele influenciar cada vizinho, e a todas as arestas que chegam nele as chances dele ser influenciado
-por cada vizinho:
-
-[DESENHO REDE COMPLETA GENERICA]
-
 \subsubsection{Simulação}
 
- Na simulação da disseminação, utilizamos o modelo epidemiológico [incluir referencia]:
+Nesta seção, iremos simular a disseminação da notícia em nossa rede completa. Para isso, simularemos um modelo epidemiológico de forma
+que possamos obter o estado de nossa rede em cada passo de contágio, ou seja, queremos saber quais artigos foram infectados em cada passo
+$q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
 
- \begin{equation}
-  \begin{cases}
+ \begin{description}
+  \item \textbf{Modelo utilizado}
+    
+    O modelo epidemiológico que iremos simular foi proposto por \cite{pastor2014epidemic} [consertar referencia, incluido pagina]. Nele,
+    simulamos a probabilidade de cada artigo estar infectado em um tempo $t$:
 
-   \dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\     
-   \dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+    \begin{equation}
+      \dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda[1- \rho_{i}^{I}(t)] \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)    
+    \end{equation}
+
+    Onde $\rho^{I}_{i}(t)$ é a probabilidade de um vértice $i$ estar infectado no tempo $t$. O parâmetro $\lambda$ é a taxa de trasmissão,
+    obtida através da divisão da taxa de infecção $\beta$ pela taxa de recuperação $\mu$. Dessa forma, o fator
+
+    \begin{equation}
+      \dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+    \end{equation}
+    
+    \begin{equation}
+      \begin{cases}
+	\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\   
+	\dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+      \end{cases}
+    \end{equation}
+
    
-  \end{cases}
- \end{equation}
+ \end{description}
 
+  
+  Temos como resultado da simulação, uma matriz de estados. Cada posição $a_{ij}$ da matriz se refere à probabilidade do artigo
+  $d_{j}$ estar contaminado no passo $t_{i}$ da simulação. Para determinar os artigos infectados no passo $t_{i}$, utilizamos a distribuição
+  de bernoulli para cada probabilidade $p_{ij}$. Assim, ficamos com uma matriz booleana de estados, onde temos bem definidos quais
+  vértices estão infectados em cada passo da simulação.
+  
+  Após definir quais nós estão infectados em cada passo da simulação, precisamos definir as relações de influências entre eles, ou seja,
+  definir quais arestas existem em nossa rede completa.
+  
+  Para definir as relações de influência, a cada novo artigo contaminado no passo $t_{i}$, consideramos como possíveis influenciadores todos os artigos
+  infectados no passo $t_{i-1}$. Por exemplo, possuindo a matriz booleana abaixo:
+  
+    \begin{center}
+    \hspace{0.67cm}$d_{1}$ \hspace{0.3cm}$d_{2}$ \hspace{0.3cm}$d_{3}$ \hspace{0.3cm}$d_{4}$
 
-   [EXPLICAR MODELO]
+    \vspace{0.2cm}
+
+    \begin{tabular}{c}
+      $t_{1}$ \\
+      $t_{2}$ \\
+      $t_{3}$
+    \end{tabular}
+    $
+    \begin{bmatrix}
+      0\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}& 0\hspace{0.2cm}\\
+      0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}\\
+      1\hspace{0.2cm} & 0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm}
+    \end{bmatrix}
+    $
+
+    \end{center}
+    
+    Temos que, em $t_{1}$ apenas o artigo $d_{2}$ está infectado. Logo, ele obrigatóriamente influenciará qualquer novo artigo infectado
+    no tempo $t_{2}$. 
+    
+    No tempo $t_{2}$ possuimos apenas $d_{3}$ como um novo artigo infectado, sendo assim, sabemos que $d_{2}$ influenciou $d_{3}$, e logo,
+    teremos em nossa rede simulada uma aresta $a_{23}$.
+    
+    No próximo passo $t_{3}$ podemos observar que o artigo $d_{3}$ continua infectado, e que possuimos dois novos artigos infectados:
+    $d_{1}$ e $d_{4}$. Porém no passo anterior temos dois artigos infectados, como saber qual deles influenciou os novos infectados?
+    Para definir o influenciador de cada novo infectado, buscaremos em nossa matriz de pesos, a probabilidade 
+    
+    
   
-  Ao terminar a simulação obtemos uma matriz de estados, onde cada posição $a_{ij}$ se refere a probabilidade do artigo
-  j estar contaminado no passo i da simulação. Utilizando uma distribuição de bernoulli, definimos os artigos que estão infectados
-  em casa passo, ficando assim com uma matriz booleana de estados.
-  
-  A partir da matriz booleana, podemos criar todos os nós de nossa rede simulada. Porém, ainda precisamos criar as arestas, ou seja, definir
-  as relações de influência. 
-  
-  Para definir as relações de influência, a cada novo artigo contaminado no passo $i$, consideramos como possíveis influenciadores todos os artigos
-  infectados no passo $i-1$. Utilizando a matriz de pesos entre os domínios, calculamos a probabilidade de cada artigo infectado no tempo
+  Utilizando a matriz de pesos entre os domínios, calculamos a probabilidade de cada artigo infectado no tempo
   $i-1$ ter infectado cada novo artigo infectado no tempo $i$. Definimos o artigo influenciador a partir da probabilidade que ele tem de 
   influenciar o novo artigo infectado. 
 
@@ -604,4 +733,9 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 
 \section{Conclusão}
 
+
+
+\pagebreak
+\bibliographystyle{abbrv}
+\bibliography{ref}
 \end{document}

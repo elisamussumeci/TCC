@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  11 DEC 2015 03:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  11 DEC 2015 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,21 +818,16 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./TCCElisa1.bbl
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-
-
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
- [1] [1] [1] [1]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1] [1] [1]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
+
 (./TCCElisa1.toc
 LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 3.
 
@@ -865,44 +860,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 119.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
 
-Overfull \hbox (4.10042pt too wide) in paragraph at lines 129--131
+Overfull \hbox (4.10042pt too wide) in paragraph at lines 127--129
 \OT1/ptm/m/n/10.95 de m[]^^Pdia e mo-de-lar a din[]amica do es-pa-lha-mento de 
 not[]^^Pcias, a fim de pre-ver tend[]encias
  []
 
 [3]
-Overfull \hbox (13.70102pt too wide) in paragraph at lines 138--141
+Overfull \hbox (13.70102pt too wide) in paragraph at lines 136--139
 []\OT1/ptm/m/n/12 Atualmente a in-ter-net []e um dos prin-ci-pais meios de veic
 ula[][]ao de not[]^^Pcias e informa[][]ao
  []
 
 [4]
-Overfull \hbox (19.36508pt too wide) in paragraph at lines 212--213
+Overfull \hbox (19.36508pt too wide) in paragraph at lines 210--211
 []\OT1/ptm/b/n/12 explicar aqui a te-o-ria por tr[]as de to-das as t[]ecnicas d
 e NLP que vc usa: Tokeniza[][]ao,
  []
 
 [5]
-Overfull \hbox (11.28954pt too wide) in paragraph at lines 240--241
+Overfull \hbox (11.28954pt too wide) in paragraph at lines 238--239
 []\OT1/ptm/m/n/12 Exemplificamos abaixo a cor-res-pond[]encia de va-lo-res $\OM
 L/ptmcm/m/it/12 Tf[]$ \OT1/ptm/m/n/12 ab-so-luto com a pondera[][]ao
  []
 
 [6] [7]
-Overfull \hbox (1.16199pt too wide) in paragraph at lines 315--316
+Overfull \hbox (1.16199pt too wide) in paragraph at lines 313--314
 []\OT1/ptm/m/n/12 A se-guir, po-de-mos ver um exem-plo do que es-pe-ra-mos da n
 ossa rede de dissemina[][]ao
  []
 
-<./rede1.png, id=47, 963.6pt x 722.7pt>
+<./rede1.png, id=44, 963.6pt x 722.7pt>
 File: ./rede1.png Graphic file (type png)
  <use ./rede1.png>
-Package pdftex.def Info: ./rede1.png used on input line 320.
+Package pdftex.def Info: ./rede1.png used on input line 318.
 (pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
  [8 <./rede1.png>]
-Overfull \hbox (17.32608pt too wide) in paragraph at lines 337--340
+Overfull \hbox (17.32608pt too wide) in paragraph at lines 335--338
 []\OT1/ptm/m/n/12 Para ge-rar nosso mo-delo Word2Vec [][], for-ne-ce-mos como e
 n-trada nosso cor-pus lingu[]^^Pstico
  []
@@ -910,74 +905,234 @@ n-trada nosso cor-pus lingu[]^^Pstico
 
 LaTeX Warning: Marginpar on page 9 moved.
 
-[9] <./rede2.png, id=58, 963.6pt x 722.7pt>
+[9] <./rede2.png, id=54, 471.7625pt x 417.56pt>
 File: ./rede2.png Graphic file (type png)
  <use ./rede2.png>
-Package pdftex.def Info: ./rede2.png used on input line 449.
-(pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
+Package pdftex.def Info: ./rede2.png used on input line 456.
+(pdftex.def)             Requested size: 94.35081pt x 83.51051pt.
+ [10 <./rede2.png>] <./rede3.png, id=60, 963.6pt x 722.7pt>
+File: ./rede3.png Graphic file (type png)
+ <use ./rede3.png>
+Package pdftex.def Info: ./rede3.png used on input line 489.
+(pdftex.def)             Requested size: 192.0548pt x 144.0412pt.
+
+<./rede4.png, id=61, 963.6pt x 722.7pt>
+File: ./rede4.png Graphic file (type png)
+ <use ./rede4.png>
+Package pdftex.def Info: ./rede4.png used on input line 495.
+(pdftex.def)             Requested size: 192.0548pt x 144.0412pt.
+ [11 <./rede3.png> <./rede4.png>] <./rede5.png, id=67, 545.03625pt x 346.29375p
+t>
+File: ./rede5.png Graphic file (type png)
+ <use ./rede5.png>
+Package pdftex.def Info: ./rede5.png used on input line 513.
+(pdftex.def)             Requested size: 163.51213pt x 103.88892pt.
+
+[12 <./rede5.png>]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.579    d_
+           {1} \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.580    d
+          _{2} \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.580    d
+          _{2} \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.580    d
+          _{2} \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.580    d_
+           {2} \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.581    \vdots
+               \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.581    \vdots
+               \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.581    \vdots
+               \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.582    d_
+           {n}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.583  \end{tabular}
+                    
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.583  \end{tabular}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.583  \end{tabular}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (0.44655pt too wide) in paragraph at lines 612--614
+[]\OT1/ptm/m/n/12 Onde $\OML/ptmcm/m/it/12 ^^Z[]\OT1/ptmcm/m/n/12 (\OML/ptmcm/m
+/it/12 t\OT1/ptmcm/m/n/12 )$ []\OT1/ptm/m/n/12 e a pro-ba-bi-li-dade de um v[]e
+rtice $\OML/ptmcm/m/it/12 i$ \OT1/ptm/m/n/12 es-tar in-fec-tado no tempo $\OML/
+ptmcm/m/it/12 t$\OT1/ptm/m/n/12 . O par[]ametro
+ []
 
-[10] [11 <./rede2.png>] [12] [13] <./grafic.png, id=72, 433.62pt x 289.08pt>
-File: ./grafic.png Graphic file (type png)
+[13] <./diagrama1.png, id=75, 963.6pt x 722.7pt>
+File: ./diagrama1.png Graphic file (type png)
+ <use ./diagrama1.png>
+Package pdftex.def Info: ./diagrama1.png used on input line 678.
+(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
 
-<use ./grafic.png>
-Package pdftex.def Info: ./grafic.png used on input line 563.
-(pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
- <./2.png, id=73, 602.25pt x 602.25pt>
-File: ./2.png Graphic file (type png)
- <use ./2.png>
-Package pdftex.def Info: ./2.png used on input line 581.
-(pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../results/a.png, id=74, 1079.03125pt x 625.33624pt>
-File: ../results/a.png Graphic file (type png)
- <use ../results/a.png>
-Package pdftex.def Info: ../results/a.png used on input line 591.
-(pdftex.def)             Requested size: 431.60486pt x 250.13007pt.
-
-Overfull \hbox (4.8135pt too wide) in paragraph at lines 591--593
+Overfull \hbox (55.00748pt too wide) in paragraph at lines 678--680
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../results/t.png, id=75, 953.5625pt x 542.025pt>
+
+Overfull \hbox (25.50879pt too wide) in paragraph at lines 686--687
+[]\OT1/ptm/m/n/12 Realizando esse pro-ce-di-mento para cada passo da simula[][]
+ao, cons-tru[]^^Pmos a dissemina[][]ao
+ []
+
+[14] <./grafic.png, id=79, 433.62pt x 289.08pt>
+File: ./grafic.png Graphic file (type png)
+ <use ./grafic.png>
+Package pdftex.def Info: ./grafic.png used on input line 697.
+(pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./2.png, id=80, 602.25pt x 602.25pt>
+File: ./2.png Graphic file (type png)
+ <use ./2.png>
+Package pdftex.def Info: ./2.png used on input line 715.
+(pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../results/a.png, id=81, 1079.03125pt x 625.33624pt>
+File: ../results/a.png Graphic file (type png)
+ <use ../results/a.png>
+Package pdftex.def Info: ../results/a.png used on input line 725.
+(pdftex.def)             Requested size: 431.60486pt x 250.13007pt.
+
+Overfull \hbox (4.8135pt too wide) in paragraph at lines 725--727
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../results/t.png, id=82, 953.5625pt x 542.025pt>
 File: ../results/t.png Graphic file (type png)
  <use ../results/t.png>
-Package pdftex.def Info: ../results/t.png used on input line 599.
+Package pdftex.def Info: ../results/t.png used on input line 733.
 (pdftex.def)             Requested size: 381.41824pt x 216.80615pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./grafic.png>] [15 <./2.png> <../results/a.png>] [16 <../results/t.png>]
-(./TCCElisa1.aux) ) 
+[15 <./diagrama1.png>] [16 <./grafic.png>] (./TCCElisa1.bbl) [17 <./2.png>]
+[18 <../results/a.png> <../results/t.png>] (./TCCElisa1.aux) ) 
 Here is how much of TeX's memory you used:
- 12797 strings out of 495004
- 227757 string characters out of 6180662
- 296309 words of memory out of 5000000
- 15689 multiletter control sequences out of 15000+600000
- 33026 words of font info for 65 fonts, out of 8000000 for 9000
+ 12828 strings out of 495004
+ 228232 string characters out of 6180662
+ 296343 words of memory out of 5000000
+ 15714 multiletter control sequences out of 15000+600000
+ 34139 words of font info for 67 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  63i,11n,76p,445b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCCElisa1.pdf (20 pages, 1105847 bytes).
+{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TCCElisa1.pdf (21 pages, 1304289 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

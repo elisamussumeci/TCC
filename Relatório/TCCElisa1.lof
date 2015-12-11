@@ -1,7 +1,11 @@
 \select@language {portuguese}
 \contentsline {figure}{\numberline {1}{\ignorespaces Rede Real Gen\IeC {\'e}rica}}{8}
-\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{11}
-\contentsline {figure}{\numberline {3}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{14}
-\contentsline {figure}{\numberline {4}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{15}
-\contentsline {figure}{\numberline {5}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{15}
-\contentsline {figure}{\numberline {6}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{16}
+\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{10}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rede Completa}}{11}
+\contentsline {figure}{\numberline {4}{\ignorespaces Dissemina\IeC {\c c}\IeC {\~a}o na Rede Completa}}{11}
+\contentsline {figure}{\numberline {5}{\ignorespaces Pesos na Rede Completa}}{12}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama Defini\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{15}
+\contentsline {figure}{\numberline {7}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{16}
+\contentsline {figure}{\numberline {8}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{17}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{18}
+\contentsline {figure}{\numberline {10}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{18}

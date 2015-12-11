@@ -11,9 +11,9 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Matriz de Documentos}{9}
 \contentsline {subsubsection}{\numberline {2.1.2}Constru\IeC {\c c}\IeC {\~a}o da Rede}{10}
 \contentsline {subsection}{\numberline {2.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{11}
-\contentsline {subsubsection}{\numberline {2.2.1}Rede Completa}{11}
+\contentsline {subsubsection}{\numberline {2.2.1}Cria\IeC {\c c}\IeC {\~a}o Rede Completa}{12}
 \contentsline {subsubsection}{\numberline {2.2.2}Simula\IeC {\c c}\IeC {\~a}o}{13}
-\contentsline {section}{\numberline {3}Resultados}{14}
-\contentsline {subsection}{\numberline {3.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{14}
-\contentsline {subsection}{\numberline {3.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{14}
-\contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{14}
+\contentsline {section}{\numberline {3}Resultados}{15}
+\contentsline {subsection}{\numberline {3.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{15}
+\contentsline {subsection}{\numberline {3.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{16}
+\contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{16}

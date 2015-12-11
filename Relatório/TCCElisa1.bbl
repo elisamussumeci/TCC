@@ -1,3 +1,8 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{pastor2014epidemic}
+R.~Pastor-Satorras, C.~Castellano, P.~Van~Mieghem, and A.~Vespignani.
+\newblock Epidemic processes in complex networks.
+\newblock {\em arXiv preprint arXiv:1408.2701}, 2014.
 
 \end{thebibliography}
