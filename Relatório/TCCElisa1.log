@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  10 DEC 2015 23:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  11 DEC 2015 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,26 +895,35 @@ n-trada nosso cor-pus lingu[]^^Pstico
 
 LaTeX Warning: Marginpar on page 9 moved.
 
-[9] [10] <../results/a.png, id=58, 1079.03125pt x 625.33624pt>
+[9] <./rede2.png, id=54, 963.6pt x 722.7pt>
+File: ./rede2.png Graphic file (type png)
+ <use ./rede2.png>
+Package pdftex.def Info: ./rede2.png used on input line 446.
+(pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10] [11 <./rede2.png>] <../results/a.png, id=63, 1079.03125pt x 625.33624pt>
 File: ../results/a.png Graphic file (type png)
 
 <use ../results/a.png>
-Package pdftex.def Info: ../results/a.png used on input line 527.
+Package pdftex.def Info: ../results/a.png used on input line 551.
 (pdftex.def)             Requested size: 431.60486pt x 250.13007pt.
 
-Overfull \hbox (4.8135pt too wide) in paragraph at lines 527--529
+Overfull \hbox (4.8135pt too wide) in paragraph at lines 551--553
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12 <../results/a.png>] (./TCCElisa1.aux) ) 
+[12] [13 <../results/a.png>] (./TCCElisa1.aux) ) 
 Here is how much of TeX's memory you used:
- 12783 strings out of 495004
- 227736 string characters out of 6180662
- 297470 words of memory out of 5000000
- 15685 multiletter control sequences out of 15000+600000
+ 12788 strings out of 495004
+ 227808 string characters out of 6180662
+ 297468 words of memory out of 5000000
+ 15689 multiletter control sequences out of 15000+600000
  33026 words of font info for 65 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  63i,11n,80p,445b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -927,10 +936,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on TCCElisa1.pdf (15 pages, 593636 bytes).
+Output written on TCCElisa1.pdf (16 pages, 608862 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

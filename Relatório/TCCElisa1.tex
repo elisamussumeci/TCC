@@ -407,32 +407,56 @@ $
 
 \subsubsection{Construção da Rede}
 
- Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um artigo.
+ Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um documento/artigo.
  
  Ao construir a rede dos nossos documentos,
  consideramos como contágio sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
  artigo B.
  
- Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isso é, dado um nó $e_{i}$ e um nó
- $e_{j}$ existe uma aresta $a_{ij}$ que sai de \textit{i} e vai para \textit{j} se o artigo \textit{i} influênciou o artigo \textit{j}.
+ Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isto é, dado um nó $e_{i}$ e um nó
+ $e_{j}$, existe uma aresta $a_{ij}$, que sai de \textit{i} e vai para \textit{j}, se o artigo \textit{i} influênciou o artigo \textit{j}.
  
- Para definir quando um artigo influencia outro em nossa rede, foram usadas duas heurísticas: \textbf{similaridade de cosseno} e 
- \textbf{temporalidade}.
+ Para definir quando um artigo influência outro em nossa rede, foram usadas duas heurísticas: \textit{similaridade} e 
+ \textit{temporalidade}.
  
- Utilizamos a similaridade de cossenos para definir se dois artigos são similares ou não. Para isso, calculamos a distância de cossenos
- entre o ângulo que os dois vetores formam. Podemos calculá-lo utilizando a fórmula abaixo:
- 
- $$ cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
- 
- Se a distância calculada for suficientemente pequena, consideramos os artigos similares.
- 
- Possuindo artigos similares, inferimos que existe uma relação de influência entre eles, 
- porém não temos como saber qual influênciou e qual foi influenciado. Para definir essa questão, utilizamos a data e hora em que
- cada um foi publicado. Dessa forma, se dois artigos são similares, consideramos como influenciador aquele que foi publicado primeiro. 
+ \begin{description}
+  \item \textbf{Similaridade}
+  
+    Para definir similaride entre dois artigos, utilizamos a \textit{Similaridade de Cosseno}. A similaridade de cosseno mede a semelhança entre
+    dois vetores através da distância de cosseno do ângulo que eles formam. Para calcular a distância de cosseno $d(A,B)$ entre um vetor $A$ e $B$, fazemos:
+    
+    $$ d(A,B) = cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
+    
+    A similaridade de cosseno se dá por $1-d(A,B)$.Utilizando essa equação, calculamos a similaridade de cosseno para cada
+    par de vetor de nossa matriz de documentos, criando assim, uma matriz de similaridades. Se similaridade entre dois vetores for 
+    grande o suficiente, os definimos como similares. 
+    
+    Para saber o quão grande a similaridade de cosseno entre dois artigos deve ser para considerarmo-os similares, fazemos a
+    distribução das similaridade e realizamos um corte em suas extremidades.
+    
+    
+  \item \textbf{Temporalidade}
+  
+    Após definir dois artigos como similares, inferimos uma relação de influência entre eles. Porém, ainda precisamos saber quem influeciou e quem
+    foi influenciado. Para descobrir isso, olhamos a data de publicação de cada artigo. Se dois artigos $A$ e $B$ foram considerados 
+    similares, e o artigo $A$ foi publicado antes do artigo $B$, então definimos que $A$ influenciou $B$, logo temos em nossa rede:
+    
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.2]{./rede2.png}
+      % rede2.png: 960x720 pixel, 72dpi, 33.87x25.40 cm, bb=0 0 960 720
+      \caption{Relação de Influência}
+    \end{figure}
 
+    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também publicado anteriormente. Em nosso modelo,
+    definimos que um artigo só pode ter sido influênciado por um único artigo. Dessa forma, como definir quem de fato influênciou $B$? Para
+    resolver esse impasse utilizamos a similaridade de cosseno. Consideramos influênciador o artigo publicado anteriormente, e que possui
+    a \textbf{maior} similaridade com $B$.
+    
+    
+ \end{description}
  
- INCLUIR O QUE É SUFICIENTEMENTE PEQUENO 
- 
+
 \subsection{Simulação Rede de Disseminação}
 
 Nesta parte do trabalho, temos como objetivo simular a disseminação de nossa rede original utilizando o modelo (adicionar referencia)

@@ -370,33 +370,73 @@ $$v_{D} = p_{1}+p_{2}+p_{3}+p_{4}+p_{5} $$
 
 Ao representar um documento dessa forma, não levamos em consideração a relevância de cada palavra para o documento, o que
 faz da nossa representação pouco eficiente. Para melhorar nossa 
-eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor \textbf{Tf-Idf} da palavra
+eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor \textit{TF-IDF} da palavra
 ao qual ele representa.
 
+Sendo assim, sabendo que para cada palavra $i$ temos um vetor $p_{i}$ que a representa na matriz de palavras, e um valor $w_{i,d}$ referente
+ao valor \textit{TF-IDF} da palavra $i$ no documento $D$, representamos o vetor $v_{D}$ da seguinte forma:
 
- Utilizando essa medida em nosso modelo, temos para cada palavra $$ um valor $w_{t,d}$, referente
-  ao valor Tf-Idf do termo $t$ no documento $d$. Sendo assim:
-  
-  $$v_{D} = \sum_{i=1}^{5} v_{i} \cdot w_{t,d} $$
+  $$v_{D} = \sum_{i=1}^{5} p_{i} \cdot w_{t,D} $$
+
+Sendo assim, ficamos com a matriz de documentos abaixo, onde cada linha $v_{i}$ é um documento, e cada coluna $t_{i}$ é a soma do atributo $i$
+em todas as palavras do documento $i$:
+
+ \begin{center}
+ \hspace{0.2cm}$t_{1}$ \hspace{0.5cm} $t_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$t_{n}$
+ 
+ \vspace{0.2cm}
+ 
+\begin{tabular}{c}
+   $v_{1}$ \\
+   $v_{2}$ \\
+   \vdots\\
+   $v_{n}$
+ \end{tabular}
+ $
+ \begin{bmatrix}
+  a_{11} & a_{12} & \hdots & a_{1n}\\
+  a_{21} & a_{22} & \hdots & a_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{31} & a_{32} & \hdots & a_{nn}
+ \end{bmatrix}_{nxn}
+$
+
+\end{center}
+
+
 
 \subsubsection{Construção da Rede}
 
- Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um artigo.
+ Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um documento/artigo.
  
  Ao construir a rede dos nossos documentos,
  consideramos como contágio sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
  artigo B.
  
- Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isso é, dado um nó $e_{i}$ e um nó
- $e_{j}$ existe uma aresta $a_{ij}$ que sai de \textit{i} e vai para \textit{j} se o artigo \textit{i} influênciou o artigo \textit{j}.
+ Dessa forma, em nossa rede, os vértices representam os artigos, e as arestas a relação de influência entre eles, isto é, dado um nó $e_{i}$ e um nó
+ $e_{j}$, existe uma aresta $a_{ij}$, que sai de \textit{i} e vai para \textit{j}, se o artigo \textit{i} influênciou o artigo \textit{j}.
  
- Para definir quando um artigo influencia outro em nossa rede, foram usadas duas heurísticas: \textbf{similaridade de cosseno} e 
- \textbf{temporalidade}.
+ Para definir quando um artigo influência outro em nossa rede, foram usadas duas heurísticas: \textit{similaridade} e 
+ \textit{temporalidade}.
  
- Utilizamos a similaridade de cossenos para definir se dois artigos são similares ou não. Para isso, calculamos a distância de cossenos
- entre o ângulo que os dois vetores formam. Podemos calculá-lo utilizando a fórmula abaixo:
- 
- $$ cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
+ \begin{description}
+  \item \textbf{Similaridade}
+  
+    Para definir similaride entre dois artigos, utilizamos a \textit{Similaridade de Cosseno}. A similaridade de cosseno mede a semelhança entre
+    dois vetores através da distância de cosseno do ângulo que eles formam. Para calcular a distância de cosseno $d(A,B)$ entre um vetor $A$ e $B$, fazemos:
+    
+    $$ d(A,B) = cos(\theta) = \dfrac{A \cdot B}{\parallel A\parallel \parallel B \parallel} $$
+    
+    A similaridade de cosseno se dá por $1-d(A,B)$.Utilizando essa equação, calculamos a similaridade de cosseno para cada
+    par de vetor de nossa matriz de documentos, criando assim, uma matriz de similaridades. Se similaridade entre dois vetores for 
+    grande o suficiente, os definimos como similares. 
+    
+    Para saber o quão grande a similaridade de cosseno entre dois artigos deve ser para considerarmo-os similares, fazemos a
+    distribução das similaridade e realizamos um corte em suas extremidades.
+    
+    
+  \item \textbf{Temporalidade}
+ \end{description}
  
  Se a distância calculada for suficientemente pequena, consideramos os artigos similares.
  
