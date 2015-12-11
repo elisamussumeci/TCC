@@ -10,11 +10,32 @@
 \usepackage{natbib}
 \usepackage[textsize=tiny]{todonotes}
 \usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
 \usepackage[lmargin=3cm,rmargin=3cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
 \setlength{\parindent}{1cm}
 \setlength{\baselineskip}{1.5cm}
 \renewcommand{\contentsname}{Sumário}
-
+\hypersetup{
+    bookmarks=false,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
 
 
 \begin{document}
@@ -152,12 +173,19 @@ de abordagem vem sendo utilizada também para entender redes de contatos em rede
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
 Para isso
 estudaremos os caminhos percorridos em uma rede de disseminação criada através de modelos de recuperação de informação utilizados em cima
-da base de dados do Projeto MediaCloud Brasil \textbf{REFERENCIA}
+da base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
+
 
 \subsection{O Projeto Media Cloud Brasil}
 
-Para a realização deste trabalho, foram utilizados os dados do projeto MediaCloud Brasil. O MediaCloud Brasil é um projeto concebido e mantido pelo
-NAMD/EMAp da Fundação Getúlio Vargas, e vem ao longo dos últimos três anos monitorando mais de cem mil veículos de mídia da internet brasileira. Possui em
+ O MediaCloud Brasil é um projeto concebido através de uma parceria do NAMD/EMAp da Fundação Getúlio Vargas, do Massachussets Institute of
+ Technology (MIT)  e Harvard. O projeto
+
+ e mantido pelo NAMD/EMAp da Fundação Getúlio Vargas, e vem ao longo dos últimos três anos 
+ monitorando mais de cem mil veículos de mídia da internet brasileira. 
+ O projeto consiste na captura automatizada de dados de tods of feeds da mídia digital brasileira, captura-se páginas de blogs, jornais, revistas,
+ 
+ Possui em
 sua base de dados mais de 1.6 milhão de artigos capturados.
 \textbf{falar sobre o que e como o Media cloud captura os artigos}
 O projeto utiliza como banco de dados o MongoDB, um banco de dados de documentos open-source de alta performance. O MongoDB é classificado como um banco de 
@@ -374,7 +402,7 @@ palavras e somamo-os, criando o vetor $v_{D}$ que representa o vetor referente a
 
 Ao representar um documento dessa forma, não levamos em consideração a relevância de cada palavra para o documento, o que
 faz da nossa representação pouco eficiente. Para melhorar nossa 
-eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor TF-IDF da palavra
+eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor \hyperref[sec:nlp]{TF-IDF} da palavra
 ao qual ele representa.
 
 Sendo assim, sabendo que para cada palavra $i$ temos um vetor $p_{i}$ que a representa na matriz de palavras, e um valor $w_{i,d}$ referente
@@ -574,14 +602,13 @@ essencial para a simualação da disseminação da notícia na rede.
  \hspace{0.2cm}$d_{1}$ \hspace{0.5cm} $d_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$d_{n}$
  
  \vspace{0.2cm}
- $
+ 
  \begin{tabular}{c}
-   d_{1} \\
-   d_{2} \\
+   $d_{1}$ \\
+   $d_{2}$ \\
    \vdots\\
-   d_{n}
+   $d_{n}$
  \end{tabular}
-$
  $
  \begin{bmatrix}
   0 & a_{12} & \hdots & a_{1n}\\
@@ -601,21 +628,46 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
 
  \begin{description}
   \item \textbf{Modelo utilizado}
+  
+  \todo{não sei o quanto preciso explicar com minas palavras do modelo, talvez tenha ficado meio confuso}
     
-    O modelo epidemiológico que iremos simular foi proposto por \cite{pastor2014epidemic} [consertar referencia, incluido pagina]. Nele,
-    simulamos a probabilidade de cada artigo estar infectado em um tempo $t$:
+    O modelo epidemiológico que iremos simular foi proposto por \citet[p. 940, eq. (33)]{pastor2014epidemic}. Nele,
+    simulamos a probabilidade $\rho^{I}_{i}(t)$ de cada artigo $i$ estar infectado em um tempo $t$ utilizando a matriz de adjacência criada na seção anterior:
 
     \begin{equation}
-      \dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda[1- \rho_{i}^{I}(t)] \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)    
+      \dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda[1- \rho_{i}^{I}(t)] \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+      \label{model}
     \end{equation}
 
-    Onde $\rho^{I}_{i}(t)$ é a probabilidade de um vértice $i$ estar infectado no tempo $t$. O parâmetro $\lambda$ é a taxa de trasmissão,
-    obtida através da divisão da taxa de infecção $\beta$ pela taxa de recuperação $\mu$. Dessa forma, o fator
-
+    Nossa matriz de adjacências é iterada para cada artigo $i$, como podemos ver no fator $\sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)$ da 
+    equação diferencial acima. Nela, somamos as probabilidades de cada artigo $j$ ter influenciado o artigo $i$ em questão, vezes a probabilidade
+    de cada artigo $j$ estar infectado no tempo $t$, ou seja, a chance de um artigo ja infectado ter infectado o artigo $i$.
+    
+    Multiplicamos esse resultado pela taxa de transmissão $\lambda$ e pela possibilidade dele ainda não estar infectado (proporção
+    de documentos não infectados). Assim obtemos a probabilidade do artigo $i$ se infectar. 
+    
+    O parâmetro $\lambda$ é obtido através da divisão da taxa de infecção $\beta$ pela taxa de recuperação $\mu$:
+    
+    \begin{equation}
+     \lambda = \dfrac{\beta}{\mu}
+    \end{equation}
+    
+    A equação (\ref{model}) teve o tempo reescaldo em $\dfrac{1}{\mu}$, o que torna nosso modelo adimensional,
+    como explicado em \citet[p. 939]{pastor2014epidemic}. Podemos interpretar que o tempo de cada passo é o inverso do tempo de 
+    recuperação  média dos artigo. 
+   
+    Para tornar o resultado da simulação mais fiel ao nosso conjunto de dados, onde possuimos um decaimento da infecção, ou seja,
+    nosso artigos se recuperam (deixam de ser influentes), incrementamos a equação abaixo ao modelo:
+    
     \begin{equation}
       \dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
+      \label{model2}
     \end{equation}
     
+    Essa equação nos diz que um artigo que já foi infectado não pode ser infectado novamente. Modificando o modelo para o incremento
+    da equação (\ref{model2}), ficamos com um modelo final utilizado nas simulações:
+    
+   
     \begin{equation}
       \begin{cases}
 	\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\   
@@ -627,55 +679,63 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
  \end{description}
 
   
-  Temos como resultado da simulação, uma matriz de estados. Cada posição $a_{ij}$ da matriz se refere à probabilidade do artigo
-  $d_{j}$ estar contaminado no passo $t_{i}$ da simulação. Para determinar os artigos infectados no passo $t_{i}$, utilizamos a distribuição
-  de bernoulli para cada probabilidade $p_{ij}$. Assim, ficamos com uma matriz booleana de estados, onde temos bem definidos quais
-  vértices estão infectados em cada passo da simulação.
-  
-  Após definir quais nós estão infectados em cada passo da simulação, precisamos definir as relações de influências entre eles, ou seja,
-  definir quais arestas existem em nossa rede completa.
-  
-  Para definir as relações de influência, a cada novo artigo contaminado no passo $t_{i}$, consideramos como possíveis influenciadores todos os artigos
-  infectados no passo $t_{i-1}$. Por exemplo, possuindo a matriz booleana abaixo:
-  
-    \begin{center}
-    \hspace{0.67cm}$d_{1}$ \hspace{0.3cm}$d_{2}$ \hspace{0.3cm}$d_{3}$ \hspace{0.3cm}$d_{4}$
+Temos como resultado da simulação, uma matriz de estados. Cada posição $a_{ij}$ da matriz se refere à probabilidade do artigo
+$d_{j}$ estar contaminado no passo $t_{i}$ da simulação. Para determinar os artigos infectados no passo $t_{i}$, utilizamos a distribuição
+de bernoulli para cada probabilidade $p_{ij}$. Assim, ficamos com uma matriz booleana de estados, onde temos bem definidos quais
+vértices estão infectados em cada passo da simulação.
 
-    \vspace{0.2cm}
+Após definir quais nós estão infectados em cada passo da simulação, precisamos definir as relações de influências entre eles, ou seja,
+definir quais arestas existem em nossa rede completa.
 
-    \begin{tabular}{c}
-      $t_{1}$ \\
-      $t_{2}$ \\
-      $t_{3}$
-    \end{tabular}
-    $
-    \begin{bmatrix}
-      0\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}& 0\hspace{0.2cm}\\
-      0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}\\
-      1\hspace{0.2cm} & 0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm}
-    \end{bmatrix}
-    $
+Para definir as relações de influência, a cada novo artigo contaminado no passo $t_{i}$, consideramos como possíveis influenciadores todos os artigos
+infectados no passo $t_{i-1}$. Por exemplo, possuindo a matriz booleana abaixo:
 
-    \end{center}
-    
-    Temos que, em $t_{1}$ apenas o artigo $d_{2}$ está infectado. Logo, ele obrigatóriamente influenciará qualquer novo artigo infectado
-    no tempo $t_{2}$. 
-    
-    No tempo $t_{2}$ possuimos apenas $d_{3}$ como um novo artigo infectado, sendo assim, sabemos que $d_{2}$ influenciou $d_{3}$, e logo,
-    teremos em nossa rede simulada uma aresta $a_{23}$.
-    
-    No próximo passo $t_{3}$ podemos observar que o artigo $d_{3}$ continua infectado, e que possuimos dois novos artigos infectados:
-    $d_{1}$ e $d_{4}$. Porém no passo anterior temos dois artigos infectados, como saber qual deles influenciou os novos infectados?
-    Para definir o influenciador de cada novo infectado, buscaremos em nossa matriz de pesos, a probabilidade 
-    
-    
-  
-  Utilizando a matriz de pesos entre os domínios, calculamos a probabilidade de cada artigo infectado no tempo
-  $i-1$ ter infectado cada novo artigo infectado no tempo $i$. Definimos o artigo influenciador a partir da probabilidade que ele tem de 
-  influenciar o novo artigo infectado. 
+  \begin{center}
+  \hspace{0.67cm}$d_{1}$ \hspace{0.3cm}$d_{2}$ \hspace{0.3cm}$d_{3}$ \hspace{0.3cm}$d_{4}$
 
+  \vspace{0.2cm}
+
+  \begin{tabular}{c}
+    $t_{1}$ \\
+    $t_{2}$ \\
+    $t_{3}$
+  \end{tabular}
+  $
+  \begin{bmatrix}
+    0\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}& 0\hspace{0.2cm}\\
+    0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm} & 0\hspace{0.2cm}\\
+    1\hspace{0.2cm} & 0\hspace{0.2cm} & 1\hspace{0.2cm} & 1\hspace{0.2cm}
+  \end{bmatrix}
+  $
+
+  \end{center}
   
+  Temos que, em $t_{1}$ apenas o artigo $d_{2}$ está infectado. Logo, ele obrigatóriamente influenciará qualquer novo artigo infectado
+  no tempo $t_{2}$. 
   
+  No tempo $t_{2}$ possuimos apenas $d_{3}$ como um novo artigo infectado, sendo assim, sabemos que $d_{2}$ influenciou $d_{3}$, e logo,
+  teremos em nossa rede simulada uma aresta $a_{23}$.
+  
+  No próximo passo $t_{3}$ podemos observar que o artigo $d_{3}$ continua infectado, e que possuimos dois novos artigos infectados:
+  $d_{1}$ e $d_{4}$. Porém no passo anterior temos dois artigos infectados, como saber qual deles influenciou os novos infectados?
+  Para definir o influenciador de cada novo infectado, buscaremos em nossa matriz de pesos, a probabilidade de cada artigo infectado
+  no passo anterior ter infectado novos artigos. A partir dessas probabilidades, utilizamos novamente a \textit{Bernoulli} e definimos
+  as relações de influência. 
+  
+  No diagrama abaixo podemos ver como o algoritmo se comporta em $t_{3}$, utilizando $P(d_{i},d_{j}$) como a probabilidade do artigo
+  $d_{i}$ influenciar o artigo $d_{j}$, e supondo uma ordem de grandeza entre eles.:
+  
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{./diagrama1.png}
+    % diagrama1.png: 960x720 pixel, 72dpi, 33.87x25.40 cm, bb=0 0 960 720
+    \caption{Diagrama Definição de Influência}
+  \end{figure}
+
+  Nesse caso, utilizando os valores do exemplo acima, encontramos que o artigo $d_{2}$ influenciou $d_{1}$ e que $d_{3}$ influenciou
+  $d_{4}$.
+  
+  Realizando esse procedimento para cada passo da simulação, construímos a disseminação na rede completa.
 
 \pagebreak  
 \section{Resultados}
@@ -736,6 +796,6 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 
 
 \pagebreak
-\bibliographystyle{abbrv}
+\bibliographystyle{plainnat}
 \bibliography{ref}
 \end{document}

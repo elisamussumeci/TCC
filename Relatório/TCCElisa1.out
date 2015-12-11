@@ -4,15 +4,20 @@
 \BOOKMARK [3][-]{subsubsection.1.2.1}{O espalhamento de not\355cias como um processo de cont\341gio}{subsection.1.2}% 4
 \BOOKMARK [3][-]{subsubsection.1.2.2}{Processos Epidemiol\363gicos em Redes Complexas}{subsection.1.2}% 5
 \BOOKMARK [3][-]{subsubsection.1.2.3}{Processamento de Linguagem Natural}{subsection.1.2}% 6
-\BOOKMARK [1][-]{section.2}{Objetivo}{}% 7
-\BOOKMARK [1][-]{section.3}{Metodologia}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{Rede de Dissemina\347\343o Real}{section.3}% 9
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Matriz de Documentos}{subsection.3.1}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Constru\347\343o da Rede}{subsection.3.1}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Simula\347\343o Rede de Dissemina\347\343o}{section.3}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Rede Completa}{subsection.3.2}% 13
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Simula\347\343o}{subsection.3.2}% 14
-\BOOKMARK [1][-]{section.4}{Resultados}{}% 15
-\BOOKMARK [2][-]{subsection.4.1}{Rede de Dissemina\347\343o Original}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.2}{Simula\347\343o Rede de Dissemina\347\343o}{section.4}% 17
-\BOOKMARK [1][-]{section.5}{Conclus\343o}{}% 18
+\BOOKMARK [2][-]{subsection.1.3}{Objetivo}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Metodologia}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Rede de Dissemina\347\343o Real}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Matriz de Documentos}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Constru\347\343o da Rede}{subsection.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.2}{Simula\347\343o Rede de Dissemina\347\343o}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Cria\347\343o Rede Completa}{subsection.2.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Simula\347\343o}{subsection.2.2}% 14
+\BOOKMARK [1][-]{section.3}{Resultados}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Rede de Dissemina\347\343o Real}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Definindo Par\342metros}{subsection.3.1}% 17
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Visualiza\347\365es da Rede Real}{subsection.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.2}{Simula\347\343o Rede de Dissemina\347\343o}{section.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Resultado Simula\347\343o}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Rede Simulada}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Visualiza\347\365es da Rede Simulada}{subsection.3.2}% 22
+\BOOKMARK [1][-]{section.4}{Conclus\343o}{}% 23
