@@ -197,19 +197,87 @@ de forma que fique o mais verídica possível.
 
 \subsubsection{Processos Epidemiológicos em Redes Complexas}
 
-
+O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
+ de vértices (nós) que são interligados por meio de arestas (Barabási, 2003). A teoria das Redes Complexas  está relacionada com a modelagem de redes reais, através da 
+ análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
+ constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
+ 
+ 
 \subsubsection{Processamento de Linguagem Natural}
 \label{sec:nlp}
 
 \todo[inline]{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
 representação vetorial de palavras
 
-O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
- de vértices (nós) que são interligados por meio de arestas (Barabási, 2003). A teoria das Redes Complexas  está relacionada com a modelagem de redes reais, através da 
- análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
- constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
+\begin{description}
+ \item \textbf{Tokenização}
+ \item \textbf{TF-IDF}
  
+O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
+a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
+$Idf_{t}$.
 
+
+Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
+$d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
+porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
+$Tf=1$. 
+
+Podemos concordar que um documento com $Tf=10$ é mais relevante do que um com $Tf=1$, porém não necessariamente 10 vezes mais relevante.
+A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
+pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
+
+\begin{equation}
+  W_{t,d}=\begin{cases}
+	    1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
+	    0 \ \hspace{3cm} \text{caso contrário}
+	  \end{cases}
+\end{equation}
+
+
+Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
+
+\begin{center}
+\begin{tabular}{ll}
+  \hline
+  $Tf_{t,d}$ & $W_{t,d}$\\
+  \hline
+  0&0\\
+  1&1\\
+  2&1.3\\
+  10&2\\
+  1000&4\\
+  
+\end{tabular}
+\end{center}
+
+
+Sabemos que nem todo termo frequente em um documento pode ser considerado muito relevante. Consideramos uma consulta com dois termos:
+um frequente no conjunto de documentos e outro raro. Não queremos que um documento que possua o termo frequente seja mais relevante do que o
+documento que possua o termo raro.
+
+Inferimos então que termos raros são mais informativos do que termos frequentes. Dessa forma, queremos dar uma maior relevância para
+termos raros do que para termos muito frequentes. Para incluir isso em nossa medida usamos o termo $Idf$.
+
+O termo $Idf_{t}$ é uma medida de informatividade do termo $t$, que afeta o rankeamento de documentos para consultas com pelo menos dois
+termos. Com ele aumentamos o peso relativo de termos raros e diminuimos o peso relativo
+de termos muito frequentes. O definimos da seguinte maneira:
+
+$$ Idf_{t}\ = \ log\ \frac{N}{df_{t}}$$
+
+Onde $df_{t}$ é a frequência de documento, o número de documentos em que $t$ ocorre. Consideramos $df_{t}$ uma medida inversa da informatividade
+do termo $t$.
+
+Ao multiplicarmos o termo $Idf$ ao nosso peso ponderado $W_{t,d}$, temos a medida Tf-Idf. O peso Tf-Idf aumenta com o número de ocorrências
+dentro de um documento e com a raridade do termo na coleção. É considerado o melhor esquema de ponderação em recuperação da informação.
+
+$$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
+
+\item \textbf{Bag-of-Words}
+\item \textbf{Skipgram}
+
+Explicar pq é um modelo adequado para o meu problema
+\end{description}
 
 \section{Objetivo}
 
@@ -255,106 +323,87 @@ A seguir, podemos ver um exemplo do que esperamos da nossa rede de disseminaçã
 No exemplo acima, temos que o artigo $A$ é similar aos artigos $B$ e $C$ e possui uma data de publicação mais antiga do que os dois. 
 Sendo assim, foi definido como o influenciador dos dois, ou seja, foi o artigo que os contagiou com a notícia.
 
-
 \subsubsection{Matriz de Documentos}
 
-Representamos vetorialmente nosso conjunto de dados utilizando o Word2Vec, uma ferramenta que promove uma implementação eficiente do
-modelo skip-gram e bag-of-words contínuo (inserir referencia).
+Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma determinada notícia, formando o corpus linguístico que 
+utilizaremos para criar a matriz de documentos, representação vetorial dos artigos selecionados.
 
-Para gerar nosso modelo word2vec, fornecemos como entrada o corpus linguístico referente a toda a coleção de documentos
-e o modelo nos retorna uma matriz, onde as linhas são as palavras contidas no corpus e as colunas são os atributos gerados pelo modelo:
+Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}, ferramenta que promove uma implementação 
+eficiente do modelo \textit{skip-gram} e \textit{bag-of-words} contínuo (inserir referencia).\todo{preciso explicar mais sobre o word2vec?}
 
-(AJEITAR MATRIZ)
-\todo{aqui talvez seja melhor usar o ambiente array, ao invés de tabular}
-\begin{center}
- \begin{tabular}{ccccc}
-          & $a_{1}$ & $a_{2}$ & ... & $a_{m}$ \\ \cline{2-5}
-    $v_{1}$ &    &    &     &    \\
-    $v_{2}$ &    &    &     &    \\
-    ...  &    &    &     &    \\
-    $v_{n}$ &    &    &     &    \\
-    \end{tabular}
+Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs?}, fornecemos como entrada nosso corpus linguístico
+e o modelo nos retorna uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as palavras contidas no corpus e as colunas $t_{1},t_{2},...,t_{n}$
+são os atributos gerados pelo modelo para cada palavra:
  
+ \begin{center}
+ \hspace{0.2cm}$t_{1}$ \hspace{0.5cm} $t_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$t_{n}$
+ 
+ \vspace{0.2cm}
+ 
+\begin{tabular}{c}
+   $p_{1}$ \\
+   $p_{2}$ \\
+   \vdots\\
+   $p_{n}$
+ \end{tabular}
+ $
+ \begin{bmatrix}
+  a_{11} & a_{12} & \hdots & a_{1n}\\
+  a_{21} & a_{22} & \hdots & a_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{31} & a_{32} & \hdots & a_{nn}
+ \end{bmatrix}_{nxn}
+$
+
+\end{center}
+
+Dessa forma, temos uma matriz de palavras, ou seja, uma representação de todas as palavras presentes em nosso corpus.
+Porém, queremos representar documentos e não apenas palavras.
+Para criar uma matriz que represente documentos, fazemos, para cada documento, uma soma dos vetores referentes a cada palavra presente
+no documento, criando assim um vetor representativo do documento em questão.
+
+Podemos exemplificar da seguinte forma: dado um documento $D$, sabemos que ele é composto pelo seguinte conjunto de palavras
+$P:\{1,2,3,4,5\}$. Para cada termo, buscamos o seu vetor representativo $p_{i}$, $i =\{1,2,3,4,5\}$ na matriz de
+palavras e somamo-os, criando o vetor $v_{D}$ que representa o vetor referente ao documento $D$:
+
+$$v_{D} = p_{1}+p_{2}+p_{3}+p_{4}+p_{5} $$
+
+Ao representar um documento dessa forma, não levamos em consideração a relevância de cada palavra para o documento, o que
+faz da nossa representação pouco eficiente. Para melhorar nossa 
+eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor \textit{TF-IDF} da palavra
+ao qual ele representa.
+
+Sendo assim, sabendo que para cada palavra $i$ temos um vetor $p_{i}$ que a representa na matriz de palavras, e um valor $w_{i,d}$ referente
+ao valor \textit{TF-IDF} da palavra $i$ no documento $D$, representamos o vetor $v_{D}$ da seguinte forma:
+
+  $$v_{D} = \sum_{i=1}^{5} p_{i} \cdot w_{t,D} $$
+
+Sendo assim, ficamos com a matriz de documentos abaixo, onde cada linha $v_{i}$ é um documento, e cada coluna $t_{i}$ é a soma do atributo $i$
+em todas as palavras do documento $i$:
+
+ \begin{center}
+ \hspace{0.2cm}$t_{1}$ \hspace{0.5cm} $t_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$t_{n}$
+ 
+ \vspace{0.2cm}
+ 
+\begin{tabular}{c}
+   $v_{1}$ \\
+   $v_{2}$ \\
+   \vdots\\
+   $v_{n}$
+ \end{tabular}
+ $
+ \begin{bmatrix}
+  a_{11} & a_{12} & \hdots & a_{1n}\\
+  a_{21} & a_{22} & \hdots & a_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{31} & a_{32} & \hdots & a_{nn}
+ \end{bmatrix}_{nxn}
+$
+
 \end{center}
 
 
-Temos nessa matriz a representação de todas as palavras presentes em nosso corpus, porém, queremos representar documentos e não palavras.\todo{como é esta representação?, porque ela é adequada para o seu trabalho? explicar isso em uma seçãoo sobre o skipgram no referencial teórico}
-Para isso, buscamos o vetor referente de cada palavra contida em um documento e somamo-os. Dessa forma, associamos todas as palavras contidas
-em um documento, e transformamo-as em um único vetor. Ou seja, dado um documento A, sabemos que ele é composto pelo seguinte conjunto de palavras
-$P:\{1,2,3,4,5\}$. Para cada termo buscamos o seu vetor representativo $v_{t}$, $t =\{1,2,3,4,5\}$ e somamos todos esses vetores, criando o vetor
-$v_{D}$ que representa o vetor do documento D:
-
-$$v_{D} = v_{1}+v_{2}+v_{3}+v_{4}+v_{5} $$
-
-Representando um documento dessa forma, não levamos em consideração a importância de cada palavra para o documento. Para melhorar nossa 
-representação, antes de somar os vetores, iremos multiplicar cada um pelo valor \textbf{Tf-Idf} da palavra a qual ele representa.
-
-O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
-a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
-$Idf_{t}$.\todo{mover a explicação do TF-IDF para o a seção \ref{sec:nlp}, referencie a equação do tf-IDF aqui e deixe na metodologia apenas o que você fez, usando o TF-IDF e outras coisas mais.}
-
-
-  Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
-  $d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
-  porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
-  $Tf=1$. 
-  
-  Podemos concordar que um documento com $Tf=10$ é mais relevante do que um com $Tf=1$, porém não necessariamente 10 vezes mais relevante.
-  A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
-  pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
-  
-  \begin{equation}
-   W_{t,d}=\begin{cases}
-             1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
-             0 \ \hspace{3cm} \text{caso contrário}
-            \end{cases}
-  \end{equation}
- 
- 
- Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
- 
- \begin{center}
-  \begin{tabular}{ll}
-    \hline
-    $Tf_{t,d}$ & $W_{t,d}$\\
-    \hline
-    0&0\\
-    1&1\\
-    2&1.3\\
-    10&2\\
-    1000&4\\
-    
-  \end{tabular}
- \end{center}
- 
- 
-  Sabemos que nem todo termo frequente em um documento pode ser considerado muito relevante. Consideramos uma consulta com dois termos:
-  um frequente no conjunto de documentos e outro raro. Não queremos que um documento que possua o termo frequente seja mais relevante do que o
-  documento que possua o termo raro.
-
-  Inferimos então que termos raros são mais informativos do que termos frequentes. Dessa forma, queremos dar uma maior relevância para
-  termos raros do que para termos muito frequentes. Para incluir isso em nossa medida usamos o termo $Idf$.
-  
-  O termo $Idf_{t}$ é uma medida de informatividade do termo $t$, que afeta o rankeamento de documentos para consultas com pelo menos dois
-  termos. Com ele aumentamos o peso relativo de termos raros e diminuimos o peso relativo
-  de termos muito frequentes. O definimos da seguinte maneira:
-  
-  $$ Idf_{t}\ = \ log\ \frac{N}{df_{t}}$$
-  
-  Onde $df_{t}$ é a frequência de documento, o número de documentos em que $t$ ocorre. Consideramos $df_{t}$ uma medida inversa da informatividade
-  do termo $t$.
-  
-  Ao multiplicarmos o termo $Idf$ ao nosso peso ponderado $W_{t,d}$, temos a medida Tf-Idf. O peso Tf-Idf aumenta com o número de ocorrências
-  dentro de um documento e com a raridade do termo na coleção. É considerado o melhor esquema de ponderação em recuperação da informação.
-  
-  $$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
-
-
- Utilizando essa medida em nosso modelo, temos para cada palavra $i$ um valor $w_{t,d}$, referente
-  ao valor Tf-Idf do termo $t$ no documento $d$. Sendo assim:
-  
-  $$v_{D} = \sum_{i=1}^{5} v_{i} \cdot w_{t,d} $$
-\todo{Você copiou este texto de algum lugar?}
 
 \subsubsection{Construção da Rede}
 
