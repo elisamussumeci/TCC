@@ -5,12 +5,18 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Relatório/graph.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Relatório/la.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gexf-js" afterPath="$PROJECT_DIR$/gexf-js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.log" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gexf-js" afterPath="$PROJECT_DIR$/gexf-js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/t.png" afterPath="$PROJECT_DIR$/results/t.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/Simulações.ipynb" afterPath="$PROJECT_DIR$/Notebook/Simulações.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/TCC - Data e SIR.ipynb" afterPath="$PROJECT_DIR$/Notebook/TCC - Data e SIR.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" afterPath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.log" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/Untitled.ipynb" afterPath="$PROJECT_DIR$/Notebook/Untitled.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TCC.iws" />
     <ignored path=".idea/workspace.xml" />

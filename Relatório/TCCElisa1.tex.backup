@@ -18,6 +18,8 @@
 
 
 \begin{document}
+\bibliographystyle{abbrv}
+\bibliography{ref}
 
 \begin{titlepage}
  \begin{center}
@@ -110,6 +112,8 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
 
 \tableofcontents
 
+\listoffigures
+
 \pagebreak
 
 \begin{abstract}
@@ -131,7 +135,6 @@ de notícias, a fim de prever tendências e mapear questões de interesse.
 
 \section{Introdução}
 
-
 Atualmente a internet é um dos principais meios de veiculação de notícias e informação do país. Com o crescente
 número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou significamente, o que tornou fundamental
 o papel das mídias digitais no acesso à informação.
@@ -151,18 +154,18 @@ de abordagem vem sendo utilizada também para entender redes de contatos em rede
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
 Para isso
 estudaremos os caminhos percorridos em uma rede de disseminação criada através de modelos de recuperação de informação utilizados em cima
-da base de dados do Projeto MediaCloud Brasil \todo{referência}.
+da base de dados do Projeto MediaCloud Brasil \textbf{REFERENCIA}
 
 \subsection{O Projeto Media Cloud Brasil}
 
 Para a realização deste trabalho, foram utilizados os dados do projeto MediaCloud Brasil. O MediaCloud Brasil é um projeto concebido e mantido pelo
 NAMD/EMAp da Fundação Getúlio Vargas, e vem ao longo dos últimos três anos monitorando mais de cem mil veículos de mídia da internet brasileira. Possui em
 sua base de dados mais de 1.6 milhão de artigos capturados.
-\todo[inline]{falar sobre o que e como o Media cloud captura os artigos}
+\textbf{falar sobre o que e como o Media cloud captura os artigos}
 O projeto utiliza como banco de dados o MongoDB, um banco de dados de documentos open-source de alta performance. O MongoDB é classificado como um banco de 
 dados 'NoSQL', uma vez que evita a tradicional estrutura  baseada em tabela relacional e utiliza documentos JSON com esquemas dinâmicos para armazenamento 
 dos documentos. A vantagem de utilizar o JSON é realizar a integração de dados em certos tipos de aplicações de forma mais fácil e mais rápida.\todo{Que tipo de aplicações?}
-\todo[inline]{Falar que uma vez armazenado, o banco de artigos é indexado para permitir buscas textuais}
+\textbf{Falar que uma vez armazenado, o banco de artigos é indexado para permitir buscas textuais}
 
 \subsection{Referencial Teórico}
 
@@ -206,8 +209,7 @@ O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topogr�
 \subsubsection{Processamento de Linguagem Natural}
 \label{sec:nlp}
 
-\todo[inline]{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
-representação vetorial de palavras
+\textbf{explicar aqui a teoria por trás de todas as técnicas de NLP que vc usa: Tokenização, TF-IDF, etc.}
 
 \begin{description}
  \item \textbf{Tokenização}
@@ -279,7 +281,7 @@ $$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
 Explicar pq é um modelo adequado para o meu problema
 \end{description}
 
-\section{Objetivo}
+\subsection{Objetivo}
 
 Esse trabalho tem como principal objetivo caracterizar a dinâmica de disseminação das notícias no país através de redes complexas.
 
@@ -323,6 +325,7 @@ A seguir, podemos ver um exemplo do que esperamos da nossa rede de disseminaçã
 No exemplo acima, temos que o artigo $A$ é similar aos artigos $B$ e $C$ e possui uma data de publicação mais antiga do que os dois. 
 Sendo assim, foi definido como o influenciador dos dois, ou seja, foi o artigo que os contagiou com a notícia.
 
+\pagebreak
 \subsubsection{Matriz de Documentos}
 
 Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma determinada notícia, formando o corpus linguístico que 
@@ -370,7 +373,7 @@ $$v_{D} = p_{1}+p_{2}+p_{3}+p_{4}+p_{5} $$
 
 Ao representar um documento dessa forma, não levamos em consideração a relevância de cada palavra para o documento, o que
 faz da nossa representação pouco eficiente. Para melhorar nossa 
-eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor \textit{TF-IDF} da palavra
+eficiência, antes de somar os vetores de palavras $p_{i}$, iremos multiplicar cada um deles pelo valor TF-IDF da palavra
 ao qual ele representa.
 
 Sendo assim, sabendo que para cada palavra $i$ temos um vetor $p_{i}$ que a representa na matriz de palavras, e um valor $w_{i,d}$ referente
@@ -436,22 +439,39 @@ $
     
     
   \item \textbf{Temporalidade}
+  
+    Após definir dois artigos como similares, inferimos uma relação de influência entre eles. Porém, ainda precisamos saber quem influeciou e quem
+    foi influenciado. Para descobrir isso, olhamos a data de publicação de cada artigo. Se dois artigos $A$ e $B$ foram considerados 
+    similares, e o artigo $A$ foi publicado antes do artigo $B$, então definimos que $A$ influenciou $B$, logo temos em nossa rede:
+    
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.2]{./rede2.png}
+      % rede2.png: 960x720 pixel, 72dpi, 33.87x25.40 cm, bb=0 0 960 720
+      \caption{Relação de Influência}
+    \end{figure}
+    
+    \pagebreak
+
+    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também publicado anteriormente. Em nosso modelo,
+    definimos que um artigo só pode ter sido influênciado por um único artigo. Dessa forma, como definir quem de fato influênciou $B$? Para
+    resolver esse impasse utilizamos a similaridade de cosseno. Consideramos influênciador o artigo publicado anteriormente, e que possui
+    a \textbf{maior} similaridade com $B$.
+    
+    Consideramos, também, que um artigo deixa de ser influente com o passar do tempo, assim como uma pessoa infectada por um vírus deixa
+    de ser infecciosa após se curar da doença. Dessa forma, precisamos calcular o tempo máximo em que um artigo é influente em nossa rede.
+    Para isso, calculamos a diferença entre as datas de publicação de cada par de artigos e fazemos a distribuição dessas diferenças. Assim como
+    na distribuição de similaridades, realizamos um corte nas extremidades e pegamos os valores limites.
  \end{description}
  
- Se a distância calculada for suficientemente pequena, consideramos os artigos similares.
- 
- Possuindo artigos similares, inferimos que existe uma relação de influência entre eles, 
- porém não temos como saber qual influênciou e qual foi influenciado. Para definir essa questão, utilizamos a data e hora em que
- cada um foi publicado. Dessa forma, se dois artigos são similares, consideramos como influenciador aquele que foi publicado primeiro. 
 
- 
- INCLUIR O QUE É SUFICIENTEMENTE PEQUENO 
- 
 \subsection{Simulação Rede de Disseminação}
 
-Nesta parte do trabalho, temos como objetivo simular a disseminação de nossa rede original utilizando o modelo (adicionar referencia)
-para tentar validar nossa rede de disseminação como um processo epidemiológico.
+Na segunda parte do trabalho, temos como objetivo simular a disseminação de nossa rede real utilizando um modelo epidemiológico, com o intuito
+de validarmos nossa rede e conseguirmos caracterizá-la.
 
+Queremos então, conseguir modelar a disseminação de uma notícia em uma rede genéric e conseguir um resultado semelhante à nossa rede de
+disseminação real
 \subsubsection{Rede Completa}
 
  Para simular nossa rede, construimos primeiramente uma rede completa com os mesmos nós de nossa rede original, onde os pesos das arestas
@@ -527,25 +547,59 @@ por cada vizinho:
 
   
   
+
+\pagebreak  
 \section{Resultados}
  
+Todos os resultados a seguir foram obtidos utilizando o conjunto de dados referente às notícias do atentado ao Charlie Hebdo na mídia
+brasileira. 
+Esse conjunto de dados contêm 2129 artigos, abaixo temos um gráfico da quantidade de artigos pelo tempo:
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.7]{./grafic.png}
+ % grafic.png: 432x288 pixel, 72dpi, 15.24x10.16 cm, bb=0 0 432 288
+ \caption{Notícias x Tempo}
+\end{figure}
+
+Observamos que o crescimento de artigos por tempo dessa notícia foi bem alto durante o mês de janeiro, e que após atingir seu máximo, começou
+a cair gradativamente.
+
+\subsection{Rede de Disseminação Real}
+
+Utilizando as metodologias descritas na seção {incluir label} para o conjunto de dados da notícia escolhida, construímos uma rede de disseminação
+onde podemos observar o espalhamento da notícia escolhida.
+
+Após calcular a matriz de documentos e a matriz de similaridades, precisamos definir o tempo máximo de influencia de um artigo, e a similaridade de cosseno
+mínima para definir similaridade. Para isso calculamos a distribuição de cada uma dessas métricas:
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.4]{./2.png}
+ % 2.png: 600x600 pixel, 72dpi, 21.17x21.17 cm, bb=0 0 600 600
+ \caption{Distribuição de Similaridades Máximas}
+\end{figure}
 
 
-\subsection{Rede de Disseminação Original}
 
-Abaixo temos uma visualização da
- rede criada:
 
 \begin{figure}[h]
  \centering
  \includegraphics[scale=0.4]{../results/a.png}
  % a.png: 1075x623 pixel, 72dpi, 37.92x21.98 cm, bb=0 0 1075 623
- \caption{Rede Disseminação}
+ \caption{Rede Disseminação Real x Passo}
 \end{figure}
 
 
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.4]{../results/t.png}
+ % t.png: 959x540 pixel, 72dpi, 33.83x19.05 cm, bb=0 0 959 540
+ \caption{Rede Disseminação Real x Tempo}
+\end{figure}
 
 \subsection{Simulação Rede de Disseminação}
+
 
 
 \section{Conclusão}
