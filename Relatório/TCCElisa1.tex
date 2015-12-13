@@ -15,11 +15,12 @@
 \usepackage[lmargin=3cm,rmargin=3cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
 \setlength{\parindent}{1cm}
 \setlength{\baselineskip}{1.5cm}
+
 \renewcommand{\contentsname}{Sumário}
 \hypersetup{
     bookmarks=false,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdftoolbar=true,        % show Acroat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
@@ -131,6 +132,8 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
 
 \tableofcontents
 
+\pagebreak
+
 \listoffigures
 
 \pagebreak
@@ -166,7 +169,7 @@ Utilizando do fato que essas mídias digitais são fundamentais na disseminaçã
 influenciador no processo de formação de opinião, podemos definir como importante entender como as notícias se formam e se espalham
 na internet brasileira.
 
-Um dos métodos de se estudar a disseminação da informação é utilizar modelos epidemiológicos. (referencia de artigo) em (ano do artigo)
+Um dos métodos de se estudar a disseminação da informação é utilizando modelos epidemiológicos. (referencia de artigo) em (ano do artigo)
 conseguiu modelar a disseminação de (tabela de alguma coisa) no tempo através de modelos epidemiológicos, como SIR, SIS entre outros. Ese tipo
 de abordagem vem sendo utilizada também para entender redes de contatos em redes sociais como (incluir referencia). MELHORAR PARAGRAFO
 
@@ -235,74 +238,142 @@ O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topogr�
 \subsubsection{Processamento de Linguagem Natural}
 \label{sec:nlp}
 
+Processamento de Linguagem Natural \textit{(Natural Process Lenguage - NLP)} é uma área de Inteligência Artifical que tem como principal
+objetivo desenvolver métodos computacionais que consigam traduzir a linguagem natural em uma linguagem computacional. A utilização desses
+métodos é fundamental em tarefas que envolvem a utilização de banco de dados com corpus linguístico, pois a partir deles podemos
+traduzir os textos para uma linguagem compreensivel ao computador.
+
 \begin{description}
- \item \textbf{Tokenização}
+  \item \textbf{Pré-Processamento}
+  
+    O primeirio passo ao lidar com documentos em texto em computadores é realizar um pré-processamento no conjunto de dados. Esse 
+    pré-processamento consiste em  tokenizar, limpar e stemmatizar cada documento do corpus linguístico. 
+    
+    O processo de tokenização consiste em decompor o documento em termos, também chamado de  tokens. Para cada documento, cria-se uma lista de 
+    tokens presentes nele. Após tokenizar, limpamos o documento retirando  as \textit{stop-words} (lista de termos não representativos para
+    documentos, geralmente composta por preposições, pronomes, pontuação, advérbios e artigos) e realizamos o processo de 
+    \textit{stemming}, que consiste em radicalizar cada termo do documento. Dessa forma, palavras que possuem o menos radical são consideradas
+    iguais, já que representam a mesma definição.
+    
+    Temos como exemplo as duas frases a seguir:
+    
+    \begin{center}
+      \begin{enumerate}
+	\item João gosta de jogar futebol. Maria prefere jogar xadrez.
+	\item Maria não gosta de futebol.
+      \end{enumerate}
+    \end{center}
+    
+
+    Após o pré-processamento temos:
+    
+    \begin{center}
+      \begin{enumerate}
+	\item (joão, gost, jog, futebol, maria, prefer, jog, xadrez)
+	\item (maria, não, gost, futebol)
+      \end{enumerate}
+    \end{center}
+    
+    
+  \item \textbf{Bag-of-Words}
+  
+   O modelo bag-of-words é uma forma de representar vetorialmente um texto muito usada em Processamento de Linguagem Natural e em
+   Recuperação de Informação. O modelo consiste em aprender um vocabulário baseado em todos
+   os documentos pré processados do conjunto de dados, e então modelar o documento a partir número de vezes em que
+   cada palavra do vacabulário aparece. Dessa forma, cada documento é representado por um 'saco de palavras', o que, apesar de manter
+   multiplicadade, causa uma perda de informação, visto que não leva em consideração a ordem das palavras e a gramatica envolvida no texto.
+   
+   Exemplifcamos o proocesso a seguir, considerando as frases pré processadas na seção anterior:
+   
+    \begin{center}
+      \begin{enumerate}
+	\item (joão, gost, jog, futebol, maria, prefer, jog, xadrez)
+	\item (maria, não, gost, futebol)
+      \end{enumerate}
+    \end{center}
+    
+    Cria-se então o vocabulário do conjunto de dados:
+    
+   \begin{center}
+    \{joão, gost, jog, futebol, maria, prefer, xadrez, não\}
+   \end{center}
+
+   A partir desse vocabulário, criamos então, o vetor referente a cada palavra:
+
+    \begin{center}
+      \begin{enumerate}
+	\item (1,1,2,1,1,1,1,0)
+	\item (0,1,0,1,1,0,0,1)
+      \end{enumerate}
+    \end{center}
+   
+ 
+ \item \textbf{Skipgram}
+
+  Explicar pq é um modelo adequado para o meu problema
+ 
  \item \textbf{TF-IDF}
  
-O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
-a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
-$Idf_{t}$.
+  O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
+  a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
+  $Idf_{t}$.
 
 
-Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
-$d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
-porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
-$Tf=1$. 
+  Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
+  $d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
+  porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
+  $Tf=1$. 
 
-Podemos concordar que um documento com $Tf=10$ é mais relevante do que um com $Tf=1$, porém não necessariamente 10 vezes mais relevante.
-A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
-pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
+  Podemos concordar que um documento com $Tf=10$ é mais relevante do que um com $Tf=1$, porém não necessariamente 10 vezes mais relevante.
+  A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
+  pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
 
-\begin{equation}
-  W_{t,d}=\begin{cases}
-	    1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
-	    0 \ \hspace{3cm} \text{caso contrário}
-	  \end{cases}
-\end{equation}
-
-
-Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
-
-\begin{center}
-\begin{tabular}{ll}
-  \hline
-  $Tf_{t,d}$ & $W_{t,d}$\\
-  \hline
-  0&0\\
-  1&1\\
-  2&1.3\\
-  10&2\\
-  1000&4\\
-  
-\end{tabular}
-\end{center}
+  \begin{equation}
+    W_{t,d}=\begin{cases}
+	      1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
+	      0 \ \hspace{3cm} \text{caso contrário}
+	    \end{cases}
+  \end{equation}
 
 
-Sabemos que nem todo termo frequente em um documento pode ser considerado muito relevante. Consideramos uma consulta com dois termos:
-um frequente no conjunto de documentos e outro raro. Não queremos que um documento que possua o termo frequente seja mais relevante do que o
-documento que possua o termo raro.
+  Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
 
-Inferimos então que termos raros são mais informativos do que termos frequentes. Dessa forma, queremos dar uma maior relevância para
-termos raros do que para termos muito frequentes. Para incluir isso em nossa medida usamos o termo $Idf$.
+  \begin{center}
+  \begin{tabular}{ll}
+    \hline
+    $Tf_{t,d}$ & $W_{t,d}$\\
+    \hline
+    0&0\\
+    1&1\\
+    2&1.3\\
+    10&2\\
+    1000&4\\
+    
+  \end{tabular}
+  \end{center}
 
-O termo $Idf_{t}$ é uma medida de informatividade do termo $t$, que afeta o rankeamento de documentos para consultas com pelo menos dois
-termos. Com ele aumentamos o peso relativo de termos raros e diminuimos o peso relativo
-de termos muito frequentes. O definimos da seguinte maneira:
 
-$$ Idf_{t}\ = \ log\ \frac{N}{df_{t}}$$
+  Sabemos que nem todo termo frequente em um documento pode ser considerado muito relevante. Consideramos uma consulta com dois termos:
+  um frequente no conjunto de documentos e outro raro. Não queremos que um documento que possua o termo frequente seja mais relevante do que o
+  documento que possua o termo raro.
 
-Onde $df_{t}$ é a frequência de documento, o número de documentos em que $t$ ocorre. Consideramos $df_{t}$ uma medida inversa da informatividade
-do termo $t$.
+  Inferimos então que termos raros são mais informativos do que termos frequentes. Dessa forma, queremos dar uma maior relevância para
+  termos raros do que para termos muito frequentes. Para incluir isso em nossa medida usamos o termo $Idf$.
 
-Ao multiplicarmos o termo $Idf$ ao nosso peso ponderado $W_{t,d}$, temos a medida Tf-Idf. O peso Tf-Idf aumenta com o número de ocorrências
-dentro de um documento e com a raridade do termo na coleção. É considerado o melhor esquema de ponderação em recuperação da informação.
+  O termo $Idf_{t}$ é uma medida de informatividade do termo $t$, que afeta o rankeamento de documentos para consultas com pelo menos dois
+  termos. Com ele aumentamos o peso relativo de termos raros e diminuimos o peso relativo
+  de termos muito frequentes. O definimos da seguinte maneira:
 
-$$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
+  $$ Idf_{t}\ = \ log\ \frac{N}{df_{t}}$$
 
-\item \textbf{Bag-of-Words}
-\item \textbf{Skipgram}
+  Onde $df_{t}$ é a frequência de documento, o número de documentos em que $t$ ocorre. Consideramos $df_{t}$ uma medida inversa da informatividade
+  do termo $t$.
 
-Explicar pq é um modelo adequado para o meu problema
+  Ao multiplicarmos o termo $Idf$ ao nosso peso ponderado $W_{t,d}$, temos a medida Tf-Idf. O peso Tf-Idf aumenta com o número de ocorrências
+  dentro de um documento e com a raridade do termo na coleção. É considerado o melhor esquema de ponderação em recuperação da informação.
+
+  $$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
+
 \end{description}
 
 \subsection{Objetivo}
@@ -735,6 +806,7 @@ infectados no passo $t_{i-1}$. Por exemplo, possuindo a matriz booleana abaixo:
   
   Realizando esse procedimento para cada passo da simulação, construímos a disseminação na rede completa.
 
+  
 \pagebreak  
 \section{Resultados}
  
@@ -762,7 +834,7 @@ onde podemos observar o espalhamento da notícia escolhida.
 Após calcular a matriz de documentos e a matriz de similaridades, precisamos definir o tempo máximo de influencia de um artigo, e a similaridade de cosseno
 mínima para definir similaridade. Para isso calculamos a distribuição de cada uma dessas métricas:
 
-\begin{figure}[h]
+\begin{figure}[ht]
  \centering
  \includegraphics[scale=0.4]{./2.png}
  % 2.png: 600x600 pixel, 72dpi, 21.17x21.17 cm, bb=0 0 600 600
@@ -773,17 +845,16 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 \subsubsection{Visualizações da Rede Real}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
  \centering
- \includegraphics[scale=0.4]{../results/a.png}
+ \includegraphics[scale=0.7]{../results/a.png}
  % a.png: 1075x623 pixel, 72dpi, 37.92x21.98 cm, bb=0 0 1075 623
  \caption{Rede Disseminação Real x Passo}
 \end{figure}
 
 
-\begin{figure}[h]
- \centering
- \includegraphics[scale=0.4]{../results/t.png}
+\begin{figure}[ht]
+ \includegraphics[scale=0.8]{../results/t.png}
  % t.png: 959x540 pixel, 72dpi, 33.83x19.05 cm, bb=0 0 959 540
  \caption{Rede Disseminação Real x Tempo}
 \end{figure}
@@ -792,9 +863,9 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 \subsection{Simulação Rede de Disseminação}
 
 \subsubsection{Resultado Simulação}
-\begin{figure}[h]
+\begin{figure}[ht]
  \centering
- \includegraphics[scale=0.6]{../data/charlie/simulation.png}
+ \includegraphics[scale=0.7]{../data/charlie/simulation.png}
  % simulation.png: 781x584 pixel, 100dpi, 19.84x14.83 cm, bb=0 0 562 420
  \caption{Simulação Modelo}
 \end{figure}
@@ -803,7 +874,23 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 
 \subsubsection{Visualizações da Rede Simulada}
 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.8]{../results/simul.png}
+ \caption{Rede Simulada x Tempo}
+\end{figure}
 
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.4]{../results/Untitled.png}
+ % Untitled.png: 1024x1024 pixel, 72dpi, 36.12x36.12 cm, bb=0 0 1024 1024
+ \caption{Rede Simulada x Passo}
+\end{figure}
+
+
+
+
+\pagebreak
 \section{Conclusão}
 
 

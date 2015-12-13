@@ -1,12 +1,14 @@
 \select@language {portuguese}
-\contentsline {figure}{\numberline {1}{\ignorespaces Rede Real Gen\IeC {\'e}rica}}{8}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{10}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rede Completa}}{11}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Dissemina\IeC {\c c}\IeC {\~a}o na Rede Completa}}{11}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Pesos na Rede Completa}}{12}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama Defini\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{15}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{16}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{17}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{18}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{18}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o Modelo}}{19}{figure.11}
+\contentsline {figure}{\numberline {1}{\ignorespaces Rede Real Gen\IeC {\'e}rica}}{10}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{12}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rede Completa}}{13}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Dissemina\IeC {\c c}\IeC {\~a}o na Rede Completa}}{13}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Pesos na Rede Completa}}{14}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama Defini\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{17}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{18}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{19}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{20}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{21}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o Modelo}}{22}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Rede Simulada x Tempo}}{23}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Rede Simulada x Passo}}{24}{figure.13}
