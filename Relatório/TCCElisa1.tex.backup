@@ -15,12 +15,12 @@
 \usepackage[lmargin=3cm,rmargin=3cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
 \setlength{\parindent}{1cm}
 \setlength{\baselineskip}{1.5cm}
-\renewcommand{\contentsname}{Sumário}
+
 \renewcommand{\contentsname}{Sumário}
 \hypersetup{
     bookmarks=false,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdftoolbar=true,        % show Acroat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
@@ -239,8 +239,8 @@ O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topogr�
 \label{sec:nlp}
 
 Processamento de Linguagem Natural \textit{(Natural Process Lenguage - NLP)} é uma área de Inteligência Artifical que tem como principal
-objetivo desenvolver métodos computacionais que consigam traduzir a linguagem natural em uma linguagem computacional. A utilização desses
-métodos é fundamental em tarefas que envolvem a utilização de banco de dados com corpus linguístico, pois a partir deles podemos
+objetivo desenvolver métodos computacionais que consigam traduzir a linguagem natural para a máquina. A utilização desses
+métodos é fundamental em tarefas que envolvem análises conjuntos de dados, pois a partir deles podemos
 traduzir os textos para uma linguagem compreensivel ao computador.
 
 \begin{description}
@@ -255,69 +255,89 @@ traduzir os textos para uma linguagem compreensivel ao computador.
     \textit{stemming}, que consiste em radicalizar cada termo do documento. Dessa forma, palavras que possuem o menos radical são consideradas
     iguais, já que representam a mesma definição.
     
+    Temos como exemplo as duas frases a seguir:
+    
+    \begin{center}
+      \begin{enumerate}
+	\item João gosta de jogar futebol. Maria prefere jogar xadrez.
+	\item Maria não gosta de futebol.
+      \end{enumerate}
+    \end{center}
+    
+
+    Após o pré-processamento temos:
+    
+    \begin{center}
+      \begin{enumerate}
+	\item (joão, gost, jog, futebol, maria, prefer, jog, xadrez)
+	\item (maria, não, gost, futebol)
+      \end{enumerate}
+    \end{center}
+    
     
   \item \textbf{Bag-of-Words}
   
    O modelo bag-of-words é uma forma de representar vetorialmente um texto muito usada em Processamento de Linguagem Natural e em
    Recuperação de Informação. O modelo consiste em aprender um vocabulário baseado em todos
    os documentos pré processados do conjunto de dados, e então modelar o documento a partir número de vezes em que
-   cada palavra do vacabulário aparece. 
- 
- \item \textbf{Skipgram}
+   cada palavra do vacabulário aparece. Dessa forma, cada documento é representado por um 'saco de palavras', o que, apesar de manter
+   multiplicadade, causa uma perda de informação, visto que não leva em consideração a ordem  e posição das palavras.
+   
+   Exemplifcamos o proocesso a seguir, considerando as frases pré processadas na seção anterior:
+   
+    \begin{center}
+      \begin{enumerate}
+	\item (joão, gost, jog, futebol, maria, prefer, jog, xadrez)
+	\item (maria, não, gost, futebol)
+      \end{enumerate}
+    \end{center}
+    
+    Cria-se então o vocabulário do conjunto de dados:
+    
+   \begin{center}
+    \{joão, gost, jog, futebol, maria, prefer, xadrez, não\}
+   \end{center}
 
-  Explicar pq é um modelo adequado para o meu problema
+   A partir desse vocabulário, criamos então, o vetor referente a cada palavra:
+
+    \begin{center}
+      \begin{enumerate}
+	\item (1,1,2,1,1,1,1,0)
+	\item (0,1,0,1,1,0,0,1)
+      \end{enumerate}
+    \end{center}
+   
  
+ \item \textbf{Skip-gram}
+
+  O \textit{Skip-gram} é um modelo deep-learning que tem como objetivo representar palavras com o maior valor semântico possível, ou seja
+  uma representação que leva em consideração o contexto. Intruduzido
+  por \cite{mikolov2013efficient}, o skip-gram é uma rede neural que ao treinar um corpus linguístico, retorna para cada palavra um vetor 
+  representativo de atributos.
+  
+  A maior vantagem desse modelo é que palavras semelhantes possuem vetores próximos no espaço, ou seja, atráves dos atributos calculados pelo
+  modelo conseguimos definir a semelhança semântica entre duas palavras. Esse fator faz do skip-gram um modelo essencial para este trabalho
+  que tem na semelhança entre textos uma de suas principais eurísticas.
+  
  \item \textbf{TF-IDF}
  
   O modelo Tf-Idf (\textit{term frequency-inverse document frequency}), é uma medida estatística que tem o intuito de indicar
-  a importância de uma palavra de um documento em relação a um corpus linguístico muito usada para rankeamento de documentos em uma consulta. O Tf-Idf trata-se do produto entre as estatísticas $Tf_{d,t}$ e
-  $Idf_{t}$.
+  a importância de uma palavra de um documento em relação a um corpus linguístico. O Tf-Idf é definido através do produto entre as 
+  estatísticas $Tf_{d,t}$ e $Idf_{t}$.
 
 
   Dado um conjunto de $N$ documentos, $Tf_{d,t}$ é a frequência do termo $t$ no documento
-  $d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Usamos o termo $Tf$ para computar escores de correspondência consulta-documento,
-  porém, o $Tf$ nos dá a frequência absoluta dos termos, o que faz com que um termo que possua $Tf=10$ seja 10 vezes mais relevante do um que possua
-  $Tf=1$. 
+  $d$, ou seja, o número de vezes em que $t$ ocorre em $d$. Sendo assim, o $Tf$ nos dá a frequência absoluta dos termos, 
+  o que faz com que um termo que possua uma maior frequência no texto seja mais relevante.
 
-  Podemos concordar que um documento com $Tf=10$ é mais relevante do que um com $Tf=1$, porém não necessariamente 10 vezes mais relevante.
-  A relevância não aumenta em proporção com a frequência do termo. Para contornar isso, é comum usar ao invés da frequência absoluta uma ponderação
-  pelo $Log$ da frequência. Dessa forma, o peso $log$ da frequência do termo $t$ em $d$ é definido como:
-
-  \begin{equation}
-    W_{t,d}=\begin{cases}
-	      1 + logTf_{t,d}  \hspace{1cm} \text{se} \ Tf_{t,d} > 0 \\
-	      0 \ \hspace{3cm} \text{caso contrário}
-	    \end{cases}
-  \end{equation}
-
-
-  Exemplificamos abaixo a correspondência de valores $Tf_{t,d}$ absoluto com a ponderação $W_{t,d}$:
-
-  \begin{center}
-  \begin{tabular}{ll}
-    \hline
-    $Tf_{t,d}$ & $W_{t,d}$\\
-    \hline
-    0&0\\
-    1&1\\
-    2&1.3\\
-    10&2\\
-    1000&4\\
-    
-  \end{tabular}
-  \end{center}
-
-
-  Sabemos que nem todo termo frequente em um documento pode ser considerado muito relevante. Consideramos uma consulta com dois termos:
+  Sabemos que nem todo termo frequente em um documento
+  pode ser considerado como relevante. Consideramos uma consulta com dois termos:
   um frequente no conjunto de documentos e outro raro. Não queremos que um documento que possua o termo frequente seja mais relevante do que o
   documento que possua o termo raro.
 
-  Inferimos então que termos raros são mais informativos do que termos frequentes. Dessa forma, queremos dar uma maior relevância para
-  termos raros do que para termos muito frequentes. Para incluir isso em nossa medida usamos o termo $Idf$.
-
-  O termo $Idf_{t}$ é uma medida de informatividade do termo $t$, que afeta o rankeamento de documentos para consultas com pelo menos dois
-  termos. Com ele aumentamos o peso relativo de termos raros e diminuimos o peso relativo
-  de termos muito frequentes. O definimos da seguinte maneira:
+  Dessa forma, concluimos que termos raros são mais informativos do que termos frequentes, e logo, devemos dá-los uma maior relevância.
+  Para incluir esse fator em nossa medida utlizamos o termo $Idf$, que aumenta o peso relativo de termos raros e diminui o 
+  peso relativo de termos muito frequentes. O definimos da seguinte maneira:
 
   $$ Idf_{t}\ = \ log\ \frac{N}{df_{t}}$$
 

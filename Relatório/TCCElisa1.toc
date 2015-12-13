@@ -5,20 +5,20 @@
 \contentsline {subsubsection}{\numberline {1.2.1}O espalhamento de not\IeC {\'\i }cias como um processo de cont\IeC {\'a}gio}{6}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Processos Epidemiol\IeC {\'o}gicos em Redes Complexas}{6}{subsubsection.1.2.2}
 \contentsline {subsubsection}{\numberline {1.2.3}Processamento de Linguagem Natural}{6}{subsubsection.1.2.3}
-\contentsline {subsection}{\numberline {1.3}Objetivo}{9}{subsection.1.3}
-\contentsline {section}{\numberline {2}Metodologia}{10}{section.2}
-\contentsline {subsection}{\numberline {2.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{10}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Matriz de Documentos}{11}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Constru\IeC {\c c}\IeC {\~a}o da Rede}{12}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{13}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Cria\IeC {\c c}\IeC {\~a}o Rede Completa}{14}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Simula\IeC {\c c}\IeC {\~a}o}{15}{subsubsection.2.2.2}
-\contentsline {section}{\numberline {3}Resultados}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{18}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Definindo Par\IeC {\^a}metros}{18}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Visualiza\IeC {\c c}\IeC {\~o}es da Rede Real}{18}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{18}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Resultado Simula\IeC {\c c}\IeC {\~a}o}{18}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Rede Simulada}{18}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Visualiza\IeC {\c c}\IeC {\~o}es da Rede Simulada}{18}{subsubsection.3.2.3}
-\contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{19}{section.4}
+\contentsline {subsection}{\numberline {1.3}Objetivo}{8}{subsection.1.3}
+\contentsline {section}{\numberline {2}Metodologia}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{9}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Matriz de Documentos}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Constru\IeC {\c c}\IeC {\~a}o da Rede}{11}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{12}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Cria\IeC {\c c}\IeC {\~a}o Rede Completa}{13}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Simula\IeC {\c c}\IeC {\~a}o}{14}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}Resultados}{17}{section.3}
+\contentsline {subsection}{\numberline {3.1}Rede de Dissemina\IeC {\c c}\IeC {\~a}o Real}{17}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Definindo Par\IeC {\^a}metros}{17}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Visualiza\IeC {\c c}\IeC {\~o}es da Rede Real}{17}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Simula\IeC {\c c}\IeC {\~a}o Rede de Dissemina\IeC {\c c}\IeC {\~a}o}{17}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Resultado Simula\IeC {\c c}\IeC {\~a}o}{17}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Rede Simulada}{17}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Visualiza\IeC {\c c}\IeC {\~o}es da Rede Simulada}{17}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{18}{section.4}

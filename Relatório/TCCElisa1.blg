@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: TCCElisa1.aux
 The style file: plainnat.bst
 Database file #1: ref.bib
-You've used 1 entry,
+You've used 2 entries,
             2773 wiz_defined-function locations,
-            597 strings with 5021 characters,
-and the built_in function-call counts, 496 in all, are:
-= -- 37
-> -- 39
+            602 strings with 5199 characters,
+and the built_in function-call counts, 959 in all, are:
+= -- 74
+> -- 78
 < -- 0
-+ -- 13
-- -- 12
-* -- 42
-:= -- 86
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 7
-chr.to.int$ -- 1
-cite$ -- 2
-duplicate$ -- 20
-empty$ -- 32
-format.name$ -- 13
-if$ -- 94
++ -- 26
+- -- 24
+* -- 82
+:= -- 162
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 14
+chr.to.int$ -- 2
+cite$ -- 4
+duplicate$ -- 40
+empty$ -- 63
+format.name$ -- 26
+if$ -- 187
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 14
+missing$ -- 2
+newline$ -- 18
+num.names$ -- 8
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 12
 quote$ -- 0
-skip$ -- 17
+skip$ -- 33
 stack$ -- 0
-substring$ -- 2
-swap$ -- 1
+substring$ -- 4
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 11
+type$ -- 22
 warning$ -- 0
-while$ -- 3
+while$ -- 6
 width$ -- 0
-write$ -- 19
+write$ -- 31
