@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  14 DEC 2015 01:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  14 DEC 2015 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1100,7 +1100,7 @@ Overfull \hbox (1.16199pt too wide) in paragraph at lines 377--378
 ossa rede de dissemina[][]ao
  []
 
-<./rede1.png, id=224, 963.6pt x 722.7pt>
+<./rede1.png, id=231, 963.6pt x 722.7pt>
 File: ./rede1.png Graphic file (type png)
  <use ./rede1.png>
 Package pdftex.def Info: ./rede1.png used on input line 382.
@@ -1127,7 +1127,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 483.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 483.
-[10] <./rede2.png, id=249, 471.7625pt x 417.56pt>
+[10] <./rede2.png, id=256, 471.7625pt x 417.56pt>
 File: ./rede2.png Graphic file (type png)
  <use ./rede2.png>
 Package pdftex.def Info: ./rede2.png used on input line 520.
@@ -1139,13 +1139,13 @@ Package babel Info: Redefining portuges shorthand "|
  [11 <./rede2.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 539.
- <./rede3.png, id=256, 963.6pt x 722.7pt>
+ <./rede3.png, id=263, 963.6pt x 722.7pt>
 File: ./rede3.png Graphic file (type png)
  <use ./rede3.png>
 Package pdftex.def Info: ./rede3.png used on input line 553.
 (pdftex.def)             Requested size: 192.0548pt x 144.0412pt.
 
-<./rede4.png, id=257, 963.6pt x 722.7pt>
+<./rede4.png, id=264, 963.6pt x 722.7pt>
 File: ./rede4.png Graphic file (type png)
  <use ./rede4.png>
 Package pdftex.def Info: ./rede4.png used on input line 559.
@@ -1157,7 +1157,7 @@ Package babel Info: Redefining portuges shorthand "|
  [12 <./rede3.png> <./rede4.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 567.
- <./rede5.png, id=264, 545.03625pt x 346.29375pt>
+ <./rede5.png, id=271, 545.03625pt x 346.29375pt>
 File: ./rede5.png Graphic file (type png)
 
 <use ./rede5.png>
@@ -1175,7 +1175,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 695.
  [14]
-<./diagrama1.png, id=285, 963.6pt x 722.7pt>
+<./diagrama1.png, id=292, 963.6pt x 722.7pt>
 File: ./diagrama1.png Graphic file (type png)
  <use ./diagrama1.png>
 Package pdftex.def Info: ./diagrama1.png used on input line 766.
@@ -1205,7 +1205,7 @@ Package babel Info: Redefining portuges shorthand "|
 [16 <./diagrama1.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 778.
- <./grafic.png, id=299, 433.62pt x 289.08pt>
+ <./grafic.png, id=306, 433.62pt x 289.08pt>
 File: ./grafic.png Graphic file (type png)
 
 <use ./grafic.png>
@@ -1220,7 +1220,7 @@ Package babel Info: Redefining portuges shorthand "|
  [17 <./grafic.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 805.
- <./2.png, id=305, 602.25pt x 602.25pt>
+ <./2.png, id=312, 602.25pt x 602.25pt>
 File: ./2.png Graphic file (type png)
 
 <use ./2.png>
@@ -1234,14 +1234,14 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 823.
 
-<../Notebook/dist_outs.png, id=312, 433.62pt x 289.08pt>
+<../Notebook/dist_outs.png, id=319, 433.62pt x 289.08pt>
 File: ../Notebook/dist_outs.png Graphic file (type png)
 
 <use ../Notebook/dist_outs.png>
 Package pdftex.def Info: ../Notebook/dist_outs.png used on input line 835.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
-<../results/a.png, id=313, 1079.03125pt x 625.33624pt>
+<../results/a.png, id=320, 1079.03125pt x 625.33624pt>
 File: ../results/a.png Graphic file (type png)
  <use ../results/a.png>
 Package pdftex.def Info: ../results/a.png used on input line 852.
@@ -1261,7 +1261,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 872.
  [20 <../results/a.png>]
-<../results/t.png, id=323, 953.5625pt x 542.025pt>
+<../results/t.png, id=330, 953.5625pt x 542.025pt>
 File: ../results/t.png Graphic file (type png)
  <use ../results/t.png>
 Package pdftex.def Info: ../results/t.png used on input line 873.
@@ -1281,7 +1281,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 896.
 
-<../data/charlie/simulation.png, id=332, 564.4287pt x 422.0568pt>
+<../data/charlie/simulation.png, id=339, 564.4287pt x 422.0568pt>
 File: ../data/charlie/simulation.png Graphic file (type png)
 
 <use ../data/charlie/simulation.png>
@@ -1304,7 +1304,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 939.
 
-<../results/simul.png, id=343, 654.445pt x 485.815pt>
+<../results/simul.png, id=350, 654.445pt x 485.815pt>
 File: ../results/simul.png Graphic file (type png)
 
 <use ../results/simul.png>
@@ -1320,40 +1320,59 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 957.
 [23 <../results/simul.png>]
-<../results/Untitled.png, id=348, 1027.84pt x 1027.84pt>
+<../results/Untitled.png, id=355, 1027.84pt x 1027.84pt>
 File: ../results/Untitled.png Graphic file (type png)
 
 <use ../results/Untitled.png>
 Package pdftex.def Info: ../results/Untitled.png used on input line 961.
 (pdftex.def)             Requested size: 411.12872pt x 411.12872pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 977.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 977.
- [24 <../results/Untitled.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 977.
- (./TCCElisa1.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 984.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 984.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 984.
+(babel)             in language  on input line 974.
 
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 984.
+Overfull \hbox (9.95706pt too wide) in paragraph at lines 976--978
+\OT1/ptm/m/n/12 out-degrees com a da rede real. Na fi-gura abaixo po-de-mos ver
+ o his-to-grama das distribui[][]oes
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 978.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 978.
+[24 <../results/Untitled.png>]
+<../Notebook/teste.png, id=361, 578.16pt x 433.62pt>
+File: ../Notebook/teste.png Graphic file (type png)
+
+<use ../Notebook/teste.png>
+Package pdftex.def Info: ../Notebook/teste.png used on input line 981.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 991.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 991.
+ [25 <../Notebook/teste.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 991.
+ (./TCCElisa1.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 998.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 998.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 998.
+
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 998.
  (./TCCElisa1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 984.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 984.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 998.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 998.
 Package rerunfilecheck Info: File `TCCElisa1.out' has not changed.
-(rerunfilecheck)             Checksum: 43CE6BDE3111946929D0E3797AA31B85;1815.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 984.
+(rerunfilecheck)             Checksum: 03FA82218A9EF6F60704AEDE9FF70C47;1907.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 998.
  ) 
 Here is how much of TeX's memory you used:
- 16466 strings out of 495004
- 283914 string characters out of 6180662
- 373281 words of memory out of 5000000
- 19228 multiletter control sequences out of 15000+600000
+ 16475 strings out of 495004
+ 284082 string characters out of 6180662
+ 372281 words of memory out of 5000000
+ 19233 multiletter control sequences out of 15000+600000
  44599 words of font info for 90 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  63i,11n,76p,445b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1366,10 +1385,10 @@ urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/us
 yr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCCElisa1.pdf (28 pages, 2225378 bytes).
+Output written on TCCElisa1.pdf (29 pages, 2244262 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 280 words of extra memory for PDF output out of 10000 (max. 10000000)
 

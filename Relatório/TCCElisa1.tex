@@ -971,6 +971,20 @@ taxa de infecção ($\lambda$) constante. Como no mundo real a taxa de infeccios
 para atingir seu máximo. Ao utilizar uma taxa constante, estamos desconsiderando qualquer fator externo e supondo que não existem
 variações na infecciosidade da doença com o  passar do tempo, o que explica a epidemia ocorrer tão rapidamente em nosso modelo.
 
+\subsubsection{Validação da Rede Simulada}
+
+Para testar a autenticidade de nossa rede simulada, comparamos a distribuição de out-degrees com a da rede real. Na figura abaixo podemos ver
+o histograma das distribuições e as funções aproximadas de cada uma:
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{../Notebook/teste.png}
+ % teste.png: 576x432 pixel, 72dpi, 20.32x15.24 cm, bb=0 0 576 432
+ \caption{Comparação Out-Degrees}
+\end{figure}
+
+Vemos que as redes possuem distribuições de out-degrees muito parecidas, o que nos certifica de que possuímos um modelo adequado para
+simular a disseminação de notícias.
 
 
 \pagebreak
