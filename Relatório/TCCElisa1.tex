@@ -229,10 +229,15 @@ de forma que fique o mais verídica possível.
 
 \subsubsection{Processos Epidemiológicos em Redes Complexas}
 
-O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
- de vértices (nós) que são interligados por meio de arestas (Barabási, 2003). A teoria das Redes Complexas  está relacionada com a modelagem de redes reais, através da 
- análise de dados empíricos. Redes Complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
+ O termo Redes Complexas se refere a um grafo que apresenta uma estrutura topográfica não trivial, composto por um conjunto
+ de vértices (nós) que são interligados por meio de arestas (\cite{ravasz2003hierarchical}). A teoria das Redes Complexas  
+ está relacionada com a modelagem de redes reais, através da 
+ análise de dados empíricos. As redes complexas não são estáticas (evoluem no tempo alterando sua estrutura), e 
  constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
+ 
+ Um processo dinâmico comumente modelado como rede complexa é a disseminação de uma doença na população. Através da rede
+ conseguimos observar o processo de infecção dinâmicamente, e realizar análises que trazem resutados significativos para o modelo epidemico,
+ como estudar os caminhos percorridos e definir parâmetros de infecciosidade.
  
  
 \subsubsection{Processamento de Linguagem Natural}
@@ -341,7 +346,7 @@ traduzir os textos para uma linguagem compreensivel ao computador.
 
 \subsection{Objetivo}
 
-Esse trabalho tem como principal objetivo caracterizar a dinâmica de disseminação das notícias no país através de redes complexas.
+Esse trabalho tem como principal objetivo caracterizar e modelar a dinâmica de disseminação das notícias no país através de redes complexas.
 
 
 
@@ -389,8 +394,8 @@ Sendo assim, foi definido como o influenciador dos dois, ou seja, foi o artigo q
 Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma determinada notícia, formando o corpus linguístico que 
 utilizaremos para criar a matriz de documentos, representação vetorial dos artigos selecionados.
 
-Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}, ferramenta que promove uma implementação 
-eficiente do modelo \textit{skip-gram} e \textit{bag-of-words} contínuo (inserir referencia).\todo{preciso explicar mais sobre o word2vec?}
+Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}}, ferramenta que promove uma implementação 
+eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec?}
 
 Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs?}, fornecemos como entrada nosso corpus linguístico
 e o modelo nos retorna uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as palavras contidas no corpus e as colunas $t_{1},t_{2},...,t_{n}$
@@ -789,13 +794,20 @@ a cair gradativamente.
 
 \subsection{Rede de Disseminação Real}
 
-Utilizando as metodologias descritas na seção {incluir label} para o conjunto de dados da notícia escolhida, construímos uma rede de disseminação
-onde podemos observar o espalhamento da notícia escolhida.
+Utilizando os dados descritos na seção anterior, construímos a matriz de documentos, que obteve o tamanho 2115x300, onde 2115 são as linhas
+que representam cada artigo e o 300 se refere às colunas, que são os atributos definidos pelo modelo \textit{skipgram}.
 
+Podemos observar que o número de artigos na matriz é inferior ao número de artigos totais do conjunto de dados. Isso aconteceu pois 
+alguns artigos não obtiveram resultados satisfatórios durante o processo de tokenização, e por isso, foram descartados do conjunto de dados.
+
+Possuindo a matriz de documentos, calculamos então, a matriz de similaridades para podermos construis a rede de disseminação.
+
+\pagebreak
 \subsubsection{Definindo Parâmetros}
 
-Após calcular a matriz de documentos e a matriz de similaridades, precisamos definir o tempo máximo de influencia de um artigo, e a similaridade de cosseno
-mínima para definir similaridade. Para isso calculamos a distribuição de cada uma dessas métricas:
+Após calcular a matriz de documentos e a matriz de similaridades, antes de construir a rede de disseminação,
+precisamos definir o tempo máximo de influência de um artigo, e a similaridade de cosseno
+mínima para definir se dois artigos são similares. Para isso calculamos a distribuição de cada uma dessas métricas:
 
 \begin{figure}[ht]
  \centering
@@ -805,27 +817,101 @@ mínima para definir similaridade. Para isso calculamos a distribuição de cada
 \end{figure}
 
 
+Observando as distribuições acima, definimos como similaridade mínima x e tempo máximo de influência de um artigo y.
+
+\pagebreak
 \subsubsection{Visualizações da Rede Real}
 
+Utilizando os parâmetros definidos acima, construimos finalmente nossa rede de disseminação do conjunto de dados escolhido.
+A rede encontrada possui 1786 vértices, onde cada vértice é um artigo.
+
+Durante a criação da rede, artigos que não possuiam uma relação de influência com nenhum outro foram descartados, o que explica a diferença
+do número de nós para o número de artigos presentes na matriz de documentos.
+
+Abaixo temos a distribuição de \textit{out-degrees} da rede:
 
 \begin{figure}[ht]
  \centering
- \includegraphics[scale=0.7]{../results/a.png}
- % a.png: 1075x623 pixel, 72dpi, 37.92x21.98 cm, bb=0 0 1075 623
- \caption{Rede Disseminação Real x Passo}
+ \includegraphics[scale=0.7]{../Notebook/dist_outs.png}
+ % dist_outs.png: 432x288 pixel, 72dpi, 15.24x10.16 cm, bb=0 0 432 288
+ \caption{Distribuição Out-degrees Rede Real}
 \end{figure}
 
+Podemos reparar que, como esperado, possuimos poucos nós com grande grau de influência, isso é, poucos artigos são muito influentes na
+mídia. 
 
+Abaixo podemos ver uma visualização da rede criada. Nela, o eixo x representa o passo da infecção, ou seja, os vértices que estão na 
+segunda coluna foram influeciados pelos que estão na primeira coluna. Os que estão na terceira coluna foram influenciados pelos da segunda, 
+assim sucessivamente. 
+
+O tamanho e cor do vértice indicam o valor do out-degree, quanto maior e mair escuro maior seu out-degree. O mesmo se aplica ao tamanho
+do veículo de cada vértice, ou seja, o veículo que publicou o artigo referente ao vértice em questão.
+
+\begin{flushleft}
+  \begin{figure}[ht]
+  \includegraphics[scale=0.5]{../results/a.png}
+  % a.png: 1075x623 pixel, 72dpi, 37.92x21.98 cm, bb=0 0 1075 623
+  \caption{Rede Disseminação Real x Passo}
+  \end{figure}
+\end{flushleft}
+\pagebreak
+
+Observando a visualização, vemos que a epidemia acontece rapidamente. Podemos visualizar também alguns veículos como principais influenciadores
+em nossa rede, os dois mais influentes são o g1.globo.com e o gazetadopovo.com.br.
+
+Outra forma de visualizar nossa rede é organizar os vértices em função do tempo ao invés do passo de contágio. Abaixo vemos a visualização
+onde o eixo x é o tempo, e cada coluna é o tempo $t$ de publicação dos artigos presente nela. Para construir a visualização, definimos
+como tempo $t_{0}$ a data de publicação do primeiro artigo publicado. Como espaçar $t$ de hora em hora nos resultou em uma visualização muito confusa,
+ resolvemos espaçar de 3 em 3 horas. Dessa forma, na segunda coluna $t_{1}$ encontramos todos os artigos publicados 3 horas após a publicação
+ do primeiro artigo, e assim por diante.
+
+Encontramos assim, uma visualização bem longa, com um formato semelhante de um cone deitado. Na medida que o tempo vai passando, nossas
+colunas vão diminuindo até não termos mais nenhum artigo. Abaixo mostramos um corte da parte inicial da visualização:
+
+\pagebreak
 \begin{figure}[ht]
- \includegraphics[scale=0.8]{../results/t.png}
+ \includegraphics[scale=0.5]{../results/t.png}
  % t.png: 959x540 pixel, 72dpi, 33.83x19.05 cm, bb=0 0 959 540
  \caption{Rede Disseminação Real x Tempo}
 \end{figure}
 
+É interessante ver nessa visualização, que os artigos mais influentes se concentram nas primeiras colunas de artigos. Isto é, os artigos que mais
+influenciaram sobre a notícia em questão na mídia, foram os publicados bem no início da disseminação.
+
 
 \subsection{Simulação Rede de Disseminação}
 
+O primeiro passo para a criação da rede simulada, consistia em criar uma rede completa, onde os vértices são os mesmos
+da rede real e as arestas são as probabilidades das conexões existirem. Para a construção da rede completa, precisamos
+inicialmente das probabilidades de influência entre cada par de veículo presente em nossos dados.
+
+Sendo assim, construímos uma matriz quadrada de probabilidades de influências. A matriz encontrado possui o tamanho 84x84, uma vez que
+possuímos 84 veículos responsáveis pela publicação dos artigos de nosso conjunto de dados.
+
+Possuindo a matriz de probabilidades, podemos dar início à construção da rede completa. Realizando as metodologias de construção da matriz
+completa, encontramos uma matriz quadrada de tamanho 1786x1786 (número de vértices da rede real). 
+
+
+\pagebreak
 \subsubsection{Resultado Simulação}
+
+Possuingo a matriz de adjacência da rede completa, podemos realizar a simulação do modelo. Porém, precisamos primeiro definir o valor do 
+parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construimos as redes a partir desses
+resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Vemos na tabela
+abaixo alguns valores de diferenças encontrados:
+
+\begin{center}
+ \begin{tabular}{cc}
+  $\lambda$ & KL \\
+   0.1 & y\\
+   0.01 & y \\
+   0.5 & y
+ \end{tabular}
+\end{center}
+
+O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda=0.1$, logo, foi o $\lambda$ utilizado para obter os
+resultados a seguir. Abaixo vemos o resultado da simulação utilizando o parâmetro escolhido:
+
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.7]{../data/charlie/simulation.png}

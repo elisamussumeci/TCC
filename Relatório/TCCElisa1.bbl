@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{3}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -17,5 +17,10 @@ Romualdo Pastor-Satorras, Claudio Castellano, Piet Van~Mieghem, and Alessandro
   Vespignani.
 \newblock Epidemic processes in complex networks.
 \newblock \emph{arXiv preprint arXiv:1408.2701}, 2014.
+
+\bibitem[Ravasz and Barab{\'a}si(2003)]{ravasz2003hierarchical}
+Erzs{\'e}bet Ravasz and Albert-L{\'a}szl{\'o} Barab{\'a}si.
+\newblock Hierarchical organization in complex networks.
+\newblock \emph{Physical Review E}, 67\penalty0 (2):\penalty0 026112, 2003.
 
 \end{thebibliography}
