@@ -4,34 +4,14 @@
     <list default="true" id="4ecf4090-0ff1-4eef-96dc-bd8bc70de907" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/Relatório/graph.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Relatório/la.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-0.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-1.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-10.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-11.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-12.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-13.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-2.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-3.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-4.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-5.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-6.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-7.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-8.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1-9.png" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1-9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex.backup" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gexf-js" afterPath="$PROJECT_DIR$/gexf-js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/Simulações.ipynb" afterPath="$PROJECT_DIR$/Notebook/Simulações.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" afterPath="$PROJECT_DIR$/Notebook/TCC - Word2Vec Similaridade.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.bbl" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.bbl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.blg" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.blg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.lof" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.lof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.log" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" afterPath="$PROJECT_DIR$/Relatório/TCCElisa1.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebook/gephi/grafo_original.graphml" afterPath="$PROJECT_DIR$/Notebook/gephi/grafo_original.graphml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/ref.bib" afterPath="$PROJECT_DIR$/Relatório/ref.bib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation_sage.sage" afterPath="$PROJECT_DIR$/simulation_sage.sage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TCC.iws" />
@@ -78,20 +58,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simulation_sage.sage" pinned="false" current-in-tab="false">
+      <file leaf-file-name="simulation_sage.sage" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1011" max-vertical-offset="1650">
-              <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.58429563" vertical-offset="1217" max-vertical-offset="1650">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_graph_sim.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_graph_sim.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58429563" vertical-offset="377" max-vertical-offset="855">
+            <state vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="855">
               <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -120,8 +100,8 @@
         <option value="$PROJECT_DIR$/graph_sim_funs.py" />
         <option value="$PROJECT_DIR$/word2vec_graph_funs.py" />
         <option value="$PROJECT_DIR$/create_graphs.py" />
-        <option value="$PROJECT_DIR$/simulation_sage.sage" />
         <option value="$PROJECT_DIR$/create_graph_sim.py" />
+        <option value="$PROJECT_DIR$/simulation_sage.sage" />
       </list>
     </option>
   </component>
@@ -885,23 +865,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1011" max-vertical-offset="1650">
-          <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create_graph_sim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58429563" vertical-offset="377" max-vertical-offset="855">
+        <state vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="855">
           <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#153#1544#0" expanded="false" />
             <element signature="e#1582#2984#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulation_sage.sage">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58429563" vertical-offset="1217" max-vertical-offset="1650">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

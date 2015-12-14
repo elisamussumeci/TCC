@@ -895,7 +895,23 @@ completa, encontramos uma matriz quadrada de tamanho 1786x1786 (número de vért
 \pagebreak
 \subsubsection{Resultado Simulação}
 
-Possuingo a matriz de adjacência da
+Possuingo a matriz de adjacência da rede completa, podemos realizar a simulação do modelo. Porém, precisamos primeiro definir o valor do 
+parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construimos as redes a partir desses
+resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Vemos na tabela
+abaixo alguns valores de diferenças encontrados:
+
+\begin{center}
+ \begin{tabular}{cc}
+  $\lambda$ & KL \\
+   0.1 & y\\
+   0.01 & 0.014 \\
+   0.5 & y
+ \end{tabular}
+\end{center}
+
+O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda=0.1$, logo, foi o $\lambda$ utilizado para obter os
+resultados a seguir. Abaixo vemos o resultado da simulação feita com 3000 passos e utilizando o parâmetro escolhido:
+
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.7]{../data/charlie/simulation.png}
@@ -903,8 +919,15 @@ Possuingo a matriz de adjacência da
  \caption{Simulação Modelo}
 \end{figure}
 
+Na figura acima possuímos 500 curvas, onde cada curva representa curva de infecção de um artigo. Cada ponto do gráfico diz
+respeito à probabilidade do artigo estar infectado no tempo $t$ do modelo. 
+
+O resultado da simulação é um típico resultado para um modelo epidemiológico SIR, o que mostra que nossa matriz de adjacências foi coerente
+para a modelagem do sistema e que nossa rede de disseminação real pode ser descrita sim como um processo epidemiológico.
+
 \subsubsection{Rede Simulada}
 
+A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. Utilizando essa matriz, construímos a rede 
 \subsubsection{Visualizações da Rede Simulada}
 
 \begin{figure}[ht]
@@ -928,7 +951,7 @@ Possuingo a matriz de adjacência da
 
 
 
-\pagebreak
+
 \bibliographystyle{plainnat}
 \bibliography{ref}
 \end{document}

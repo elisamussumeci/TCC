@@ -1,9 +1,26 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bettencourt et~al.(2006)Bettencourt, Cintr{\'o}n-Arias, Kaiser, and
+  Castillo-Ch{\'a}vez]{bettencourt2006power}
+Lu{\'\i}s~MA Bettencourt, Ariel Cintr{\'o}n-Arias, David~I Kaiser, and Carlos
+  Castillo-Ch{\'a}vez.
+\newblock The power of a good idea: Quantitative modeling of the spread of
+  ideas from epidemiological models.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications},
+  364:\penalty0 513--536, 2006.
+
+\bibitem[Chakrabarti et~al.(2008)Chakrabarti, Wang, Wang, Leskovec, and
+  Faloutsos]{chakrabarti2008epidemic}
+Deepayan Chakrabarti, Yang Wang, Chenxi Wang, Jurij Leskovec, and Christos
+  Faloutsos.
+\newblock Epidemic thresholds in real networks.
+\newblock \emph{ACM Transactions on Information and System Security (TISSEC)},
+  10\penalty0 (4):\penalty0 1, 2008.
 
 \bibitem[Mikolov et~al.(2013)Mikolov, Chen, Corrado, and
   Dean]{mikolov2013efficient}
@@ -22,5 +39,12 @@ Romualdo Pastor-Satorras, Claudio Castellano, Piet Van~Mieghem, and Alessandro
 Erzs{\'e}bet Ravasz and Albert-L{\'a}szl{\'o} Barab{\'a}si.
 \newblock Hierarchical organization in complex networks.
 \newblock \emph{Physical Review E}, 67\penalty0 (2):\penalty0 026112, 2003.
+
+\bibitem[Wang et~al.(2003)Wang, Chakrabarti, Wang, and
+  Faloutsos]{wang2003proceedings}
+Y~Wang, D~Chakrabarti, C~Wang, and C~Faloutsos.
+\newblock Proceedings of the 22nd international symposium on reliable
+  distributed systems.
+\newblock 2003.
 
 \end{thebibliography}

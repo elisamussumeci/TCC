@@ -22,3 +22,13 @@
   year={2003},
   publisher={APS}
 }
+
+@article{bettencourt2006power,
+  title={The power of a good idea: Quantitative modeling of the spread of ideas from epidemiological models},
+  author={Bettencourt, Lu{\'\i}s MA and Cintr{\'o}n-Arias, Ariel and Kaiser, David I and Castillo-Ch{\'a}vez, Carlos},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  volume={364},
+  pages={513--536},
+  year={2006},
+  publisher={Elsevier}
+}
