@@ -174,8 +174,7 @@ de abordagem vem sendo utilizada também para entender redes de contatos em rede
 
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
 Para isso
-estudaremos os caminhos percorridos em uma rede de disseminação criada através de modelos de recuperação de informação utilizados em cima
-da base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
+estudaremos os caminhos percorridos em uma rede de disseminação \todo{Estimada a partir da} base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
 
 
 \subsection{O Projeto Media Cloud Brasil}
@@ -394,9 +393,9 @@ Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma d
 utilizaremos para criar a matriz de documentos, representação vetorial dos artigos selecionados.
 
 Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}}, ferramenta que promove uma implementação 
-eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec?}
+eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec? Sim, aqui, por exemplo s\'o usamos o skipgram e n\~ao o CBOW. Al\'em disso \'e preciso dizer os par\^ametros usados para treinar o modelo.}
 
-Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs?}, fornecemos como entrada nosso corpus linguístico
+Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs? Sim tem que dizer que o modelo foi treinado com n documentos, considerando bigramas (?)}, fornecemos como entrada nosso corpus linguístico
 e o modelo nos retorna uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as palavras contidas no corpus e as colunas $t_{1},t_{2},...,t_{n}$
 são os atributos gerados pelo modelo para cada palavra:
  
@@ -808,6 +807,7 @@ Após calcular a matriz de documentos e a matriz de similaridades, antes de cons
 precisamos definir o tempo máximo de influência de um artigo, e a similaridade de cosseno
 mínima para definir se dois artigos são similares. Para isso calculamos a distribuição de cada uma dessas métricas:
 
+\todo{incluir distribuição de tempo}
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.4]{./2.png}
@@ -948,6 +948,13 @@ possível traduzir o passo da simulação para uma unidade de tempo comparável 
  \caption{Rede Simulada x Tempo}
 \end{figure}
 
+O resultado dessa visualização tem um formato parecido com a visualização por tempo da rede real, e por também ser longa, selecionamos 
+apenas seu início como mostrado na figura acima. O primeiro fator que observamos ao analisar a visualização é o fato de todos os vértices
+que possuem um out-degree maior do que um estarem concentrados nos três primeiros passos da simulação. Isso nos mostra que a infecção ocorreu
+mais rápido na simulação do que na rede real. Para chegarmos a mais conclusões observamos a rede abaixo, onde o eixo x consiste no passo da
+infecção, assim como fizemos para a rede real:
+
+
 \begin{figure}[h]
  \centering
  \includegraphics[scale=0.4]{../results/Untitled.png}
@@ -955,7 +962,28 @@ possível traduzir o passo da simulação para uma unidade de tempo comparável 
  \caption{Rede Simulada x Passo}
 \end{figure}
 
+Essa visualização intensifica o observado na figura anterior, em poquíssimo tempo a epidemia se espalhou, necessitando de apenas alguns passos
+para o ciclo da epidemia ocorrer. 
 
+O motivo da epidemia na rede simulada ter ocorrido muito mais rápido do que na rede real é basicamente pelo fato de estarmos lidando com uma
+taxa de infecção ($\lambda$) constante. Como no mundo real a taxa de infecciosidade varia de acordo com fatores externos, a infecção demora mais
+para atingir seu máximo. Ao utilizar uma taxa constante, estamos desconsiderando qualquer fator externo e supondo que não existem
+variações na infecciosidade da doença com o  passar do tempo, o que explica a epidemia ocorrer tão rapidamente em nosso modelo.
+
+\subsubsection{Validação da Rede Simulada}
+
+Para testar a autenticidade de nossa rede simulada, comparamos a distribuição de out-degrees com a da rede real. Na figura abaixo podemos ver
+o histograma das distribuições e as funções aproximadas de cada uma:
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{../Notebook/teste.png}
+ % teste.png: 576x432 pixel, 72dpi, 20.32x15.24 cm, bb=0 0 576 432
+ \caption{Comparação Out-Degrees}
+\end{figure}
+
+Vemos que as redes possuem distribuições de out-degrees muito parecidas, o que nos certifica de que possuímos um modelo adequado para
+simular a disseminação de notícias.
 
 
 \pagebreak

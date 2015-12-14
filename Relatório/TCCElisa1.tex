@@ -174,8 +174,7 @@ de abordagem vem sendo utilizada também para entender redes de contatos em rede
 
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
 Para isso
-estudaremos os caminhos percorridos em uma rede de disseminação criada através de modelos de recuperação de informação utilizados em cima
-da base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
+estudaremos os caminhos percorridos em uma rede de disseminação \todo{Estimada a partir da} base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
 
 
 \subsection{O Projeto Media Cloud Brasil}
@@ -394,9 +393,9 @@ Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma d
 utilizaremos para criar a matriz de documentos, representação vetorial dos artigos selecionados.
 
 Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}}, ferramenta que promove uma implementação 
-eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec?}
+eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec? Sim, aqui, por exemplo s\'o usamos o skipgram e n\~ao o CBOW. Al\'em disso \'e preciso dizer os par\^ametros usados para treinar o modelo.}
 
-Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs?}, fornecemos como entrada nosso corpus linguístico
+Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs? Sim tem que dizer que o modelo foi treinado com n documentos, considerando bigramas (?)}, fornecemos como entrada nosso corpus linguístico
 e o modelo nos retorna uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as palavras contidas no corpus e as colunas $t_{1},t_{2},...,t_{n}$
 são os atributos gerados pelo modelo para cada palavra:
  
@@ -534,6 +533,7 @@ $
     Para isso, calculamos a diferença entre as datas de publicação de cada par de artigos e fazemos a distribuição dessas diferenças. Assim como
     na distribuição de similaridades, realizamos um corte nas extremidades e pegamos os valores limites.
  \end{description}
+ \todo[inline]{Elisa, aqui t\^em que mostrar as distribui\c{c}\~oes e dizer quais foram os valores}
  
 
 \subsection{Simulação Rede de Disseminação}
@@ -688,9 +688,9 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
      \lambda = \dfrac{\beta}{\mu}
     \end{equation}
     
-    A equação (\ref{model}) teve o tempo reescaldo em $\dfrac{1}{\mu}$, o que torna nosso modelo adimensional,
-    como explicado em \citet[p. 939]{pastor2014epidemic}. Podemos interpretar que o tempo de cada passo é o inverso do tempo de 
-    recuperação  média dos artigo. 
+    A equação (\ref{model}) teve o tempo reescalado em $\dfrac{1}{\mu}$, o que torna nosso modelo adimensional,
+    como explicado em \citet[p. 939]{pastor2014epidemic}. Podemos interpretar que o tempo de cada passo é o inverso da taxa de 
+    recuperação  média dos artigos. 
    
     Para tornar o resultado da simulação mais fiel ao nosso conjunto de dados, onde possuimos um decaimento da infecção, ou seja,
     nosso artigos se recuperam (deixam de ser influentes), incrementamos a equação abaixo ao modelo:
@@ -898,16 +898,18 @@ completa, encontramos uma matriz quadrada de tamanho 1786x1786 (número de vért
 Possuingo a matriz de adjacência da rede completa, podemos realizar a simulação do modelo. Porém, precisamos primeiro definir o valor do 
 parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construimos as redes a partir desses
 resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Como sabemos
-que o $\lambda$ crítico do modelo é dado por:
+que o $\lambda$ crítico do modelo é dado por: \todo{dizer que $\lambda_c$ corresponde a $R_0=1$}
 
 $$\lambda_{c} = \dfrac{1}{\Lambda}$$
 
 Onde $\Lambda$ é o maior autovalor da matriz de adjacência (\cite{wang2003proceedings}, \cite{chakrabarti2008epidemic}), então testamos
-valores próximos ao $\lambda_{c}$. Vemos na tabela
-abaixo alguns valores de diferenças encontrados:
+valores próximos ao $\lambda_{c}$. Vemos na tabela \ref{tabela:dist_kl} alguns valores de diferenças encontrados:
 
 \todo{rodar o codigo para pegar esses valores}
-\begin{center}
+\begin{table}
+\caption{Colocar t\'itulo nesta tabela}
+\label{tabela:dist_kl}
+ \begin{center}
  \begin{tabular}{l|c}
    \ \ \ \ \ $\lambda$ & KL \\ \hline
    $\lambda_{c} + 0.1$ & y\\
@@ -915,6 +917,9 @@ abaixo alguns valores de diferenças encontrados:
    $\lambda_{c} + 0.5$ & y
  \end{tabular}
 \end{center}
+\end{table}
+
+
 
 O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda=0.1$, logo, foi o $\lambda$ utilizado para obter os
 resultados a seguir. Abaixo vemos o resultado da simulação feita com 3000 passos e utilizando o parâmetro escolhido:

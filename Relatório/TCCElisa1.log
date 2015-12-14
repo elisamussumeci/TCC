@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  14 DEC 2015 01:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.7)  14 DEC 2015 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **TCCElisa1.tex
 (./TCCElisa1.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 3 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -24,19 +24,19 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
@@ -186,7 +186,7 @@ Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00B8 (decimal 184)
@@ -217,7 +217,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -249,14 +249,14 @@ Now handling font encoding U ...
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -264,7 +264,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -382,19 +382,26 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+Package: babel 2014/09/25 3.9l The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/12/03 3.9h Babel common definitions
+File: babel.def 2014/09/25 3.9l Babel common definitions
 \babel@savecnt=\count102
 \U@D=\dimen116
 )
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Portuguese' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for english instead on input line 55.
+
+\l@portuges = a dialect from \language0
 Package babel Info: Making " an active character on input line 145.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
@@ -405,22 +412,24 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count103
 )
 (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
+Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks25
 \XKV@tempa@toks=\toks26
+)
 \XKV@depth=\count104
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -437,242 +446,281 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks27
-)
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box31
+\pgfutil@tempdima=\dimen117
+\pgfutil@tempdimb=\dimen118
 
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box31
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks28
 \pgfkeys@temptoks=\toks29
 
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
 \pgfkeys@tmptoks=\toks30
 ))
-\pgf@x=\dimen117
-\pgf@y=\dimen118
-\pgf@xa=\dimen119
-\pgf@ya=\dimen120
-\pgf@xb=\dimen121
-\pgf@yb=\dimen122
-\pgf@xc=\dimen123
-\pgf@yc=\dimen124
+\pgf@x=\dimen119
+\pgf@y=\dimen120
+\pgf@xa=\dimen121
+\pgf@ya=\dimen122
+\pgf@xb=\dimen123
+\pgf@yb=\dimen124
+\pgf@xc=\dimen125
+\pgf@yc=\dimen126
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count105
 \c@pgf@countb=\count106
 \c@pgf@countc=\count107
 \c@pgf@countd=\count108
-
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count109
 \pgfsyssoftpath@bigbuffer@items=\count110
 )
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 
-(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen125
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen127
 \pgfmath@count=\count111
 \pgfmath@box=\box32
-\pgfmath@toks=\toks31
-\pgfmath@stack@operand=\toks32
-\pgfmath@stack@operation=\toks33
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
 )
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count112
 ))
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen126
-\pgf@picmaxx=\dimen127
-\pgf@picminy=\dimen128
-\pgf@picmaxy=\dimen129
-\pgf@pathminx=\dimen130
-\pgf@pathmaxx=\dimen131
-\pgf@pathminy=\dimen132
-\pgf@pathmaxy=\dimen133
-\pgf@xx=\dimen134
-\pgf@xy=\dimen135
-\pgf@yx=\dimen136
-\pgf@yy=\dimen137
-\pgf@zx=\dimen138
-\pgf@zy=\dimen139
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen128
+\pgf@picmaxx=\dimen129
+\pgf@picminy=\dimen130
+\pgf@picmaxy=\dimen131
+\pgf@pathminx=\dimen132
+\pgf@pathmaxx=\dimen133
+\pgf@pathminy=\dimen134
+\pgf@pathmaxy=\dimen135
+\pgf@xx=\dimen136
+\pgf@xy=\dimen137
+\pgf@yx=\dimen138
+\pgf@yy=\dimen139
+\pgf@zx=\dimen140
+\pgf@zy=\dimen141
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen140
-\pgf@path@lasty=\dimen141
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen142
+\pgf@path@lasty=\dimen143
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen142
-\pgf@shorten@start@additional=\dimen143
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen144
+\pgf@shorten@start@additional=\dimen145
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box33
 \pgf@hbox=\box34
 \pgf@layerbox@main=\box35
 \pgf@picture@serial@count=\count113
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen144
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen146
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen145
-\pgf@pt@y=\dimen146
-\pgf@pt@temp=\dimen147
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen147
+\pgf@pt@y=\dimen148
+\pgf@pt@temp=\dimen149
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen150
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen148
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen151
 \pgf@sys@shading@range@num=\count114
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box36
 ))
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box37
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen152
+\pgf@nodesepend=\dimen153
 )
-(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen149
-\pgf@nodesepend=\dimen150
-)
-(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
-))
-(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen151
-\pgffor@skip=\dimen152
-\pgffor@stack=\toks34
-\pgffor@toks=\toks35
-))
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen154
+\pgffor@skip=\dimen155
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count115
-\pgfplotmarksize=\dimen153
+\pgfplotmarksize=\dimen156
 )
-\tikz@lastx=\dimen154
-\tikz@lasty=\dimen155
-\tikz@lastxsaved=\dimen156
-\tikz@lastysaved=\dimen157
-\tikzleveldistance=\dimen158
-\tikzsiblingdistance=\dimen159
+\tikz@lastx=\dimen157
+\tikz@lasty=\dimen158
+\tikz@lastxsaved=\dimen159
+\tikz@lastysaved=\dimen160
+\tikzleveldistance=\dimen161
+\tikzsiblingdistance=\dimen162
 \tikz@figbox=\box38
-\tikz@tempbox=\box39
+\tikz@figbox@bg=\box39
+\tikz@tempbox=\box40
+\tikz@tempbox@bg=\box41
 \tikztreelevel=\count116
 \tikznumberofchildren=\count117
 \tikznumberofcurrentchild=\count118
 \tikz@fig@count=\count119
 
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count120
 \pgfmatrixcurrentcolumn=\count121
 \pgf@matrix@numberofcolumns=\count122
 )
 \tikz@expandcount=\count123
 
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
-hs.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
-ioning.code.tex
-File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count124
 \calc@Bcount=\count125
-\calc@Adimen=\dimen160
-\calc@Bdimen=\dimen161
+\calc@Adimen=\dimen163
+\calc@Bdimen=\dimen164
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count126
 \calc@Cskip=\skip50
 )
@@ -739,7 +787,7 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen162
+\@linkdim=\dimen165
 \Hy@linkcounter=\count128
 \Hy@pagecounter=\count129
 
@@ -762,10 +810,10 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count131
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen163
+\XeTeXLinkMargin=\dimen166
 \Fld@menulength=\count132
-\Field@Width=\dimen164
-\Fld@charsize=\dimen165
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -799,15 +847,15 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count138
 \Gm@cntv=\count139
 \c@Gm@tempcnt=\count140
-\Gm@bindingoffset=\dimen166
-\Gm@wd@mp=\dimen167
-\Gm@odd@mp=\dimen168
-\Gm@even@mp=\dimen169
-\Gm@layoutwidth=\dimen170
-\Gm@layoutheight=\dimen171
-\Gm@layouthoffset=\dimen172
-\Gm@layoutvoffset=\dimen173
-\Gm@dimlist=\toks36
+\Gm@bindingoffset=\dimen169
+\Gm@wd@mp=\dimen170
+\Gm@odd@mp=\dimen171
+\Gm@even@mp=\dimen172
+\Gm@layoutwidth=\dimen173
+\Gm@layoutheight=\dimen174
+\Gm@layouthoffset=\dimen175
+\Gm@layoutvoffset=\dimen176
+\Gm@dimlist=\toks39
 )
 
 Package hyperref Warning: Option `bookmarks' has already been used,
@@ -845,16 +893,16 @@ LaTeX Font Info:    ... okay on input line 42.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count141
-\scratchdimen=\dimen174
-\scratchbox=\box40
+\scratchdimen=\dimen177
+\scratchbox=\box42
 \nofMPsegments=\count142
 \nofMParguments=\count143
-\everyMPshowfont=\toks37
+\everyMPshowfont=\toks40
 \MPscratchCnt=\count144
-\MPscratchDim=\dimen175
+\MPscratchDim=\dimen178
 \MPnumerator=\count145
 \makeMPintoPDFobject=\count146
-\everyMPtoPDFconversion=\toks38
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -871,7 +919,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box41
+\AtBeginShipoutBox=\box43
 Package hyperref Info: Link coloring ON on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1013,8 +1061,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 141.
 
 Overfull \hbox (4.10042pt too wide) in paragraph at lines 151--153
-\OT1/ptm/m/n/10.95 de m[]^^Pdia e mo-de-lar a din[]amica do es-pa-lha-mento de 
-not[]^^Pcias, a fim de pre-ver tend[]encias
+\OT1/ptm/m/n/10.95 de m[]^^Pdia e mod-e-lar a din[]amica do es-pal-hamento de n
+ot[]^^Pcias, a fim de pr-e-ver tend[]encias
  []
 
 Package babel Info: Redefining portuges shorthand "|
@@ -1030,122 +1078,200 @@ Overfull \hbox (13.70102pt too wide) in paragraph at lines 160--163
 ula[][]ao de not[]^^Pcias e informa[][]ao
  []
 
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 177.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 178.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 177.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 178.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 177.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 178.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 177.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 180.
 
-Overfull \hbox (18.94511pt too wide) in paragraph at lines 183--185
-[]\OT1/ptm/m/n/12 O Me-di-a-Cloud Bra-sil []e um pro-jeto con-ce-bido atrav[]es
- de uma par-ce-ria do NAMD/EMAp
+Overfull \hbox (18.94511pt too wide) in paragraph at lines 182--184
+[]\OT1/ptm/m/n/12 O Me-di-a-Cloud Brasil []e um pro-jeto con-ce-bido atrav[]es 
+de uma parce-ria do NAMD/EMAp
  []
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 195.
+
+Overfull \hbox (2.29356pt too wide) in paragraph at lines 194--194
+\OT1/ptm/m/n/6 aplica[][]oes?  
+ []
+
+
+Overfull \hbox (2.29356pt too wide) in paragraph at lines 194--194
+\OT1/ptm/m/n/6 aplica[][]oes?  
+ []
+
+
+Overfull \hbox (2.29356pt too wide) in paragraph at lines 194--194
+\OT1/ptm/m/n/6 aplica[][]oes?  
+ []
+
+
+Overfull \hbox (2.29356pt too wide) in paragraph at lines 194--194
+\OT1/ptm/m/n/6 aplica[][]oes?  
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 198.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 201.
+(babel)             in language  on input line 200.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
+(babel)             in language  on input line 204.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
+(babel)             in language  on input line 204.
 [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 229.
+(babel)             in language  on input line 228.
 
-Overfull \hbox (1.53378pt too wide) in paragraph at lines 237--240
-[]\OT1/ptm/m/n/12 Um pro-cesso din[]amico co-mu-mente mo-de-lado como rede com-
+Overfull \hbox (1.53378pt too wide) in paragraph at lines 236--239
+[]\OT1/ptm/m/n/12 Um pro-cesso din[]amico co-mu-mente mod-e-lado como rede com-
 plexa []e a dissemina[][]ao
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 242.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 248.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 248.
 [6]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 302.
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 301.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 307.
+(babel)             in language  on input line 306.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 307.
+(babel)             in language  on input line 306.
  [7]
-Overfull \hbox (15.53467pt too wide) in paragraph at lines 322--325
-[]\OT1/ptm/m/n/12 A maior van-ta-gem desse mo-delo []e que pa-la-vras se-me-lha
-n-tes pos-suem ve-to-res pr[]oximos
+Overfull \hbox (2.61136pt too wide) in paragraph at lines 316--320
+[]\OT1/ptm/m/n/12 O \OT1/ptm/m/it/12 Skip-gram []\OT1/ptm/m/n/12 e um mod-elo d
+eep-learning que tem como ob-je-tivo rep-re-sen-tar palavras
+ []
+
+
+Overfull \hbox (15.53467pt too wide) in paragraph at lines 321--324
+[]\OT1/ptm/m/n/12 A maior van-tagem desse mod-elo []e que palavras semel-hantes
+ pos-suem ve-tores pr[]oximos
+ []
+
+
+Overfull \hbox (2.62383pt too wide) in paragraph at lines 321--324
+\OT1/ptm/m/n/12 no espa[]o, ou seja, atr[]aves dos atrib-u-tos cal-cu-la-dos pe
+lo mod-elo con-seguimos definir
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 346.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 354.
+(babel)             in language  on input line 353.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 354.
+(babel)             in language  on input line 353.
 [8]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 354.
+(babel)             in language  on input line 353.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 356.
+(babel)             in language  on input line 355.
 
-Overfull \hbox (1.16199pt too wide) in paragraph at lines 377--378
-[]\OT1/ptm/m/n/12 A se-guir, po-de-mos ver um exem-plo do que es-pe-ra-mos da n
-ossa rede de dissemina[][]ao
+Overfull \hbox (1.16199pt too wide) in paragraph at lines 376--377
+[]\OT1/ptm/m/n/12 A seguir, pode-mos ver um ex-em-plo do que es-per-amos da nos
+sa rede de dissemina[][]ao
  []
 
-<./rede1.png, id=231, 963.6pt x 722.7pt>
+<./rede1.png, id=232, 963.6pt x 722.7pt>
 File: ./rede1.png Graphic file (type png)
  <use ./rede1.png>
-Package pdftex.def Info: ./rede1.png used on input line 382.
+Package pdftex.def Info: ./rede1.png used on input line 381.
 (pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 391.
+(babel)             in language  on input line 390.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 391.
+(babel)             in language  on input line 390.
  [9 <./rede1.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 391.
+(babel)             in language  on input line 390.
 
-Overfull \hbox (17.32608pt too wide) in paragraph at lines 399--402
-[]\OT1/ptm/m/n/12 Para ge-rar nosso mo-delo Word2Vec [][][], for-ne-ce-mos como
- en-trada nosso cor-pus lingu[]^^Pstico
+Overfull \hbox (0.81187pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 word2vec? 
+ []
+
+
+Overfull \hbox (1.29764pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 par[]ametros 
+ []
+
+
+Overfull \hbox (0.81187pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 word2vec? 
+ []
+
+
+Overfull \hbox (1.29764pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 par[]ametros 
+ []
+
+
+Overfull \hbox (0.81187pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 word2vec? 
+ []
+
+
+Overfull \hbox (1.29764pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 par[]ametros 
+ []
+
+
+Overfull \hbox (0.81187pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 word2vec? 
+ []
+
+
+Overfull \hbox (1.29764pt too wide) in paragraph at lines 396--396
+\OT1/ptm/m/n/6 par[]ametros 
+ []
+
+
+Overfull \hbox (17.32608pt too wide) in paragraph at lines 398--401
+[]\OT1/ptm/m/n/12 Para gerar nosso mod-elo Word2Vec [][][], fornece-mos como en
+-trada nosso cor-pus lingu[]^^Pstico
  []
 
 
 LaTeX Warning: Marginpar on page 10 moved.
 
+
+Overfull \hbox (9.52562pt too wide) in paragraph at lines 438--442
+[]\OT1/ptm/m/n/12 Ao rep-re-sen-tar um doc-u-mento dessa forma, n[]ao lev-a-mos
+ em considera[][]ao a relev[]ancia
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 479.
+(babel)             in language  on input line 478.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 483.
+(babel)             in language  on input line 482.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 483.
-[10] <./rede2.png, id=256, 471.7625pt x 417.56pt>
+(babel)             in language  on input line 482.
+[10] <./rede2.png, id=257, 471.7625pt x 417.56pt>
 File: ./rede2.png Graphic file (type png)
  <use ./rede2.png>
-Package pdftex.def Info: ./rede2.png used on input line 520.
+Package pdftex.def Info: ./rede2.png used on input line 519.
 (pdftex.def)             Requested size: 94.35081pt x 83.51051pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 526.
+(babel)             in language  on input line 525.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 526.
+(babel)             in language  on input line 525.
  [11 <./rede2.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 539.
- <./rede3.png, id=263, 963.6pt x 722.7pt>
+ <./rede3.png, id=264, 963.6pt x 722.7pt>
 File: ./rede3.png Graphic file (type png)
  <use ./rede3.png>
 Package pdftex.def Info: ./rede3.png used on input line 553.
 (pdftex.def)             Requested size: 192.0548pt x 144.0412pt.
 
-<./rede4.png, id=264, 963.6pt x 722.7pt>
+<./rede4.png, id=265, 963.6pt x 722.7pt>
 File: ./rede4.png Graphic file (type png)
  <use ./rede4.png>
 Package pdftex.def Info: ./rede4.png used on input line 559.
@@ -1157,7 +1283,7 @@ Package babel Info: Redefining portuges shorthand "|
  [12 <./rede3.png> <./rede4.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 567.
- <./rede5.png, id=271, 545.03625pt x 346.29375pt>
+ <./rede5.png, id=273, 545.03625pt x 346.29375pt>
 File: ./rede5.png Graphic file (type png)
 
 <use ./rede5.png>
@@ -1171,11 +1297,11 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 659.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 695.
+(babel)             in language  on input line 694.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 695.
+(babel)             in language  on input line 694.
  [14]
-<./diagrama1.png, id=292, 963.6pt x 722.7pt>
+<./diagrama1.png, id=294, 963.6pt x 722.7pt>
 File: ./diagrama1.png Graphic file (type png)
  <use ./diagrama1.png>
 Package pdftex.def Info: ./diagrama1.png used on input line 766.
@@ -1185,17 +1311,14 @@ Overfull \hbox (55.00748pt too wide) in paragraph at lines 766--768
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 774.
+(babel)             in language  on input line 769.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 774.
+(babel)             in language  on input line 769.
 [15]
 Overfull \hbox (25.50879pt too wide) in paragraph at lines 774--775
-[]\OT1/ptm/m/n/12 Realizando esse pro-ce-di-mento para cada passo da simula[][]
-ao, cons-tru[]^^Pmos a dissemina[][]ao
+[]\OT1/ptm/m/n/12 Realizando esse pro-ced-i-mento para cada passo da simula[][]
+ao, con-stru[]^^Pmos a dissemina[][]ao
  []
 
 Package babel Info: Redefining portuges shorthand "|
@@ -1205,7 +1328,7 @@ Package babel Info: Redefining portuges shorthand "|
 [16 <./diagrama1.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 778.
- <./grafic.png, id=306, 433.62pt x 289.08pt>
+ <./grafic.png, id=308, 433.62pt x 289.08pt>
 File: ./grafic.png Graphic file (type png)
 
 <use ./grafic.png>
@@ -1220,10 +1343,29 @@ Package babel Info: Redefining portuges shorthand "|
  [17 <./grafic.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 805.
- <./2.png, id=312, 602.25pt x 602.25pt>
-File: ./2.png Graphic file (type png)
 
-<use ./2.png>
+Overfull \hbox (2.85161pt too wide) in paragraph at lines 811--811
+\OT1/ptm/m/n/6 distribui[][]ao 
+ []
+
+
+Overfull \hbox (2.85161pt too wide) in paragraph at lines 811--811
+\OT1/ptm/m/n/6 distribui[][]ao 
+ []
+
+
+Overfull \hbox (2.85161pt too wide) in paragraph at lines 811--811
+\OT1/ptm/m/n/6 distribui[][]ao 
+ []
+
+
+Overfull \hbox (2.85161pt too wide) in paragraph at lines 811--811
+\OT1/ptm/m/n/6 distribui[][]ao 
+ []
+
+<./2.png, id=314, 602.25pt x 602.25pt>
+File: ./2.png Graphic file (type png)
+ <use ./2.png>
 Package pdftex.def Info: ./2.png used on input line 814.
 (pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
 Package babel Info: Redefining portuges shorthand "|
@@ -1234,14 +1376,14 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 823.
 
-<../Notebook/dist_outs.png, id=319, 433.62pt x 289.08pt>
+<../Notebook/dist_outs.png, id=321, 433.62pt x 289.08pt>
 File: ../Notebook/dist_outs.png Graphic file (type png)
 
 <use ../Notebook/dist_outs.png>
 Package pdftex.def Info: ../Notebook/dist_outs.png used on input line 835.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
-<../results/a.png, id=320, 1079.03125pt x 625.33624pt>
+<../results/a.png, id=322, 1079.03125pt x 625.33624pt>
 File: ../results/a.png Graphic file (type png)
  <use ../results/a.png>
 Package pdftex.def Info: ../results/a.png used on input line 852.
@@ -1261,7 +1403,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 872.
  [20 <../results/a.png>]
-<../results/t.png, id=330, 953.5625pt x 542.025pt>
+<../results/t.png, id=332, 953.5625pt x 542.025pt>
 File: ../results/t.png Graphic file (type png)
  <use ../results/t.png>
 Package pdftex.def Info: ../results/t.png used on input line 873.
@@ -1280,102 +1422,129 @@ Package babel Info: Redefining portuges shorthand "|
 [21 <../results/t.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 896.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 901.
 
-<../data/charlie/simulation.png, id=339, 564.4287pt x 422.0568pt>
-File: ../data/charlie/simulation.png Graphic file (type png)
 
-<use ../data/charlie/simulation.png>
-Package pdftex.def Info: ../data/charlie/simulation.png used on input line 924.
+LaTeX Warning: File `../data/charlie/simulation.png' not found on input line 92
+9.
 
-(pdftex.def)             Requested size: 395.09738pt x 295.43773pt.
 
-Overfull \hbox (1.79819pt too wide) in paragraph at lines 929--931
-[]\OT1/ptm/m/n/12 Na fi-gura acima possu[]^^Pmos 500 cur-vas, onde cada curva r
-e-pre-senta curva de infec[][]ao
+! Package pdftex.def Error: File `../data/charlie/simulation.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.929 ...cale=0.7]{../data/charlie/simulation.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (1.79819pt too wide) in paragraph at lines 934--936
+[]\OT1/ptm/m/n/12 Na figura acima possu[]^^Pmos 500 cur-vas, onde cada curva re
+p-re-senta curva de infec[][]ao
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 934.
+(babel)             in language  on input line 940.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 934.
-[22 <../data/charlie/simulation.png>]
+(babel)             in language  on input line 944.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 935.
+(babel)             in language  on input line 949.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 939.
-
-<../results/simul.png, id=350, 654.445pt x 485.815pt>
+(babel)             in language  on input line 949.
+[22] <../results/simul.png, id=353, 654.445pt x 485.815pt>
 File: ../results/simul.png Graphic file (type png)
 
 <use ../results/simul.png>
-Package pdftex.def Info: ../results/simul.png used on input line 948.
+Package pdftex.def Info: ../results/simul.png used on input line 953.
 (pdftex.def)             Requested size: 523.55672pt x 388.65253pt.
 
-Overfull \hbox (96.76537pt too wide) in paragraph at lines 948--949
+Overfull \hbox (96.76537pt too wide) in paragraph at lines 953--954
  [][] 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 957.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 957.
-[23 <../results/simul.png>]
-<../results/Untitled.png, id=355, 1027.84pt x 1027.84pt>
+
+Overfull \hbox (3.93259pt too wide) in paragraph at lines 957--962
+\OT1/ptm/m/n/12 tempo da rede real, e por tamb[]em ser longa, se-le-cionamos ap
+e-nas seu in[]^^Pcio como mostrado
+ []
+
+<../results/Untitled.png, id=354, 1027.84pt x 1027.84pt>
 File: ../results/Untitled.png Graphic file (type png)
 
 <use ../results/Untitled.png>
-Package pdftex.def Info: ../results/Untitled.png used on input line 961.
+Package pdftex.def Info: ../results/Untitled.png used on input line 966.
 (pdftex.def)             Requested size: 411.12872pt x 411.12872pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 974.
 
-Overfull \hbox (9.95706pt too wide) in paragraph at lines 976--978
-\OT1/ptm/m/n/12 out-degrees com a da rede real. Na fi-gura abaixo po-de-mos ver
- o his-to-grama das distribui[][]oes
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 978.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 978.
+[23 <../results/simul.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 979.
+
+Overfull \hbox (9.95706pt too wide) in paragraph at lines 981--983
+\OT1/ptm/m/n/12 out-degrees com a da rede real. Na figura abaixo pode-mos ver o
+ his-tograma das distribui[][]oes
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 978.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 978.
-[24 <../results/Untitled.png>]
-<../Notebook/teste.png, id=361, 578.16pt x 433.62pt>
+<../Notebook/teste.png, id=359, 578.16pt x 433.62pt>
 File: ../Notebook/teste.png Graphic file (type png)
 
 <use ../Notebook/teste.png>
-Package pdftex.def Info: ../Notebook/teste.png used on input line 981.
+Package pdftex.def Info: ../Notebook/teste.png used on input line 986.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 991.
+(babel)             in language  on input line 996.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 991.
- [25 <../Notebook/teste.png>]
+(babel)             in language  on input line 996.
+ [24 <../results/Untitled.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 991.
- (./TCCElisa1.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 998.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 998.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 998.
+(babel)             in language  on input line 996.
+ (./TCCElisa1.bbl
+Underfull \hbox (badness 1603) in paragraph at lines 33--37
+[]\OT1/ptm/m/n/12 Romualdo Pastor-Satorras, Clau-dio Castel-lano, Piet Van Mieg
+hem, and Alessan-
+ []
 
-[26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 998.
+
+Underfull \hbox (badness 2027) in paragraph at lines 33--37
+\OT1/ptm/m/n/12 dro Vespig-nani.  Epi-demic pro-cesses in com-plex net-works.  
+\OT1/ptm/m/it/12 arXiv preprint
+ []
+
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1003.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1003.
+ [25 <../Notebook/teste.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
  (./TCCElisa1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 998.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 998.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
+
 Package rerunfilecheck Info: File `TCCElisa1.out' has not changed.
 (rerunfilecheck)             Checksum: 03FA82218A9EF6F60704AEDE9FF70C47;1907.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 998.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
  ) 
 Here is how much of TeX's memory you used:
- 16475 strings out of 495004
- 284082 string characters out of 6180662
- 372281 words of memory out of 5000000
- 19233 multiletter control sequences out of 15000+600000
- 44599 words of font info for 90 fonts, out of 8000000 for 9000
- 16 hyphenation exceptions out of 8191
- 63i,11n,76p,445b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18064 strings out of 495000
+ 329657 string characters out of 6181169
+ 416597 words of memory out of 5000000
+ 20808 multiletter control sequences out of 15000+600000
+ 53124 words of font info for 107 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 62i,11n,80p,436b,870s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1385,10 +1554,10 @@ urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/us
 yr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCCElisa1.pdf (29 pages, 2244262 bytes).
+Output written on TCCElisa1.pdf (28 pages, 2116722 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 356 compressed objects within 4 object streams
- 99 named destinations out of 1000 (max. 500000)
- 280 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 426 PDF objects out of 1000 (max. 8388607)
+ 358 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 
