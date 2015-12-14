@@ -169,8 +169,7 @@ Utilizando do fato que essas mídias digitais são fundamentais na disseminaçã
 influenciador no processo de formação de opinião, podemos definir como importante entender como as notícias se formam e se espalham
 na internet brasileira.
 
-Um dos métodos de se estudar a disseminação da informação é utilizando modelos epidemiológicos. (referencia de artigo) em (ano do artigo)
-conseguiu modelar a disseminação de (tabela de alguma coisa) no tempo através de modelos epidemiológicos, como SIR, SIS entre outros. Ese tipo
+Um dos métodos de se estudar a disseminação da informação é utilizando modelos epidemiológicos. \cite{bettencourt2006power} conseguiu modelar a disseminação de (tabela de alguma coisa) no tempo através de modelos epidemiológicos, como SIR, SIS entre outros. Ese tipo
 de abordagem vem sendo utilizada também para entender redes de contatos em redes sociais como (incluir referencia). MELHORAR PARAGRAFO
 
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
@@ -897,15 +896,22 @@ completa, encontramos uma matriz quadrada de tamanho 1786x1786 (número de vért
 
 Possuingo a matriz de adjacência da rede completa, podemos realizar a simulação do modelo. Porém, precisamos primeiro definir o valor do 
 parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construimos as redes a partir desses
-resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Vemos na tabela
+resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Como sabemos
+que o $\lambda$ crítico do modelo é dado por:
+
+$$\lambda_{c} = \dfrac{1}{\Lambda}$$
+
+Onde $\Lambda$ é o maior autovalor da matriz de adjacência (\cite{wang2003proceedings}, \cite{chakrabarti2008epidemic}), então testamos
+valores próximos ao $\lambda_{c}$. Vemos na tabela
 abaixo alguns valores de diferenças encontrados:
 
+\todo{rodar o codigo para pegar esses valores}
 \begin{center}
- \begin{tabular}{cc}
-  $\lambda$ & KL \\
-   0.1 & y\\
-   0.01 & 0.014 \\
-   0.5 & y
+ \begin{tabular}{l|c}
+   \ \ \ \ \ $\lambda$ & KL \\ \hline
+   $\lambda_{c} + 0.1$ & y\\
+   $\lambda_{c} + 0.01$ & 0.014 \\
+   $\lambda_{c} + 0.5$ & y
  \end{tabular}
 \end{center}
 
@@ -927,8 +933,14 @@ para a modelagem do sistema e que nossa rede de disseminação real pode ser des
 
 \subsubsection{Rede Simulada}
 
-A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. Utilizando essa matriz, construímos a rede 
+A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. Utilizando essa matriz, construímos a rede de disseminação simulada.
+
 \subsubsection{Visualizações da Rede Simulada}
+
+Para visualizar a rede simulada, recriamos as duas visualizações feitas para a rede real de dados. Abaixo podemos ver a visualização
+onde o eixo x é o tempo $t$, ou seja, cada passo dado para realizar a simulação. Como nosso modelo é adimensional, não foi 
+possível traduzir o passo da simulação para uma unidade de tempo comparável à visualização da rede original.
+
 
 \begin{figure}[ht]
  \centering

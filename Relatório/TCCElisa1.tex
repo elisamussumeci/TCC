@@ -808,6 +808,7 @@ Após calcular a matriz de documentos e a matriz de similaridades, antes de cons
 precisamos definir o tempo máximo de influência de um artigo, e a similaridade de cosseno
 mínima para definir se dois artigos são similares. Para isso calculamos a distribuição de cada uma dessas métricas:
 
+\todo{incluir distribuição de tempo}
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.4]{./2.png}
@@ -905,6 +906,7 @@ Onde $\Lambda$ é o maior autovalor da matriz de adjacência (\cite{wang2003proc
 valores próximos ao $\lambda_{c}$. Vemos na tabela
 abaixo alguns valores de diferenças encontrados:
 
+\todo{rodar o codigo para pegar esses valores}
 \begin{center}
  \begin{tabular}{l|c}
    \ \ \ \ \ $\lambda$ & KL \\ \hline
@@ -933,13 +935,26 @@ para a modelagem do sistema e que nossa rede de disseminação real pode ser des
 \subsubsection{Rede Simulada}
 
 A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. Utilizando essa matriz, construímos a rede de disseminação simulada.
+
 \subsubsection{Visualizações da Rede Simulada}
+
+Para visualizar a rede simulada, recriamos as duas visualizações feitas para a rede real de dados. Abaixo podemos ver a visualização
+onde o eixo x é o tempo $t$, ou seja, cada passo dado para realizar a simulação. Como nosso modelo é adimensional, não foi 
+possível traduzir o passo da simulação para uma unidade de tempo comparável à visualização da rede original.
+
 
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.8]{../results/simul.png}
  \caption{Rede Simulada x Tempo}
 \end{figure}
+
+O resultado dessa visualização tem um formato parecido com a visualização por tempo da rede real, e por também ser longa, selecionamos 
+apenas seu início como mostrado na figura acima. O primeiro fator que observamos ao analisar a visualização é o fato de todos os vértices
+que possuem um out-degree maior do que um estarem concentrados nos três primeiros passos da simulação. Isso nos mostra que a infecção ocorreu
+mais rápido na simulação do que na rede real. Para chegarmos a mais conclusões observamos a rede abaixo, onde o eixo x consiste no passo da
+infecção, assim como fizemos para a rede real:
+
 
 \begin{figure}[h]
  \centering
@@ -948,6 +963,13 @@ A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. U
  \caption{Rede Simulada x Passo}
 \end{figure}
 
+Essa visualização intensifica o observado na figura anterior, em poquíssimo tempo a epidemia se espalhou, necessitando de apenas alguns passos
+para o ciclo da epidemia ocorrer. 
+
+O motivo da epidemia na rede simulada ter ocorrido muito mais rápido do que na rede real é basicamente pelo fato de estarmos lidando com uma
+taxa de infecção ($\lambda$) constante. Como no mundo real a taxa de infecciosidade varia de acordo com fatores externos, a infecção demora mais
+para atingir seu máximo. Ao utilizar uma taxa constante, estamos desconsiderando qualquer fator externo e supondo que não existem
+variações na infecciosidade da doença com o  passar do tempo, o que explica a epidemia ocorrer tão rapidamente em nosso modelo.
 
 
 
