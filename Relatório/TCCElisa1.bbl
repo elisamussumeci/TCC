@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,13 @@ Deepayan Chakrabarti, Yang Wang, Chenxi Wang, Jurij Leskovec, and Christos
 \newblock Epidemic thresholds in real networks.
 \newblock \emph{ACM Transactions on Information and System Security (TISSEC)},
   10\penalty0 (4):\penalty0 1, 2008.
+
+\bibitem[Kermack and McKendrick(1927)]{kermack1927contribution}
+William~O Kermack and Anderson~G McKendrick.
+\newblock A contribution to the mathematical theory of epidemics.
+\newblock In \emph{Proceedings of the Royal Society of London A: Mathematical,
+  Physical and Engineering Sciences}, volume 115, pages 700--721. The Royal
+  Society, 1927.
 
 \bibitem[Mikolov et~al.(2013)Mikolov, Chen, Corrado, and
   Dean]{mikolov2013efficient}

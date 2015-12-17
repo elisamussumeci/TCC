@@ -4,17 +4,17 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
-\usepackage{pslatex}
+\usepackage{setspace}
 \usepackage[portuguese]{babel}
 \usepackage{indentfirst}
 \usepackage{natbib}
 \usepackage[textsize=tiny]{todonotes}
-\usepackage{tikz}
 \usepackage{url}
 \usepackage{hyperref}
-\usepackage[lmargin=3cm,rmargin=3cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage[lmargin=3cm,rmargin=3cm,tmargin=3cm,bmargin=3cm]{geometry}
+
 \setlength{\parindent}{1cm}
-\setlength{\baselineskip}{1.5cm}
+\setlength{\baselineskip}{2cm}
 
 \renewcommand{\contentsname}{Sumário}
 \hypersetup{
@@ -138,6 +138,19 @@ realizá-lo a não ser nos casos e para os fins autorizados pelo professor orien
 
 \pagebreak
 
+\section*{Agradecimentos}
+\doublespacing
+À Escola de Matematica Aplicada da FGV (EMAp) por todo o apoio e suporte ao longo dos últimos quatro anos. 
+
+Ao meu orientador Flávio Codeço Coelho por todo o aprendizado, apoio, paciência e confiança depositados em mim nos últimos anos. Também ao
+professor Renato Rocha Souza, por toda atenção e carinho prestados.
+
+À minha família por estar sempre ao meu lado acreditando no meu potencial, e apoiando minhas decisões. Ao
+Breno, pelo companheirismo em todos os momentos bons e ruins.
+
+Agradeço também ao meus colegas de classe, que compartilharam comigo essa experiência única de fazer Matemática Aplica. 
+
+\pagebreak
 \begin{abstract}
  
 O processo de formação de opinião é fortemente influenciado pela mídia digital.
@@ -156,7 +169,7 @@ de notícias, a fim de prever tendências e mapear questões de interesse.
 \pagebreak
 
 \section{Introdução}
-
+\onehalfspacing
 Atualmente a internet é um dos principais meios de veiculação de notícias e informação do país. Com o crescente
 número de pessoas aderindo à redes sociais, o compartilhamento de notícias aumentou significamente, o que tornou fundamental
 o papel das mídias digitais no acesso à informação.
@@ -169,35 +182,87 @@ Utilizando do fato que essas mídias digitais são fundamentais na disseminaçã
 influenciador no processo de formação de opinião, podemos definir como importante entender como as notícias se formam e se espalham
 na internet brasileira.
 
-Um dos métodos de se estudar a disseminação da informação é utilizando modelos epidemiológicos. \cite{bettencourt2006power} conseguiu modelar a disseminação de (tabela de alguma coisa) no tempo através de modelos epidemiológicos, como SIR, SIS entre outros. Ese tipo
-de abordagem vem sendo utilizada também para entender redes de contatos em redes sociais como (incluir referencia). MELHORAR PARAGRAFO
+Um dos métodos de se estudar a disseminação da informação é utilizando modelos epidemiológicos, como \cite{bettencourt2006power} 
+fez em sua pesquisa, onde modelou a disseminação do diagrama de \textit{Feynman} na população acadêmica através de modelos epidemiológicos, como SIR, SIS entre
+outros.
 
 Neste trabalho utilizaremos redes complexas e modelos epidemiológicos para modelar a disseminação de notícias na mídia brasileira. 
 Para isso
-estudaremos os caminhos percorridos em uma rede de disseminação \todo{Estimada a partir da} base de dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
+estudaremos os caminhos percorridos em uma rede de disseminação estimada a partir da modelagem dos
+dados do Projeto MediaCloud Brasil\footnote[1]{\url{https://github.com/NAMD/mediacloud_backend}}.
 
 
 \subsection{O Projeto Media Cloud Brasil}
 
- O MediaCloud Brasil é um projeto concebido através de uma parceria do NAMD/EMAp da Fundação Getúlio Vargas, do Massachussets Institute of
- Technology (MIT)  e Harvard. O projeto
-
- e mantido pelo NAMD/EMAp da Fundação Getúlio Vargas, e vem ao longo dos últimos três anos 
- monitorando mais de cem mil veículos de mídia da internet brasileira. 
- O projeto consiste na captura automatizada de dados de tods of feeds da mídia digital brasileira, captura-se páginas de blogs, jornais, revistas,
+ O MediaCloud Brasil é um projeto concebido e mantido pelo NAMD/EMAp da Fundação Getúlio Vargas, que tem como objetivo realizar um monitoramento
+ da mídia brasileira. Já são mais de mil veículos sendo monitorados ao longo dos últimos 3 anos. Esse monitoramento gerou um total de quase dois milhões
+ de artigos de blogs, revistas e jornais que foram capturados e armazenados no MongoDB, banco de dados do Media Cloud.
+  
+ O processo de captura de documentos é feito através de um \textit{crawler}, que ao longo do dia,  acessa seis vezes um conjunto de 
+ aproximadamente 150 mil \textit{feeds} e armazena no banco de dados o código HTML das notícias capturadas, assim como informações sobre
+ a notícia como título, data 
+ de publicação, url, fonte da publicação e autor. Esse conjunto de feeds é 
+ constantamente atualizado, de forma que tenhamos a maior cobertura possível da mídia do país. Para isso, são feitas buscas contínuas
+ por palavras chaves no google onde as páginas que possuem os notícias mais populares
+ tem seus \textit{feeds RSS} armazenados.
  
- Possui em
-sua base de dados mais de 1.6 milhão de artigos capturados.
-\textbf{falar sobre o que e como o Media cloud captura os artigos}
-O projeto utiliza como banco de dados o MongoDB, um banco de dados de documentos open-source de alta performance. O MongoDB é classificado como um banco de 
-dados 'NoSQL', uma vez que evita a tradicional estrutura  baseada em tabela relacional e utiliza documentos JSON com esquemas dinâmicos para armazenamento 
-dos documentos. A vantagem de utilizar o JSON é realizar a integração de dados em certos tipos de aplicações de forma mais fácil e mais rápida.\todo{Que tipo de aplicações?}
-\textbf{Falar que uma vez armazenado, o banco de artigos é indexado para permitir buscas textuais}
+ Após as notícias serem capturadas, passam por um processo de limpeza. Esse processo consiste em 
+ extrair o texto significativo do código HTML armazenado, ou seja, remover o código HTML assim como anúncios, layouts, termos de usos
+ e qualquer outra informação presente no código da página, restando apenas o texto do artigo.
+ 
+ Uma vez que todos os documentos são capturados, limpos e armazenados, o banco de dados dos artigos é indexado para que seja possível
+ fazer buscas textuais. Dessa forma podemos realizar buscas no banco sobre qualquer assunto e realizar estudos em um conjunto de dados
+ específico.
 
-\subsection{Referencial Teórico}
+\subsection{Referencial Teórico} 
+
+\subsubsection{O Modelo SIR}
+
+A modelagem de doenças infecciosas é uma forte ferramenta para a predição e controle de epidemias. Determinados através de estudos de 
+disseminação de doenças, os modelos epidemiológicos são fundamentais para estudar e analisar o impacto de doenças na população.
+
+Introduzido por \cite{kermack1927contribution}, o modelo SIR é um modelo epidemiológico determinístico, que consiste em analisar
+a disseminação de uma epidemia em uma população fixa, que é dividida em três classes:
+
+\begin{description}
+ \item \textbf{Suscetíveis \textit{(S)}}
+ 
+    São todos os indivíduos não infectados e suscetíveis à doença, ou seja, que podem se infectar em algum momento.
+ \item \textbf{Infectados \textit{(I)}}
+ 
+    São os indivídus infectados com a doença.
+ \item \textbf{Recuperados \textit{(R)}}
+ 
+    Os recuperados são tantos os indivíduos que foram infectados e depois se recuperaram e tornaram-se imune à doença quanto os que
+    morreram. Dessa forma um indíviduo recuperado não pode ser infectado novamente.
+\end{description}
+
+\vspace{0.3cm}
+O fluxo do modelo pode ser representado como no diagrama abaixo:
+
+$$ S \Rightarrow I \Rightarrow R$$
+
+\vspace{0.3cm}
+
+Considerando uma população fixa $N = S(t) + I(t) + R(t)$, onde $S(t)$, $I(t)$ e $R(t)$ representam os estados no tempo $t$,
+o modelo consiste no seguinte sistema de equações diferencias:
+
+\vspace{0.3cm}
+\begin{equation}
+  \begin{cases}
+    \dfrac{dS}{dt} = - \dfrac{\beta SI}{N} \\[0.5cm]
+    \dfrac{dI}{dt} = \dfrac{\beta SI}{N} - \gamma I \\[0.5cm]
+    \dfrac{dR}{dt} = \gamma I \\
+  \end{cases}
+\end{equation}
+
+\vspace{0.3cm}
+
+Onde $\beta$ é a taxa de infecção e $\gamma$ a taxa de recuperação. No modelo, assumimos que todos os indivíduos possuem a mesma probabilidade
+de se infectarem com uma taxa $\beta$.
 
 
-\subsubsection{O espalhamento de notícias como um processo de contágio}
+\subsubsection{O Espalhamento de Notícias como um Processo de Contágio}
 
 Uma epidemia é caracterizada pela incidência de grande número de casos de uma doença em um curto período de tempo. Sabemos que as doenças
 se espalham através do contágio entre infectados, mas como podemos definir esse contágio? 
@@ -234,7 +299,7 @@ de forma que fique o mais verídica possível.
  constituem estruturas onde processos dinâmicos (como disseminação de virus ou opiniões) podem ser simulados.
  
  Um processo dinâmico comumente modelado como rede complexa é a disseminação de uma doença na população. Através da rede
- conseguimos observar o processo de infecção dinâmicamente, e realizar análises que trazem resutados significativos para o modelo epidemico,
+ conseguimos observar o processo de infecção dinâmicamente e realizar análises que trazem resultados significativos para o modelo epidêmico,
  como estudar os caminhos percorridos e definir parâmetros de infecciosidade.
  
  
@@ -243,8 +308,8 @@ de forma que fique o mais verídica possível.
 
 Processamento de Linguagem Natural \textit{(Natural Process Lenguage - NLP)} é uma área de Inteligência Artifical que tem como principal
 objetivo desenvolver métodos computacionais que consigam traduzir a linguagem natural para a máquina. A utilização desses
-métodos é fundamental em tarefas que envolvem análises conjuntos de dados, pois a partir deles podemos
-traduzir os textos para uma linguagem compreensivel ao computador.
+métodos é fundamental em tarefas que envolvem análises de conjuntos de dados, pois a partir deles podemos
+traduzir os textos para uma linguagem compreensível ao computador.
 
 \begin{description}
   \item \textbf{Pré-Processamento}
@@ -255,10 +320,10 @@ traduzir os textos para uma linguagem compreensivel ao computador.
     O processo de tokenização consiste em decompor o documento em termos, também chamado de  tokens. Para cada documento, cria-se uma lista de 
     tokens presentes nele. Após tokenizar, limpamos o documento retirando  as \textit{stop-words} (lista de termos não representativos para
     documentos, geralmente composta por preposições, pronomes, pontuação, advérbios e artigos) e realizamos o processo de 
-    \textit{stemming}, que consiste em radicalizar cada termo do documento. Dessa forma, palavras que possuem o menos radical são consideradas
-    iguais, já que representam a mesma definição.
+    \textit{stemming}, que consiste em radicalizar cada termo do documento. Dessa forma, palavras que possuem o mesmo radical são consideradas
+    iguais, já que representam palavras que possuem o mesmo significado.
     
-    Temos como exemplo as duas frases a seguir:
+    Temos como exemplo duas frases:
     
     \begin{center}
       \begin{enumerate}
@@ -280,13 +345,13 @@ traduzir os textos para uma linguagem compreensivel ao computador.
     
   \item \textbf{Bag-of-Words}
   
-   O modelo bag-of-words é uma forma de representar vetorialmente um texto muito usada em Processamento de Linguagem Natural e em
+   O modelo bag-of-words é uma forma de representar vetorialmente um texto e é muito usada no Processamento de Linguagem Natural e em
    Recuperação de Informação. O modelo consiste em aprender um vocabulário baseado em todos
-   os documentos pré processados do conjunto de dados, e então modelar o documento a partir número de vezes em que
+   os documentos pré processados do conjunto de dados, e então modelar o documento a partir do número de vezes em que
    cada palavra do vacabulário aparece. Dessa forma, cada documento é representado por um 'saco de palavras', o que, apesar de manter
    multiplicadade, causa uma perda de informação, visto que não leva em consideração a ordem  e posição das palavras.
    
-   Exemplifcamos o proocesso a seguir, considerando as frases pré processadas na seção anterior:
+   Exemplifcamos o proocesso a seguir, considerando as frases pré-processadas na seção anterior:
    
     \begin{center}
       \begin{enumerate}
@@ -301,7 +366,7 @@ traduzir os textos para uma linguagem compreensivel ao computador.
     \{joão, gost, jog, futebol, maria, prefer, xadrez, não\}
    \end{center}
 
-   A partir desse vocabulário, criamos então, o vetor referente a cada palavra:
+   A partir desse vocabulário, criamos então, o vetor referente a cada frase:
 
     \begin{center}
       \begin{enumerate}
@@ -313,8 +378,8 @@ traduzir os textos para uma linguagem compreensivel ao computador.
  
  \item \textbf{Skip-gram}
 
-  O \textit{Skip-gram} é um modelo deep-learning que tem como objetivo representar palavras com o maior valor semântico possível, ou seja
-  uma representação que leva em consideração o contexto. Intruduzido
+  O \textit{Skip-gram} é um modelo deep-learning que tem como objetivo representar palavras com o maior valor semântico possível, ou seja,
+  é uma representação que leva em consideração o contexto. Intruduzido
   por \cite{mikolov2013efficient}, o skip-gram é uma rede neural que ao treinar um corpus linguístico, retorna para cada palavra um vetor 
   representativo de atributos.
   
@@ -336,7 +401,10 @@ traduzir os textos para uma linguagem compreensivel ao computador.
   uma vez que termos raros são mais informativos do que termos frequentes. Calculamos a medida TF-IDF $ W_{t,d}$ do termo $t$ no documento
   $d$ da seguinte forma:
 
-  $$ W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}$$
+  \begin{equation}
+    W_{t,d} = (1 + log Tf_{t,d}) \cdot \ log \dfrac{N}{Df_{t}}
+  \end{equation}
+
 
   Onde $Df_{t}$ é uma medida inversa da informatividade do termo $t$, e é definida como o número de documentos em que $t$ ocorre. O peso
   TF-IDF aumenta com o número de ocorrências dentro de um documento e com a raridade do termo na coleção.
@@ -344,7 +412,11 @@ traduzir os textos para uma linguagem compreensivel ao computador.
 
 \subsection{Objetivo}
 
-Esse trabalho tem como principal objetivo caracterizar e modelar a dinâmica de disseminação das notícias no país através de redes complexas.
+Esse trabalho tem como principal objetivo caracterizar e modelar a dinâmica de disseminação das notícias no país através de redes 
+complexas e modelos epidemiólogicos.
+
+A vantangem de alcançar essa modelagem é conseguir entender como uma notícia se torna viral e realizar previsões sobre assuntos
+que serão abordados pela mídia.
 
 
 
@@ -355,15 +427,17 @@ Esse trabalho tem como principal objetivo caracterizar e modelar a dinâmica de 
 \subsection{Rede de Disseminação Real}
 
 Nesta primeira parte do trabalho, iremos construir uma rede complexa que descreva o processo epidemiológico de uma notícia. O objetivo
-da construção dessa rede, é conseguir aproximar a rede de interligação real entre os artigos selecionados do banco
+da construção dessa rede, é conseguir aproximar a rede de interligação real entre os artigos selecionados do banco MongoDB do 
 MediaCloud, de forma a torná-la observável.
 
 Primeiramente, selecionamos todos os artigos do banco referentes a uma determinada notícia, criando assim, nosso corpus linguístico.
-Depois ,a partir desse corpus, utlizamos métodos de PLN para representar matricialmente nosso conjunto de dados. A partir da matriz 
+Depois, a partir desse corpus, utlizamos métodos de PLN para representar matricialmente nosso conjunto de dados. A partir da matriz 
 criada construímos nossa rede direcionada de disseminação, onde cada vértice ou nó da rede é um artigo.
 
 Para construir a rede de disseminação precisamos definir a relação de contágio entre artigos, ou seja, o que conecta um artigo ao outro 
-na rede. No nosso caso, definimos que o contágio se dá através de uma relação de influência, porém como definir essa relação? Partindo do
+na rede. No nosso caso, definimos que o contágio se dá através de uma relação de influência, porém como definir essa relação? 
+
+Partindo do
 pressuposto de que se um artigo influênciou outro então esses artigos são necessariamente similares, consideramos a \textbf{similaridade}
 entre os artigos o fator principal para definir se eles possuem uma conexão em nossa rede.
 
@@ -373,8 +447,8 @@ depois. No caso de um artigo ter mais de um similar publicado anteriormente a el
 mais similar à ele. Dessa forma todos os vértices de nossa rede possuem um grau de entrada igual à 1 e podem possuir um grau de saída maior
 do que 1.
 
+\pagebreak
 A seguir, podemos ver um exemplo do que esperamos da nossa rede de disseminação real:
-
 
 \begin{figure}[h]
  \centering
@@ -386,18 +460,17 @@ A seguir, podemos ver um exemplo do que esperamos da nossa rede de disseminaçã
 No exemplo acima, temos que o artigo $A$ é similar aos artigos $B$ e $C$ e possui uma data de publicação mais antiga do que os dois. 
 Sendo assim, foi definido como o influenciador dos dois, ou seja, foi o artigo que os contagiou com a notícia.
 
-\pagebreak
 \subsubsection{Matriz de Documentos}
 
 Selecionamos no banco de dados do MediaCloud todos os artigos referentes a uma determinada notícia, formando o corpus linguístico que 
 utilizaremos para criar a matriz de documentos, representação vetorial dos artigos selecionados.
 
-Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}}, ferramenta que promove uma implementação 
-eficiente do modelo \hyperref[sec:nlp]{skip-gram} e \hyperref[sec:nlp]{bag-of-words} contínuo.\todo{preciso explicar mais sobre o word2vec? Sim, aqui, por exemplo s\'o usamos o skipgram e n\~ao o CBOW. Al\'em disso \'e preciso dizer os par\^ametros usados para treinar o modelo.}
+Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}},
+ferramenta que promove uma implementação eficiente do modelo \hyperref[sec:nlp]{skip-gram}.
 
-Para gerar nosso modelo Word2Vec \todo{preciso explicar que tem que haver um conjunt trainado com todos os artigos do mediacloud etcs? Sim tem que dizer que o modelo foi treinado com n documentos, considerando bigramas (?)}, fornecemos como entrada nosso corpus linguístico
-e o modelo nos retorna uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as palavras contidas no corpus e as colunas $t_{1},t_{2},...,t_{n}$
-são os atributos gerados pelo modelo para cada palavra:
+Treinamos nosso modelo utilizando todos os 1.6 milhões de documento do banco de dados do Media Cloud, com isso obtivemos
+como saída do modelo uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as $m$ palavras contidas no corpus passado e as colunas $t_{1},t_{2},...,t_{n}$
+são os $n$ atributos gerados pelo modelo para cada palavra. O número de atributos que o modelo gera é passado como input para o modelo.
  
  \begin{center}
  \hspace{0.2cm}$t_{1}$ \hspace{0.5cm} $t_{2}$ \hspace{0.3cm} $\hdots$ \hspace{0.4cm}$t_{n}$
@@ -408,22 +481,22 @@ são os atributos gerados pelo modelo para cada palavra:
    $p_{1}$ \\
    $p_{2}$ \\
    \vdots\\
-   $p_{n}$
+   $p_{m}$
  \end{tabular}
  $
  \begin{bmatrix}
   a_{11} & a_{12} & \hdots & a_{1n}\\
   a_{21} & a_{22} & \hdots & a_{2n}\\
   \vdots & \vdots & \ddots & \vdots\\
-  a_{31} & a_{32} & \hdots & a_{nn}
- \end{bmatrix}_{nxn}
+  a_{31} & a_{32} & \hdots & a_{mn}
+ \end{bmatrix}_{mxn}
 $
 
 \end{center}
 
 Dessa forma, temos uma matriz de palavras, ou seja, uma representação de todas as palavras presentes em nosso corpus.
 Porém, queremos representar documentos e não apenas palavras.
-Para criar uma matriz que represente documentos, fazemos, para cada documento, uma soma dos vetores referentes a cada palavra presente
+Para criar uma matriz que represente documentos, fazemos, para cada um deles, uma soma dos vetores referentes a cada palavra presente
 no documento, criando assim um vetor representativo do documento em questão.
 
 Podemos exemplificar da seguinte forma: dado um documento $D$, sabemos que ele é composto pelo seguinte conjunto de palavras
@@ -460,7 +533,7 @@ em todas as palavras do documento $i$:
    $v_{1}$ \\
    $v_{2}$ \\
    \vdots\\
-   $v_{n}$
+   $v_{N}$
  \end{tabular}
  $
  \begin{bmatrix}
@@ -468,16 +541,16 @@ em todas as palavras do documento $i$:
   a_{21} & a_{22} & \hdots & a_{2n}\\
   \vdots & \vdots & \ddots & \vdots\\
   a_{31} & a_{32} & \hdots & a_{nn}
- \end{bmatrix}_{nxn}
+ \end{bmatrix}_{Nxn}
 $
 
 \end{center}
 
 
-
+\pagebreak
 \subsubsection{Construção da Rede}
 
- Construimos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um documento/artigo.
+ Construímos a rede de disseminação a partir da matriz de documentos gerada na sessão anterior, onde cada vetor consiste em um documento/artigo.
  
  Ao construir a rede dos nossos documentos,
  consideramos como contágio sofrer influência de outro artigo, ou seja, um artigo A contamina um artigo B se o artigo A influenciou o
@@ -500,8 +573,8 @@ $
     \end{equation}
 
     
-    A similaridade de cosseno se dá por $1-d(A,B)$.Utilizando essa equação, calculamos a similaridade de cosseno para cada
-    par de vetor de nossa matriz de documentos, criando assim, uma matriz de similaridades. Se similaridade entre dois vetores for 
+    A similaridade de cosseno se dá por $1-d(A,B)$. Utilizando essa equação, calculamos a similaridade de cosseno para cada
+    par de vetor de nossa matriz de documentos, criando assim, uma matriz de similaridades. Se a similaridade entre dois vetores for 
     grande o suficiente, os definimos como similares. 
     
     Para saber o quão grande a similaridade de cosseno entre dois artigos deve ser para considerarmo-os similares, fazemos a
@@ -533,6 +606,7 @@ $
     Para isso, calculamos a diferença entre as datas de publicação de cada par de artigos e fazemos a distribuição dessas diferenças. Assim como
     na distribuição de similaridades, realizamos um corte nas extremidades e pegamos os valores limites.
  \end{description}
+ \todo[inline]{Elisa, aqui t\^em que mostrar as distribui\c{c}\~oes e dizer quais foram os valores}
  
 
 \subsection{Simulação Rede de Disseminação}
@@ -566,7 +640,7 @@ as relações de influencia entre eles, utilizando os resultados de uma simulaç
 \subsubsection{Criação Rede Completa}
 
 
- Para simular nossa rede, construimos primeiramente uma rede completa com os mesmos nós de nossa rede real, onde os pesos das arestas
+ Para simular nossa rede, construímos primeiramente uma rede completa com os mesmos nós de nossa rede real, onde os pesos das arestas
  são as probabilidades dessa aresta existir no caminho de disseminação da notícia, ou seja, a probabilidade de um artigo influenciar um 
  outro. Podemos exemplificar da seguinte forma, dado duas vértices de nossa rede completa, $A$ e $B$. Teremos como peso para as duas 
  arestas que conectam esses nós a probabilidade de cada uma existir:
@@ -663,9 +737,7 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
 
  \begin{description}
   \item \textbf{Modelo utilizado}
-  
-  \todo{não sei o quanto preciso explicar com minas palavras do modelo, talvez tenha ficado meio confuso}
-    
+      
     O modelo epidemiológico que iremos simular foi proposto por \citet[p. 940, eq. (33)]{pastor2014epidemic}. Nele,
     simulamos a probabilidade $\rho^{I}_{i}(t)$ de cada artigo $i$ estar infectado em um tempo $t$ utilizando a matriz de adjacência criada na seção anterior:
 
@@ -687,9 +759,9 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
      \lambda = \dfrac{\beta}{\mu}
     \end{equation}
     
-    A equação (\ref{model}) teve o tempo reescaldo em $\dfrac{1}{\mu}$, o que torna nosso modelo adimensional,
-    como explicado em \citet[p. 939]{pastor2014epidemic}. Podemos interpretar que o tempo de cada passo é o inverso do tempo de 
-    recuperação  média dos artigo. 
+    A equação (\ref{model}) teve o tempo reescalado em $\dfrac{1}{\mu}$, o que torna nosso modelo adimensional,
+    como explicado em \citet[p. 939]{pastor2014epidemic}. Podemos interpretar que o tempo de cada passo é o inverso da taxa de 
+    recuperação  média dos artigos. 
    
     Para tornar o resultado da simulação mais fiel ao nosso conjunto de dados, onde possuimos um decaimento da infecção, ou seja,
     nosso artigos se recuperam (deixam de ser influentes), incrementamos a equação abaixo ao modelo:
@@ -705,14 +777,13 @@ $q$ de nossa simulação, e quais artigos foram responsáveis por infectá-los.
    
     \begin{equation}
       \begin{cases}
-	\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\   
+	\dfrac{d\rho^{I}_{i}}{dt} = -\rho^{I}_{i}(t) + \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t) \\[0.5cm]
 	\dfrac{d\rho^{S}_{i}}{dt} = - \lambda\rho_{i}^{S}(t) \sum_{j=1}^{N} a_{ij}\rho_{j}^{I}(t)
       \end{cases}
     \end{equation}
-
-   
  \end{description}
 
+ \vspace{0.3cm}
   
 Temos como resultado da simulação, uma matriz de estados. Cada posição $a_{ij}$ da matriz se refere à probabilidade do artigo
 $d_{j}$ estar contaminado no passo $t_{i}$ da simulação. Para determinar os artigos infectados no passo $t_{i}$, utilizamos a distribuição
@@ -774,7 +845,7 @@ infectados no passo $t_{i-1}$. Por exemplo, possuindo a matriz booleana abaixo:
 
   
 \pagebreak  
-\section{Resultados}
+\section{Resultados e Discussão}
  
 Todos os resultados a seguir foram obtidos utilizando o conjunto de dados referente às notícias do atentado ao Charlie Hebdo na mídia
 brasileira. 
@@ -821,7 +892,7 @@ Observando as distribuições acima, definimos como similaridade mínima x e tem
 \pagebreak
 \subsubsection{Visualizações da Rede Real}
 
-Utilizando os parâmetros definidos acima, construimos finalmente nossa rede de disseminação do conjunto de dados escolhido.
+Utilizando os parâmetros definidos acima, construímos finalmente nossa rede de disseminação do conjunto de dados escolhido.
 A rede encontrada possui 1786 vértices, onde cada vértice é um artigo.
 
 Durante a criação da rede, artigos que não possuiam uma relação de influência com nenhum outro foram descartados, o que explica a diferença
@@ -890,33 +961,40 @@ possuímos 84 veículos responsáveis pela publicação dos artigos de nosso con
 Possuindo a matriz de probabilidades, podemos dar início à construção da rede completa. Realizando as metodologias de construção da matriz
 completa, encontramos uma matriz quadrada de tamanho 1786x1786 (número de vértices da rede real). 
 
-
 \pagebreak
 \subsubsection{Resultado Simulação}
 
 Possuingo a matriz de adjacência da rede completa, podemos realizar a simulação do modelo. Porém, precisamos primeiro definir o valor do 
-parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construimos as redes a partir desses
+parâmetro $\lambda$. Para definir esse valor, realizamos a simulação para valores variados de lambda, construímos as redes a partir desses
 resultados e calculamos a diferença de \textit{Kullback-Leibler}. O $\lambda$ que minimizasse essa diferença, seria o escolhido. Como sabemos
-que o $\lambda$ crítico do modelo é dado por:
+que o $\lambda$ crítico do modelo, que corresponde a $R_{0}=1$, é dado por: 
 
 $$\lambda_{c} = \dfrac{1}{\Lambda}$$
 
 Onde $\Lambda$ é o maior autovalor da matriz de adjacência (\cite{wang2003proceedings}, \cite{chakrabarti2008epidemic}), então testamos
-valores próximos ao $\lambda_{c}$. Vemos na tabela
-abaixo alguns valores de diferenças encontrados:
+valores próximos ao $\lambda_{c}$. Vemos na tabela \ref{tabela:dist_kl} alguns valores de diferenças encontrados:
 
-\todo{rodar o codigo para pegar esses valores}
-\begin{center}
+
+\begin{table}[ht]
+\caption{Valores de KL para $\lambda$}
+\label{tabela:dist_kl}
+ \begin{center}
  \begin{tabular}{l|c}
    \ \ \ \ \ $\lambda$ & KL \\ \hline
-   $\lambda_{c} + 0.1$ & y\\
-   $\lambda_{c} + 0.01$ & 0.014 \\
+   $\lambda_{c} + 0.01$ & y\\
+   $\lambda_{c} + 0.013$ & 0.014 \\
+   $\lambda_{c} + 0.015$ & y\\
+   $\lambda_{c} + 0.01$ & y\\
    $\lambda_{c} + 0.5$ & y
  \end{tabular}
-\end{center}
+ \end{center}
+\end{table}
+
+
 
 O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda=0.1$, logo, foi o $\lambda$ utilizado para obter os
 resultados a seguir. Abaixo vemos o resultado da simulação feita com 3000 passos e utilizando o parâmetro escolhido:
+
 
 \begin{figure}[ht]
  \centering
@@ -931,6 +1009,7 @@ respeito à probabilidade do artigo estar infectado no tempo $t$ do modelo.
 O resultado da simulação é um típico resultado para um modelo epidemiológico SIR, o que mostra que nossa matriz de adjacências foi coerente
 para a modelagem do sistema e que nossa rede de disseminação real pode ser descrita sim como um processo epidemiológico.
 
+\pagebreak
 \subsubsection{Rede Simulada}
 
 A simulação do modelo nos retorna uma matriz de estados para cada passo $t$. Utilizando essa matriz, construímos a rede de disseminação simulada.
@@ -948,6 +1027,7 @@ possível traduzir o passo da simulação para uma unidade de tempo comparável 
  \caption{Rede Simulada x Tempo}
 \end{figure}
 
+\pagebreak
 O resultado dessa visualização tem um formato parecido com a visualização por tempo da rede real, e por também ser longa, selecionamos 
 apenas seu início como mostrado na figura acima. O primeiro fator que observamos ao analisar a visualização é o fato de todos os vértices
 que possuem um out-degree maior do que um estarem concentrados nos três primeiros passos da simulação. Isso nos mostra que a infecção ocorreu
@@ -962,6 +1042,7 @@ infecção, assim como fizemos para a rede real:
  \caption{Rede Simulada x Passo}
 \end{figure}
 
+\pagebreak
 Essa visualização intensifica o observado na figura anterior, em poquíssimo tempo a epidemia se espalhou, necessitando de apenas alguns passos
 para o ciclo da epidemia ocorrer. 
 
@@ -970,6 +1051,7 @@ taxa de infecção ($\lambda$) constante. Como no mundo real a taxa de infeccios
 para atingir seu máximo. Ao utilizar uma taxa constante, estamos desconsiderando qualquer fator externo e supondo que não existem
 variações na infecciosidade da doença com o  passar do tempo, o que explica a epidemia ocorrer tão rapidamente em nosso modelo.
 
+\pagebreak
 \subsubsection{Validação da Rede Simulada}
 
 Para testar a autenticidade de nossa rede simulada, comparamos a distribuição de out-degrees com a da rede real. Na figura abaixo podemos ver
@@ -987,11 +1069,48 @@ simular a disseminação de notícias.
 
 
 \pagebreak
-\section{Conclusão}
+\section{Conclusões e Considerações Finais}
+
+
+Ao utilizar a rede completa, criada a partir dos dados da rede real, como matriz de relações para o modelo epidemiológico e obter
+resultados esperados de um modelo SIR, conseguimos mostrar que a modelagem de nossa rede real é satisfatória como rede de disseminação, ou seja,
+podemos provar que nossa rede é de fato uma rede de disseminação.
+
+Quanto à rede simulada, obtivemos um resultado bem próxima à rede real de disseminação, o que nos diz que temos um modelo capaz de 
+reproduzir o espalhamento de notícias na mídia.
+
+Infelizmente não foi possível realizar testes do modelo encontrado para outras notícias a tempo para este trabalho, nem utilizar uma base
+de dados maior, o que poderia aumentar a eficácia do resultado encontrado.
 
 
 
 
+\subsection{Trabalhos Futuros}
+
+Alguns trabalhos e melhorias que podem ser feitos a partir dos resultados encontrados neste projeto:
+
+\begin{description}
+ \item \textbf{Construir modelo com $\beta$ variando com o tempo}
+ 
+ Realizar a simulação utilizando um $\beta$ que varia de acordo com o tempo, o que torna a simulação mais próxima da realidade e que
+ resolve o problema da rede simulada ter o pico epidêmico antes da rede real.
+ 
+ \item \textbf{Comparar com modelagens para outras notícias}
+ 
+ Modelar uma rede de disseminação para diversas notícias de compartamentos diferentes e comparar os resultados encontrados.
+ 
+ \item \textbf{Modelar notícias por assunto}
+ 
+ Utilizar como conjunto de dados para criação da rede completa um grupo de notícias sobre um mesmo assunto, e a partir dele
+ tentar modelar o comportamento de uma notícia específica. Por exemplo, selecionar todas as notícias sobre terrorismo, e utilizar
+ a rede completa gerada por elas para simular a disseminação da notícia do atentado ao charlie hebdo. Depois disso, comparar os resultados
+ encontrados.
+\end{description}
+
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{section}{Referências}
 \bibliographystyle{plainnat}
 \bibliography{ref}
 \end{document}

@@ -1,16 +1,16 @@
 \select@language {portuguese}
-\contentsline {figure}{\numberline {1}{\ignorespaces Rede Real Gen\IeC {\'e}rica}}{9}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{11}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rede Completa}}{12}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Dissemina\IeC {\c c}\IeC {\~a}o na Rede Completa}}{12}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Pesos na Rede Completa}}{13}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama Defini\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{16}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{17}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{18}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o Out-degrees Rede Real}}{19}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{20}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{21}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o Modelo}}{22}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Rede Simulada x Tempo}}{23}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Rede Simulada x Passo}}{24}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o Out-Degrees}}{25}{figure.15}
+\contentsline {figure}{\numberline {1}{\ignorespaces Rede Real Gen\IeC {\'e}rica}}{14}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Rela\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{17}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rede Completa}}{18}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Dissemina\IeC {\c c}\IeC {\~a}o na Rede Completa}}{18}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Pesos na Rede Completa}}{18}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama Defini\IeC {\c c}\IeC {\~a}o de Influ\IeC {\^e}ncia}}{22}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Not\IeC {\'\i }cias x Tempo}}{23}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de Similaridades M\IeC {\'a}ximas}}{24}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o Out-degrees Rede Real}}{25}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Passo}}{26}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Rede Dissemina\IeC {\c c}\IeC {\~a}o Real x Tempo}}{27}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o Modelo}}{29}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Rede Simulada x Tempo}}{30}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Rede Simulada x Passo}}{31}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o Out-Degrees}}{32}{figure.15}
