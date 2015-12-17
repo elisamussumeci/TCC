@@ -468,7 +468,8 @@ utilizaremos para criar a matriz de documentos, representação vetorial dos art
 Para representar vetorialmente nosso conjunto de dados utilizamos o \textit{Word2Vec}\footnote[1]{\url{https://code.google.com/p/word2vec/}},
 ferramenta que promove uma implementação eficiente do modelo \hyperref[sec:nlp]{skip-gram}.
 
-Treinamos nosso modelo utilizando todos os 1.6 milhões de documento do banco de dados do Media Cloud, com isso obtivemos
+Treinamos nosso modelo word2vec utilizando todos os 1.6 milhões de documento do banco de dados do Media Cloud,
+com isso obtivemos
 como saída do modelo uma matriz, onde as linhas $p_{1},p_{2},...,p_{n}$ são as $m$ palavras contidas no corpus passado e as colunas $t_{1},t_{2},...,t_{n}$
 são os $n$ atributos gerados pelo modelo para cada palavra. O número de atributos que o modelo gera é passado como input para o modelo.
  
@@ -578,8 +579,22 @@ $
     grande o suficiente, os definimos como similares. 
     
     Para saber o quão grande a similaridade de cosseno entre dois artigos deve ser para considerarmo-os similares, fazemos a
-    distribução das similaridade e realizamos um corte em suas extremidades.
+    distribução das similaridade e realizamos um corte no extremidade inferior, como exemplificado na figura \ref{fig:2}.
     
+    Nesse
+    exemplo realizamos um corte aproximadamente no ponto $0.8$. Dessa forma definimos que para dois artigos serem considerados similares
+    eles devem ter no mínimo uma similaridade igual a $0.8$.
+
+    
+    \pagebreak
+    \begin{figure}[ht]
+      \label{fig:2}
+      \centering
+      \includegraphics[scale=0.5]{./ddistsimex.png}
+      % ddistsimex.png: 622x463 pixel, 72dpi, 21.94x16.33 cm, bb=0 0 622 463
+      \caption{Exemplo Corte na Distribuição de Similaridade}
+    \end{figure}
+
     
   \item \textbf{Temporalidade}
   
@@ -587,6 +602,7 @@ $
     foi influenciado. Para descobrir isso, olhamos a data de publicação de cada artigo. Se dois artigos $A$ e $B$ foram considerados 
     similares, e o artigo $A$ foi publicado antes do artigo $B$, então definimos que $A$ influenciou $B$, logo temos em nossa rede:
     
+    \vspace{0.5cm}
     \begin{figure}[h]
       \centering
       \includegraphics[scale=0.2]{./rede2.png}
@@ -596,7 +612,7 @@ $
     
     \pagebreak
 
-    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também publicado anteriormente. Em nosso modelo,
+    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também foi publicado anteriormente. Em nosso modelo,
     definimos que um artigo só pode ter sido influênciado por um único artigo. Dessa forma, como definir quem de fato influênciou $B$? Para
     resolver esse impasse utilizamos a similaridade de cosseno. Consideramos influênciador o artigo publicado anteriormente, e que possui
     a \textbf{maior} similaridade com $B$.
@@ -604,9 +620,14 @@ $
     Consideramos, também, que um artigo deixa de ser influente com o passar do tempo, assim como uma pessoa infectada por um vírus deixa
     de ser infecciosa após se curar da doença. Dessa forma, precisamos calcular o tempo máximo em que um artigo é influente em nossa rede.
     Para isso, calculamos a diferença entre as datas de publicação de cada par de artigos e fazemos a distribuição dessas diferenças. Assim como
-    na distribuição de similaridades, realizamos um corte nas extremidades e pegamos os valores limites.
+    na distribuição de similaridades, realizamos um corte, só que dessa vez na extremidade superior, com ojetivo de definir um tempo limite
+    máximo de influência, como mostrado na figura \ref{}
+    
+    
+    
+    
  \end{description}
- \todo[inline]{Elisa, aqui t\^em que mostrar as distribui\c{c}\~oes e dizer quais foram os valores}
+
  
 
 \subsection{Simulação Rede de Disseminação}
@@ -878,14 +899,19 @@ Após calcular a matriz de documentos e a matriz de similaridades, antes de cons
 precisamos definir o tempo máximo de influência de um artigo, e a similaridade de cosseno
 mínima para definir se dois artigos são similares. Para isso calculamos a distribuição de cada uma dessas métricas:
 
-\todo{incluir distribuição de tempo}
 \begin{figure}[ht]
  \centering
- \includegraphics[scale=0.4]{./2.png}
+ \includegraphics[scale=0.6]{./2.png}
  % 2.png: 600x600 pixel, 72dpi, 21.17x21.17 cm, bb=0 0 600 600
  \caption{Distribuição de Similaridades Máximas}
 \end{figure}
 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{./tempos.png}
+ % tempos.png: 614x574 pixel, 72dpi, 21.66x20.25 cm, bb=0 0 614 574
+ \caption{Distribuição das Diferenças de Tempo}
+\end{figure}
 
 Observando as distribuições acima, definimos como similaridade mínima x e tempo máximo de influência de um artigo y.
 

@@ -148,7 +148,7 @@ professor Renato Rocha Souza, por toda atenção e carinho prestados.
 À minha família por estar sempre ao meu lado acreditando no meu potencial, e apoiando minhas decisões. Ao
 Breno, pelo companheirismo em todos os momentos bons e ruins.
 
-Agradeço também ao meus colegas de classe, que compartilharam comigo essa experiência única de fazer Matemática Aplica. 
+Agradeço também ao meus colegas de classe, que compartilharam comigo essa experiência única de fazer Matemática Aplicada. 
 
 \pagebreak
 \begin{abstract}
@@ -579,10 +579,22 @@ $
     grande o suficiente, os definimos como similares. 
     
     Para saber o quão grande a similaridade de cosseno entre dois artigos deve ser para considerarmo-os similares, fazemos a
-    distribução das similaridade e realizamos um corte no extremidade inferior, como exemplificado na imagem abaixo:
+    distribução das similaridade e realizamos um corte no extremidade inferior, como exemplificado na figura \ref{fig:2}.
     
+    Nesse
+    exemplo realizamos um corte aproximadamente no ponto $0.8$. Dessa forma definimos que para dois artigos serem considerados similares
+    eles devem ter no mínimo uma similaridade igual a $0.8$.
+
     
-    
+    \pagebreak
+    \begin{figure}[ht]
+      \label{fig:2}
+      \centering
+      \includegraphics[scale=0.5]{./ddistsimex.png}
+      % ddistsimex.png: 622x463 pixel, 72dpi, 21.94x16.33 cm, bb=0 0 622 463
+      \caption{Exemplo Corte na Distribuição de Similaridade}
+    \end{figure}
+
     
   \item \textbf{Temporalidade}
   
@@ -590,6 +602,7 @@ $
     foi influenciado. Para descobrir isso, olhamos a data de publicação de cada artigo. Se dois artigos $A$ e $B$ foram considerados 
     similares, e o artigo $A$ foi publicado antes do artigo $B$, então definimos que $A$ influenciou $B$, logo temos em nossa rede:
     
+    \vspace{0.5cm}
     \begin{figure}[h]
       \centering
       \includegraphics[scale=0.2]{./rede2.png}
@@ -599,7 +612,7 @@ $
     
     \pagebreak
 
-    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também publicado anteriormente. Em nosso modelo,
+    Porém, pode acontecer de termos um outro artigo $C$, também considerado similar ao artigo $B$ e que também foi publicado anteriormente. Em nosso modelo,
     definimos que um artigo só pode ter sido influênciado por um único artigo. Dessa forma, como definir quem de fato influênciou $B$? Para
     resolver esse impasse utilizamos a similaridade de cosseno. Consideramos influênciador o artigo publicado anteriormente, e que possui
     a \textbf{maior} similaridade com $B$.
@@ -607,11 +620,24 @@ $
     Consideramos, também, que um artigo deixa de ser influente com o passar do tempo, assim como uma pessoa infectada por um vírus deixa
     de ser infecciosa após se curar da doença. Dessa forma, precisamos calcular o tempo máximo em que um artigo é influente em nossa rede.
     Para isso, calculamos a diferença entre as datas de publicação de cada par de artigos e fazemos a distribuição dessas diferenças. Assim como
-    na distribuição de similaridades, realizamos um corte nas extremidades e pegamos os valores limites.
- \end{description}
- \todo[inline]{Elisa, aqui t\^em que mostrar as distribui\c{c}\~oes e dizer quais foram os valores}
- 
+    na distribuição de similaridades, realizamos um corte, só que dessa vez na extremidade superior, com ojetivo de definir um tempo limite
+    máximo de influência, como mostrado na figura \ref{fig:4}
+    
+    \vspace{0.4cm}
+    \begin{figure}[h]
+      \label{fig:4}
+      \centering
+      \includegraphics[scale=0.5]{./tempdistmex.png}
+      % tempdistmex.png: 960x720 pixel, 72dpi, 33.87x25.40 cm, bb=0 0 960 720
+      \caption{Exemplo Distribuição de Tempos}
+    \end{figure}
 
+    
+    
+ \end{description}
+
+ 
+\pagebreak
 \subsection{Simulação Rede de Disseminação}
 
 Na segunda parte do trabalho, temos como objetivo simular a disseminação de nossa rede real utilizando um modelo epidemiológico, com o intuito
@@ -639,7 +665,6 @@ as relações de influencia entre eles, utilizando os resultados de uma simulaç
 \end{figure}
 
 
-\pagebreak
 \subsubsection{Criação Rede Completa}
 
 
@@ -867,12 +892,13 @@ a cair gradativamente.
 \subsection{Rede de Disseminação Real}
 
 Utilizando os dados descritos na seção anterior, construímos a matriz de documentos, que obteve o tamanho 2115x300, onde 2115 são as linhas
-que representam cada artigo e o 300 se refere às colunas, que são os atributos definidos pelo modelo \textit{skipgram}.
+que representam cada artigo e o 300 se refere às colunas, que foi o número de atributos escolhido para rodar o treinamento do 
+modelo word2vec.
 
 Podemos observar que o número de artigos na matriz é inferior ao número de artigos totais do conjunto de dados. Isso aconteceu pois 
 alguns artigos não obtiveram resultados satisfatórios durante o processo de tokenização, e por isso, foram descartados do conjunto de dados.
 
-Possuindo a matriz de documentos, calculamos então, a matriz de similaridades para podermos construis a rede de disseminação.
+Possuindo a matriz de documentos, calculamos então, a matriz de similaridades para podermos construir a rede de disseminação.
 
 \pagebreak
 \subsubsection{Definindo Parâmetros}
@@ -881,16 +907,29 @@ Após calcular a matriz de documentos e a matriz de similaridades, antes de cons
 precisamos definir o tempo máximo de influência de um artigo, e a similaridade de cosseno
 mínima para definir se dois artigos são similares. Para isso calculamos a distribuição de cada uma dessas métricas:
 
-\todo{incluir distribuição de tempo}
 \begin{figure}[ht]
  \centering
- \includegraphics[scale=0.4]{./2.png}
+ \includegraphics[scale=0.6]{./2.png}
  % 2.png: 600x600 pixel, 72dpi, 21.17x21.17 cm, bb=0 0 600 600
  \caption{Distribuição de Similaridades Máximas}
 \end{figure}
 
+Observando a distribuição de similaridade, observamos que a maioria dos artigos tem similaridades concentradas acima 0.8. Logo
+definimos como similaridade mínima para dois artigos possuirem relação de influência como 0.8. A seguir observamos a distribuição da diferença
+de datas de publicação, ou seja, diferença entre a hora que foram postados para cada par de artigo do conjunto de dados.
 
-Observando as distribuições acima, definimos como similaridade mínima x e tempo máximo de influência de um artigo y.
+\pagebreak
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{./tempos.png}
+ % tempos.png: 614x574 pixel, 72dpi, 21.66x20.25 cm, bb=0 0 614 574
+ \caption{Distribuição das Diferenças de Tempo}
+\end{figure}
+
+Na distribuição de tempos, definimos o corte no tempo 160, que significa que para dois artigos poderem possuir uma relação de 
+influência, precisam ter sido publicados com no máximo 160 horas de diferença.
+
+
 
 \pagebreak
 \subsubsection{Visualizações da Rede Real}
@@ -984,18 +1023,18 @@ valores próximos ao $\lambda_{c}$. Vemos na tabela \ref{tabela:dist_kl} alguns 
  \begin{center}
  \begin{tabular}{l|c}
    \ \ \ \ \ $\lambda$ & KL \\ \hline
-   $\lambda_{c} + 0.01$ & y\\
-   $\lambda_{c} + 0.013$ & 0.014 \\
-   $\lambda_{c} + 0.015$ & y\\
-   $\lambda_{c} + 0.01$ & y\\
-   $\lambda_{c} + 0.5$ & y
+   $\lambda_{c} + 0.01$ & 0.0307\\
+   $\lambda_{c} + 0.013$ & 0.017 \\
+   $\lambda_{c} + 0.015$ & 0.0137\\
+   $\lambda_{c} + 0.1$ & 1.0034\\
+   $\lambda_{c} + 0.2$ & 1.554
  \end{tabular}
  \end{center}
 \end{table}
 
 
 
-O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda=0.1$, logo, foi o $\lambda$ utilizado para obter os
+O valor de $\lambda$ que minimizou a diferença de Kullback-Leibler foi $\lambda= \lambda_{c} + 0.015$, logo, foi o $\lambda$ utilizado para obter os
 resultados a seguir. Abaixo vemos o resultado da simulação feita com 3000 passos e utilizando o parâmetro escolhido:
 
 
