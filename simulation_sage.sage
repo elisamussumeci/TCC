@@ -94,11 +94,15 @@ def create_infected_matrix(la, Ti):
 T = ode_solver()
 T.algorithm = "rkf45"
 T.function = fun
-l = 1/eig + 0.01
+l = 1/eig + 0.015
 
 
 dI, Infects = create_infected_matrix(l, T)
-
 np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/dI.csv', dI, delimiter=',')
 np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects.csv', Infects, delimiter=',')
 
+
+#for i in [0.017, 0.02]:
+#    dI, Infects = create_infected_matrix(1/eig+i, T)
+#    np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/dI_%s.csv' % i, dI, delimiter=',')
+#    np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects_%s.csv' % i, Infects, delimiter=',')
