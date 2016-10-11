@@ -98,15 +98,15 @@ def graph_simu_nx(Infects, G):
     return graph_sim
 
 
-Infects = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects.csv'), delimiter=",")
-G = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_complete.csv'), delimiter=",")
-original_graph = nx.read_gpickle('/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph.gpickle')
+Infects = np.loadtxt(open('/home/elisa/Projetos/TCC/charlie_results/Infects.csv'), delimiter=",")
+G = np.loadtxt(open('/home/elisa/Projetos/TCC/charlie_results/graph_complete.csv'), delimiter=",")
+original_graph = nx.read_gpickle('/home/elisa/Projetos/TCC/charlie_results/original_graph.gpickle')
 #
 ori_outs = [i[1] for i in original_graph.out_degree_iter()]
 g_ori = gaussian_kde(ori_outs)
 #
 graph_simulated = graph_simu_nx(Infects, G)
-nx.write_gpickle(graph_simulated, '/home/elisa/Documents/Projetos/TCC/data/graph_simulated_nx.gpickle')
+nx.write_gpickle(graph_simulated, '/home/elisa/Projetos/TCC/charlie_results/graph_simulated_nx.gpickle')
 sim_outs = [j[1] for j in graph_simulated.out_degree_iter()]
 g_sim = gaussian_kde(sim_outs)
 

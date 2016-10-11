@@ -2,11 +2,11 @@ import numpy as np
 import csv
 from scipy.stats import bernoulli
 
-G = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_complete.csv'), delimiter=",")
-nodes = np.loadtxt(open('/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph_nodes.csv'), delimiter=",")
+G = np.loadtxt(open('/home/elisa/Projetos/TCC/charlie_results/graph_complete.csv'), delimiter=",")
+nodes = np.loadtxt(open('/home/elisa/Projetos/TCC/charlie_results/original_graph_nodes.csv'), delimiter=",")
 
 # load list of domains in data
-with open('/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph_domains_each_node.txt') as f:
+with open('/home/elisa/Projetos/TCC/charlie_results/graph_original_domains_each_node.txt') as f:
     domains = f.read().splitlines()
 
 # create dictionary, one colour to each domain
@@ -48,7 +48,7 @@ def plot_sol(sol, color_dict, domains):
     for i in range(500):
         co = color_dict[domains[i]]
         plots += list_plot([(j[0], j[1][i]) for j in sol[:1786]], color=co, plotjoined=True, alpha=.2, gridlines=true)
-    plots.save('/home/elisa/Documents/Projetos/TCC/data/charlie/simulation.png')
+    plots.save('/home/elisa/Projetos/TCC/charlie_results/simulation.png')
 
 
 
@@ -81,7 +81,7 @@ def create_infects(dI):
     return Infects
 
 
-def create_infected_matrix(la, Ti):
+def create_infected_matrix(la, T):
     T.ode_solve(t_span=[0, 5], y_0=list(i0)+list(s0), num_points=3000, params=[G, la])
     plot_sol(T.solution, color_dict, domains)
 
@@ -94,15 +94,9 @@ def create_infected_matrix(la, Ti):
 T = ode_solver()
 T.algorithm = "rkf45"
 T.function = fun
-l = 1/eig + 0.015
+l = 1/eig + 0.0001
 
 
 dI, Infects = create_infected_matrix(l, T)
-np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/dI.csv', dI, delimiter=',')
-np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects.csv', Infects, delimiter=',')
-
-
-#for i in [0.017, 0.02]:
-#    dI, Infects = create_infected_matrix(1/eig+i, T)
-#    np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/dI_%s.csv' % i, dI, delimiter=',')
-#    np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/Infects_%s.csv' % i, Infects, delimiter=',')
+np.savetxt('/home/elisa/Projetos/TCC/charlie_results/dI.csv', dI, delimiter=',')
+np.savetxt('/home/elisa/Projetos/TCC/charlie_results/Infects.csv', Infects, delimiter=',')

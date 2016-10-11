@@ -1,0 +1,15 @@
+To Do Artigo:
+
+	- Inserir shade no zoom do grafico
+	- Melhorar lambda critico (rodar no sage e confirmar lambda critico) - DIMINUIR LAMBDA
+	- usar alem da entropy o diametro da rede
+
+
+	- beta vai ser o outdree do primeiro influenciador do grafo
+          -> beta do empirico esta menor que o beta do simulado
+
+
+	- calcular lambda critico da matriz de adjacencia do grafo simulado
+	- apresenta no texto lambda critio da rede empirica
+	- out degree medio entre o dois primeiros passos da rede empirica (dois primeiros passos) e comparar com olmbda critico obtido a aprtir
+da matriz de ajacencia da  rede empirico

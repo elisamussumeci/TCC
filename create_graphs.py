@@ -83,7 +83,7 @@ def get_pos(data, pub_i, column_list, time_max, sim_min, outs):
         return None
 
     pos = column_list.index(sim)
-    time_dif = (data[pos]['published'] - pub_i).total_seconds()/3600
+    time_dif = (pub_i - data[pos]['published']).total_seconds()/3600
     if pos in outs:
         column_list[pos] = 0
         get_pos(data, pub_i, column_list, time_max, sim_min, outs)
@@ -102,7 +102,7 @@ def create_graph(dists_triu, data, time_max=164, sim_min=0.8):
     outs = []
     for i in range(1,size):
         pub_i = data[i]['published']
-        column = list(dists_triu[:,i])
+        column = list(dists_triu[:, i])
         pos = get_pos(data, pub_i, column, time_max, sim_min, outs)
 
         if pos != None:
@@ -217,13 +217,13 @@ def create_complete_adjacency(graph, matrix):
 
 # ############################ Load data ################################
 
-with open('data/articles_data/charliehebdo.json') as f:
+with open('Mediacloud_data/charliehebdo.json') as f:
     a = f.read()
     list_of_dict = json_util.loads(a)
 
 # Fixing some data issues
 del_pos = []
-for pos,i in enumerate(list_of_dict):
+for pos, i in enumerate(list_of_dict):
     if 'published' not in i:
         i['published'] = i['updated']
     if i['published'].year < 2015:
@@ -244,7 +244,7 @@ print('articles_imported')
 list_ids = create_ids_list(articles)
 
 # load model that contains all words from media cloud articles database
-modelMC = Word2Vec.load('Models/MediaCloud_w2v')
+modelMC = Word2Vec.load('Mediacloud_data/MediaCloud_w2v')
 
 docvs = create_model_matrix(articles, modelMC)
 
@@ -261,27 +261,54 @@ dists_triu = np.triu(dists, k=1)
 # ################ Create Graphs ###############################
 
 G = create_graph(dists_triu, articles)
-nx.write_gpickle(G, '/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph.gpickle')
+nx.write_gpickle(G, '/home/elisa/Projetos/TCC/charlie_results/original_graph.gpickle')
 
 original_nodes = G.nodes()
-np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/original_graph_nodes.csv', original_nodes, delimiter=',')
+np.savetxt('/home/elisa/Projetos/TCC/charlie_results/original_graph_nodes.csv', original_nodes, delimiter=',')
 
 all_nodes_domains = []
 for i in original_nodes:
     all_nodes_domains.append(G.node[i]['domain'])
 
-f = open('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_original_domains_each_node.txt','w')
+f = open('/home/elisa/Projetos/TCC/charlie_results/graph_original_domains_each_node.txt', 'w')
 for item in all_nodes_domains:
     f.write("%s\n" % item)
 
 ##########################################################################
+
 domain_list, domain_matrix = create_matrix_domain(G)
 
 graph_complete = create_complete_adjacency(G, domain_matrix)
 as_numpy = graph_complete.as_matrix()
 np.fill_diagonal(as_numpy, 0)
-np.savetxt('/home/elisa/Documents/Projetos/TCC/data/charlie/graph_complete.csv', as_numpy, delimiter=',')
+np.savetxt('/home/elisa/Projetos/TCC/charlie_results/graph_complete.csv', as_numpy, delimiter=',')
 
+
+################# create i0 simultaion #######################
+
+def create_first_pubs(original_graph):
+    dates_list = [original_graph.node[node]['date'] for node in original_graph.nodes()]
+    fs = []
+    for node in original_graph.nodes():
+        if original_graph.node[node]['date'].date() == min(dates_list).date():
+            fs.append(original_graph.node[node]['domain'])
+    return fs
+
+
+def create_I0(list_first_pubs, domains):
+    i0 = np.zeros(len(domains))
+    for pos, i in enumerate(i0):
+        if domains[pos] in list_first_pubs:
+            i0[pos] = 1
+            list_first_pubs.remove(domains[pos])
+
+    return i0
+
+list_first_pubs = create_first_pubs(G)
+I0 = create_I0(list_first_pubs, all_nodes_domains)
+
+
+np.savetxt('/home/elisa/Projetos/TCC/charlie_results/i0.csv', I0, delimiter=',')
 
 
 
